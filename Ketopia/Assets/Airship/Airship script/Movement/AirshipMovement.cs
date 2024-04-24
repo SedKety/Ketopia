@@ -5,24 +5,31 @@ using UnityEngine;
 
 public class AirshipMovement : MonoBehaviour
 {
+    [Header("Movement/Rotation")]
     public float airshipMovementSpeed;
     public float airshipMovementSpeedMultiplier;
     public float airshipRotationSpeed;
-
-
     public bool airshipMovementEnabled;
 
+    [Header("Misc")]
     public Rigidbody rb;
-
-    public static AirshipMovement _instance;
-
+    public static AirshipMovement instance;
+    public int despawnTimer;
+    public bool shouldDespawn;
     private void Start()
     {
-        if (_instance == null)
+        if (instance == null)
         {
-            _instance = this;
+            instance = this;
         }
         rb = GetComponent<Rigidbody>();
+    }
+    public void Update()
+    {
+        if (AirshipManager.instance.currentFuel <= 0)
+        {
+            airshipMovementEnabled = false;
+        }
     }
     public void FixedUpdate()
     {
@@ -32,11 +39,21 @@ public class AirshipMovement : MonoBehaviour
             rotationValue = rotationValue * airshipRotationSpeed;
             gameObject.transform.Rotate(0, rotationValue, 0);
 
-
             var movementValue = Input.GetAxis("Vertical");
             movementValue = movementValue * airshipMovementSpeed * airshipMovementSpeedMultiplier;
 
-            transform.Translate(0, movementValue, 0);
+            transform.Translate(0, 0, movementValue);
+            //rb.velocity = new Vector3(0f, 0f, movementValue);
         }
+    }
+    public void EnableMovement()
+    {
+        airshipMovementEnabled = true;
+        StartCoroutine(AirshipManager.instance.FuelConsumption());
+    }
+    public void DisableMovement()
+    {
+        airshipMovementEnabled = false;
+        StopCoroutine(AirshipManager.instance.FuelConsumption());
     }
 }
