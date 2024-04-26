@@ -8,14 +8,14 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
     public Collider spawnCollider;
     public int spawnCount;
     public LayerMask spawnLayerMask;
-    public int maxRetries = 10; // Maximum number of retries to avoid infinite loop
+    public int maxRetries = 10; 
 
     void Start()
     {
         SpawnObjects();
     }
 
-    void SpawnObjects()
+    public virtual void SpawnObjects()
     {
         if (spawnableGameobjects != null && spawnCollider != null)
         {
@@ -39,12 +39,12 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
 
                 if (retries >= maxRetries)
                 {
-                    break; 
+                    break;
                 }
             }
         }
     }
-    Vector3 SpawnPosition(Bounds bounds)
+    public virtual Vector3 SpawnPosition(Bounds bounds)
     {
         float randomX = Random.Range(bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);
         float randomZ = Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);

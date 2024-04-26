@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8a7d39f15e46d4b8e0a6b96dbdbe72, type: 3}
+  m_Name: NotStone
+  m_EditorClassIdentifier: 
+  itemName: asgsg
+  itemDescription: agewfSSF
+  physicalItem: {fileID: 0}
+  itemSprite: {fileID: 2800000, guid: 81f7024a6cb0658419f4da0bcf9ab5d4, type: 3}
+  itemId: 2
+  quantity: 13
+  maxQuantity: 50
+  itemType: 1
+  healthValue: 2
+  foodValue: 3

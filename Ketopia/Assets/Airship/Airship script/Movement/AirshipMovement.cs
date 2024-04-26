@@ -10,7 +10,7 @@ public class AirshipMovement : MonoBehaviour
     public float airshipMovementSpeedMultiplier;
     public float airshipRotationSpeed;
     public bool airshipMovementEnabled;
-
+    public Vector3 airshipMovementDirection;
     [Header("Misc")]
     public Rigidbody rb;
     public static AirshipMovement instance;
@@ -23,6 +23,7 @@ public class AirshipMovement : MonoBehaviour
             instance = this;
         }
         rb = GetComponent<Rigidbody>();
+        airshipMovementEnabled = false;
     }
     public void Update()
     {
@@ -39,12 +40,19 @@ public class AirshipMovement : MonoBehaviour
             rotationValue = rotationValue * airshipRotationSpeed;
             gameObject.transform.Rotate(0, rotationValue, 0);
 
-            var movementValue = Input.GetAxis("Vertical");
-            movementValue = movementValue * airshipMovementSpeed * airshipMovementSpeedMultiplier;
-
-            transform.Translate(0, 0, movementValue);
+            var zAxis = Input.GetAxis("Vertical");
+            zAxis = zAxis * airshipMovementSpeed * airshipMovementSpeedMultiplier;
+            var yAxis = Input.GetAxis("AirshipHorizontal");
+            yAxis *= 0.25f;
             //rb.velocity = new Vector3(0f, 0f, movementValue);
+            airshipMovementDirection = new Vector3(0, yAxis, zAxis);
         }
+        else if (!airshipMovementEnabled)
+        {
+            airshipMovementDirection = Vector3.zero;
+        }
+        transform.Translate(airshipMovementDirection);
+
     }
     public void EnableMovement()
     {

@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PhysicalItemScript : MonoBehaviour, IInteractable
+{
+    public Item item;
+    public int quantity;
+    public void Start()
+    {
+        item.quantity = quantity;
+    }
+    public void IInteractable()
+    {
+        int leftOverItems = InventoryManager.instance.OnItemAdd(item, quantity);
+        if (leftOverItems <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            quantity = leftOverItems;
+        }
+    }
+}

@@ -16,6 +16,10 @@ public class IslandGenerator : MonoBehaviour
 
     [ContextMenu("SpawnIslands")]
 
+    public void Start()
+    {
+        Invoke(nameof(SpawnIslands), 0.1f);
+    }
     public void StartSpawning()
     {
         airship = AirshipManager.instance.gameObject;

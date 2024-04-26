@@ -12,6 +12,8 @@ public class AirshipManager : MonoBehaviour
     public float fuelCost;
     public float fuelDecreaseTimer;
 
+    public Transform camHolderAirship;
+
     public void Start()
     {
         if (instance == null)
