@@ -27,16 +27,16 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        print("hello");
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        print("bye");
+       
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        print("oi");
+        
     }
 }

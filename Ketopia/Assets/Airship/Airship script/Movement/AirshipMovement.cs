@@ -14,8 +14,6 @@ public class AirshipMovement : MonoBehaviour
     [Header("Misc")]
     public Rigidbody rb;
     public static AirshipMovement instance;
-    public int despawnTimer;
-    public bool shouldDespawn;
     private void Start()
     {
         if (instance == null)
@@ -57,11 +55,11 @@ public class AirshipMovement : MonoBehaviour
     public void EnableMovement()
     {
         airshipMovementEnabled = true;
-        StartCoroutine(AirshipManager.instance.FuelConsumption());
+        AirshipManager.instance.SwitchState(AirshipState.enabled);
     }
     public void DisableMovement()
     {
         airshipMovementEnabled = false;
-        StopCoroutine(AirshipManager.instance.FuelConsumption());
+        AirshipManager.instance.SwitchState(AirshipState.disabled);
     }
 }

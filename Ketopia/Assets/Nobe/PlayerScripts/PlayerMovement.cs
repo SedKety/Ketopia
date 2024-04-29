@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Airship"))
         {

@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     public GameObject hotbar;
     public GameObject inventory;
-
+    public PlayerState playerState;
     public InventorySlot[] inventorySlots;
 
     public void Start()
@@ -18,12 +18,13 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) & !inventory.activeInHierarchy)
         {
+            playerState = PlayerManager.instance.playerState;
             PlayerManager.instance.SwitchState(PlayerState.inventory);
             inventory.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.E) & inventory.activeInHierarchy)
         {
-            PlayerManager.instance.SwitchState(PlayerState.normal);
+            PlayerManager.instance.SwitchState(playerState);
             inventory.SetActive(false);
         }
     }

@@ -21,40 +21,54 @@ public class PlayerManager : MonoBehaviour
     public void Start()
     {
         instance = this;
-        playerState = PlayerState.normal;   
+        playerState = PlayerState.normal;
         player = gameObject;
+    }
+    public void Update()
+    {
+        if (playerState == PlayerState.ship & Input.GetKeyDown(KeyCode.G))
+        {
+            SwitchState(PlayerState.normal);
+            AirshipMovement.instance.DisableMovement();
+        }
     }
     public void SwitchState(PlayerState state)
     {
         playerState = state;
-        if (playerState == PlayerState.normal)
-        {
-            player.GetComponent<PlayerMovement>().canMove = true;
-            player.GetComponent<PlayerCamMovement>().canILook = true;
-            Camera.main.transform.position = playerCamLocation.position;  
-            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            player.GetComponent<Collider>().enabled = true;
-            player.GetComponent <Rigidbody>().useGravity = true;
-            InventoryManager.instance.hotbar.SetActive(true);
-            InventoryManager.instance.inventory.SetActive(false);
 
-        }
-        else if (playerState == PlayerState.ship)
+        switch (playerState)
         {
-            player.GetComponent<PlayerMovement>().canMove = false;
-            player.GetComponent<PlayerCamMovement>().canILook = false;
-            Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
-            Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
-            player.GetComponent<Collider>().enabled = false;
-            player.GetComponent<Rigidbody>().useGravity = false;
-            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            InventoryManager.instance.hotbar.SetActive(false);
-            InventoryManager.instance.inventory.SetActive(false);
-        }
-        else if(playerState == PlayerState.inventory)
-        {
-            AirshipMovement.instance.DisableMovement();
-            player.GetComponent<PlayerCamMovement>().canILook = false;
+            case PlayerState.ship:
+                player.GetComponent<PlayerMovement>().canMove = false;
+                player.GetComponent<PlayerCamMovement>().canILook = false;
+                Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
+                Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
+                player.GetComponent<Collider>().enabled = false;
+                player.GetComponent<Rigidbody>().useGravity = false;
+                player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                InventoryManager.instance.hotbar.SetActive(false);
+                InventoryManager.instance.inventory.SetActive(false);
+                AirshipMovement.instance.EnableMovement();
+                break;
+
+
+            case PlayerState.normal:
+                player.GetComponent<PlayerMovement>().canMove = true;
+                player.GetComponent<PlayerCamMovement>().canILook = true;
+                Camera.main.transform.position = playerCamLocation.position;
+                player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                player.GetComponent<Collider>().enabled = true;
+                player.GetComponent<Rigidbody>().useGravity = true;
+                InventoryManager.instance.hotbar.SetActive(true);
+                InventoryManager.instance.inventory.SetActive(false);
+                break;
+
+
+
+            case PlayerState.inventory:
+                AirshipMovement.instance.DisableMovement();
+                player.GetComponent<PlayerCamMovement>().canILook = false;
+                break;
         }
     }
 }
