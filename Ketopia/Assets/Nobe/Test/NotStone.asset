@@ -15,9 +15,9 @@ MonoBehaviour:
   itemName: asgsg
   itemDescription: agewfSSF
   physicalItem: {fileID: 0}
-  itemSprite: {fileID: 2800000, guid: 81f7024a6cb0658419f4da0bcf9ab5d4, type: 3}
+  itemSprite: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
   itemId: 2
-  quantity: 13
+  quantity: -11
   maxQuantity: 50
   itemType: 1
   healthValue: 2

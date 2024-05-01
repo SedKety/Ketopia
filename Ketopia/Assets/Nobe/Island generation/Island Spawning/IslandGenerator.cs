@@ -14,6 +14,11 @@ public class IslandGenerator : MonoBehaviour
     public GameObject[] islands;
     public int howManyToSpawn;
 
+    public island[] commonIslands;
+    public island[] uncommonIslands;
+    public island[] rareIslands;
+    public island[] epicIslands;
+    public island[] legendaryIslands;
     [ContextMenu("SpawnIslands")]
 
     public void Start()
@@ -27,7 +32,7 @@ public class IslandGenerator : MonoBehaviour
     }
     public void Update()
     {
-        if(Vector3.Distance(lastSpawnedIslands, airship.transform.position) >= spawnDistance)
+        if (Vector3.Distance(lastSpawnedIslands, airship.transform.position) >= spawnDistance)
         {
             SpawnIslands();
         }
@@ -58,6 +63,22 @@ public class IslandGenerator : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+
+    [System.Serializable]
+    public struct island
+    {
+        [Header("IslandName")]
+        string name;
+        [Space]
+        [Space]
+        [Header("IslandObject")]
+        [SerializeField] GameObject islandGameobject;
+        [Space]
+        [Space]
+        [Header("ResourceNodes")]
+        [SerializeField] GameObject[] nodesToSpawnOnIsland;
+        [SerializeField] int howManyNodes;
     }
 }
 

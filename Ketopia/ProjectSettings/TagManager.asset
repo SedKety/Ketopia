@@ -9,6 +9,7 @@ TagManager:
   - Island
   - InteractionCollider
   - Airship
+  - PlayerSteeringWheelPlacement
   layers:
   - Default
   - TransparentFX

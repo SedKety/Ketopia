@@ -15,11 +15,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
 
     public Transform playerCamLocation;
+    public Transform playerWheelLocation;
 
     public int playerHealth;
     public int playerFood;
     public void Start()
     {
+        playerWheelLocation = GameObject.FindGameObjectWithTag("PlayerSteeringWheelPlacement").transform;
         instance = this;
         playerState = PlayerState.normal;
         player = gameObject;
@@ -31,6 +33,12 @@ public class PlayerManager : MonoBehaviour
             SwitchState(PlayerState.normal);
             AirshipMovement.instance.DisableMovement();
         }
+        if (playerState == PlayerState.ship)
+        {
+            transform.position = playerWheelLocation.position;
+            Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
+            Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
+        }
     }
     public void SwitchState(PlayerState state)
     {
@@ -41,8 +49,6 @@ public class PlayerManager : MonoBehaviour
             case PlayerState.ship:
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
-                Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
-                Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
                 player.GetComponent<Collider>().enabled = false;
                 player.GetComponent<Rigidbody>().useGravity = false;
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;

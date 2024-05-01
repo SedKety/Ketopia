@@ -5,52 +5,74 @@ using UnityEngine;
 
 public class AirshipMovement : MonoBehaviour
 {
-    [Header("Movement/Rotation")]
+    [Header("Movement")]
     public float airshipMovementSpeed;
     public float airshipMovementSpeedMultiplier;
     public float airshipRotationSpeed;
     public bool airshipMovementEnabled;
+    public float airshipUpHeight;
+    public float airshipUpHeightMultiplier;
     public Vector3 airshipMovementDirection;
-    [Header("Misc")]
-    public Rigidbody rb;
+    public float groundDrag;
+    public float upForce;
+
+    public Transform orientation;
+    float horizontalInput;
+    float verticalInput;
+    Rigidbody rb;
+
     public static AirshipMovement instance;
+    public Transform propellor;
+    public float propellorRotationSpeed;
+    public Transform steeringWheel;
     private void Start()
     {
         if (instance == null)
         {
             instance = this;
         }
-        rb = GetComponent<Rigidbody>();
         airshipMovementEnabled = false;
+        Time.timeScale = 1f;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        orientation = GetComponent<Transform>();
     }
-    public void Update()
-    {
-        if (AirshipManager.instance.currentFuel <= 0)
-        {
-            airshipMovementEnabled = false;
-        }
-    }
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         if (airshipMovementEnabled)
         {
-            var rotationValue = Input.GetAxis("Horizontal");
-            rotationValue = rotationValue * airshipRotationSpeed;
-            gameObject.transform.Rotate(0, rotationValue, 0);
-
-            var zAxis = Input.GetAxis("Vertical");
-            zAxis = zAxis * airshipMovementSpeed * airshipMovementSpeedMultiplier;
-            var yAxis = Input.GetAxis("AirshipHorizontal");
-            yAxis *= 0.25f;
-            //rb.velocity = new Vector3(0f, 0f, movementValue);
-            airshipMovementDirection = new Vector3(0, yAxis, zAxis);
+            MyInput();
+            SpeedControl();
+            HandleRotation();
+            airshipMovementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            rb.AddForce(airshipMovementDirection.normalized * airshipMovementSpeed * 1000f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(0, airshipUpHeight * airshipUpHeightMultiplier * 1000, 0, ForceMode.Force);
+            //rb.MovePosition(rb.position += new Vector3(0, airshipUpHeight * 0.25f, 0));
+            propellor.transform.Rotate(0, 0, verticalInput * propellorRotationSpeed);
+            rb.drag = groundDrag;
         }
-        else if (!airshipMovementEnabled)
+    }
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > airshipMovementSpeed)
         {
-            airshipMovementDirection = Vector3.zero;
+            Vector3 limitedVel = flatVel.normalized * airshipMovementSpeed;
+            rb.velocity = new Vector3(limitedVel.x, limitedVel.y, limitedVel.z);
         }
-        transform.Translate(airshipMovementDirection);
-
+    }
+    void HandleRotation()
+    {
+        var rotation = Input.GetAxis("Horizontal") * airshipRotationSpeed;
+        var rotationValue = Quaternion.Euler(0, rotation, 0);
+        steeringWheel.Rotate(0, 0, rotation * -100);
+        rb.MoveRotation(rb.rotation * rotationValue);
+    }
+    private void MyInput()
+    {
+        verticalInput = Input.GetAxis("Vertical");
+        airshipUpHeight = Input.GetAxis("AirshipHorizontal");
     }
     public void EnableMovement()
     {

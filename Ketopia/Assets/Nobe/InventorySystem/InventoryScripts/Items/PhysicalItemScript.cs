@@ -22,4 +22,19 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
             quantity = leftOverItems;
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Airship"))
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Airship"))
+        {
+            transform.parent = null;
+        }
+    }
 }
