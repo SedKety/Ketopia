@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: airshipmat
+  m_Name: lowPolyMat
   m_Shader: {fileID: -6465566751694194690, guid: c6a8810ed0bb8144c8eb55a1f75239c0,
     type: 3}
   m_Parent: {fileID: 0}
