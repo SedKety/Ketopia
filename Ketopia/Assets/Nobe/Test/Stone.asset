@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: dsgaseg
   itemDescription: sagdsadg
-  physicalItem: {fileID: 0}
+  physicalItem: {fileID: 1852881735038724795, guid: 61f123550ce3a04408204b24b4f0e419,
+    type: 3}
   itemSprite: {fileID: 2800000, guid: 81f7024a6cb0658419f4da0bcf9ab5d4, type: 3}
   itemId: 1
-  quantity: 53
+  quantity: 50
   maxQuantity: 75
   itemType: 1
   healthValue: 1

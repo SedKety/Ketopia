@@ -22,6 +22,7 @@ public class AirshipMovement : MonoBehaviour
     Rigidbody rb;
 
     public static AirshipMovement instance;
+    public AirShipPlayerParentScript airshipPlayerParentScript;
     public Transform propellor;
     public float propellorRotationSpeed;
     public Transform steeringWheel;
@@ -41,6 +42,7 @@ public class AirshipMovement : MonoBehaviour
     {
         if (airshipMovementEnabled)
         {
+            rb.mass = 50;
             MyInput();
             SpeedControl();
             HandleRotation();
@@ -50,6 +52,11 @@ public class AirshipMovement : MonoBehaviour
             //rb.MovePosition(rb.position += new Vector3(0, airshipUpHeight * 0.25f, 0));
             propellor.transform.Rotate(0, 0, verticalInput * propellorRotationSpeed);
             rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.mass = 100000;
+            rb.drag = 100000;
         }
     }
     private void SpeedControl()
@@ -78,10 +85,12 @@ public class AirshipMovement : MonoBehaviour
     {
         airshipMovementEnabled = true;
         AirshipManager.instance.SwitchState(AirshipState.enabled);
+        airshipPlayerParentScript.DisableGravity();
     }
     public void DisableMovement()
     {
         airshipMovementEnabled = false;
         AirshipManager.instance.SwitchState(AirshipState.disabled);
+        airshipPlayerParentScript.EnableGravity();
     }
 }

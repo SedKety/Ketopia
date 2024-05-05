@@ -94,6 +94,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.parent = other.transform;
         }
+        if (other.CompareTag("Stairs"))
+        {
+            canMove = false;
+            rb.velocity = new Vector3(0, verticalInput, 0);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -101,6 +106,10 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Airship"))
         {
             transform.parent = null;
+        }
+        if (other.CompareTag("Stairs"))
+        {
+            canMove = true;
         }
     }
 }

@@ -37,4 +37,5 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
             transform.parent = null;
         }
     }
+
 }

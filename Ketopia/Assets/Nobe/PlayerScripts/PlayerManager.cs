@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
     public PlayerState playerState;
     public GameObject player;
-
+    public Transform dropSpot;
     public Transform playerCamLocation;
     public Transform playerWheelLocation;
 
@@ -52,7 +52,6 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<Collider>().enabled = false;
                 player.GetComponent<Rigidbody>().useGravity = false;
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                InventoryManager.instance.hotbar.SetActive(false);
                 InventoryManager.instance.inventory.SetActive(false);
                 AirshipMovement.instance.EnableMovement();
                 break;
@@ -65,7 +64,6 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 player.GetComponent<Collider>().enabled = true;
                 player.GetComponent<Rigidbody>().useGravity = true;
-                InventoryManager.instance.hotbar.SetActive(true);
                 InventoryManager.instance.inventory.SetActive(false);
                 break;
 

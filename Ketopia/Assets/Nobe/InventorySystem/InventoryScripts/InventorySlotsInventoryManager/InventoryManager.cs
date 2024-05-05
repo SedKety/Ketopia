@@ -5,9 +5,10 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
-    public GameObject hotbar;
     public GameObject inventory;
     public PlayerState playerState;
+
+    public GameObject inventorySlotObject;
     public InventorySlot[] inventorySlots;
 
     public void Start()
@@ -31,7 +32,6 @@ public class InventoryManager : MonoBehaviour
 
     public int OnItemAdd(Item item, int quantity)
     {
-        // First, check if there's an inventory slot with the given item
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i].item == item)
@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
                 if (leftOverSpace >= quantity)
                 {
                     inventorySlots[i].item.quantity += quantity;
-                    return 0; // No leftover space
+                    return 0; 
                 }
                 else
                 {
@@ -57,7 +57,7 @@ public class InventoryManager : MonoBehaviour
                 inventorySlots[i].OnItemAdd(item);
                 var remainingSpace = item.maxQuantity - quantity;
                 inventorySlots[i].item.quantity = Mathf.Min(quantity, remainingSpace);
-                return 0; // No leftover space
+                return 0; //niks meer dus return je niks. kleine L imo
             }
         }
 

@@ -10,6 +10,9 @@ TagManager:
   - InteractionCollider
   - Airship
   - PlayerSteeringWheelPlacement
+  - InventoryObject
+  - DropZone
+  - Stairs
   layers:
   - Default
   - TransparentFX

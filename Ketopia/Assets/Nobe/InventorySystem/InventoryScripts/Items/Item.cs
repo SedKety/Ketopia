@@ -6,7 +6,7 @@ public enum ItemType
     resource,
     consumable,
     container,
-
+    fuel,
 }
 public abstract class Item : ScriptableObject
 {
@@ -19,7 +19,7 @@ public abstract class Item : ScriptableObject
     public int maxQuantity;
     public ItemType itemType;
 
-    public virtual void OnItemUse()
+    public virtual void OnItemUse(GameObject objectToInteract)
     {
 
     }

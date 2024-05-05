@@ -63,6 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694372090341458850}
   - component: {fileID: 1891815564534026529}
+  - component: {fileID: 2178561787678012570}
   m_Layer: 0
   m_Name: AirshipPlayerParent
   m_TagString: Airship
@@ -106,6 +107,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12.464013, y: 19.252827, z: 29.31103}
   m_Center: {x: 0.36279535, y: 0.78959227, z: 1.9682722}
+--- !u!114 &2178561787678012570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111427879454140052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8a2a1f950e7e446a3de173bb5b7a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5916721946288518524
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6883858159392162470}
   - component: {fileID: 3386360276808989344}
-  - component: {fileID: 8656405430528687344}
+  - component: {fileID: 9071004923432665986}
   m_Layer: 0
   m_Name: IslandDespawner
   m_TagString: Untagged
@@ -227,7 +240,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 750
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8656405430528687344
+--- !u!114 &9071004923432665986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7348503449290864235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386aa63240422554d825849022ad258e, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e7979c09ae2624f9d012e2c0a59292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7516006967683338252
@@ -456,6 +469,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: -2774385849764514640, guid: 0862257a5ff8039409aa8f7ba314308e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stairs
+      objectReference: {fileID: 0}
     - target: {fileID: -2641275380517741418, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -496,6 +514,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: -267811654908122817, guid: 0862257a5ff8039409aa8f7ba314308e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stairs
+      objectReference: {fileID: 0}
     - target: {fileID: -239799850255367616, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -780,6 +803,7 @@ MonoBehaviour:
   groundDrag: 5
   upForce: 10
   orientation: {fileID: 0}
+  airshipPlayerParentScript: {fileID: 2178561787678012570}
   propellor: {fileID: 1972945830085073277}
   propellorRotationSpeed: 5
   steeringWheel: {fileID: 4973787914234778930}
@@ -1311,7 +1335,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1398,7 +1422,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
