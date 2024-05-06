@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mensen/Nobe.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Mensen/Hernia.unity
+    guid: 114c0b78183f28240b6368909759d200
+  - enabled: 1
+    path: Assets/Scenes/MainGame/Game.unity
+    guid: c6ccf9b9b652417419c1d2987a015b59
   m_configObjects: {}
