@@ -36,15 +36,15 @@ public class InventoryManager : MonoBehaviour
         {
             if (inventorySlots[i].item == item)
             {
-                var leftOverSpace = inventorySlots[i].item.maxQuantity - inventorySlots[i].item.quantity;
+                var leftOverSpace = inventorySlots[i].maxQuantity - inventorySlots[i].quantity;
                 if (leftOverSpace >= quantity)
                 {
-                    inventorySlots[i].item.quantity += quantity;
-                    return 0; 
+                    inventorySlots[i].quantity += quantity;
+                    return 0;
                 }
                 else
                 {
-                    inventorySlots[i].item.quantity += leftOverSpace;
+                    inventorySlots[i].quantity += leftOverSpace;
                     quantity -= leftOverSpace;
                 }
             }
@@ -54,14 +54,12 @@ public class InventoryManager : MonoBehaviour
         {
             if (inventorySlots[i].item == null)
             {
-                inventorySlots[i].OnItemAdd(item);
-                var remainingSpace = item.maxQuantity - quantity;
-                inventorySlots[i].item.quantity = Mathf.Min(quantity, remainingSpace);
-                return 0; //niks meer dus return je niks. kleine L imo
+                inventorySlots[i].OnItemAdd(item, quantity);
+                var remainingSpace = inventorySlots[i].maxQuantity - quantity;
+                inventorySlots[i].quantity = Mathf.Min(quantity, remainingSpace);
+                return 0; 
             }
         }
-
-
         return quantity;
     }
 }

@@ -18,8 +18,7 @@ MonoBehaviour:
     type: 3}
   itemSprite: {fileID: 2800000, guid: 81f7024a6cb0658419f4da0bcf9ab5d4, type: 3}
   itemId: 1
-  quantity: 50
-  maxQuantity: 75
   itemType: 1
+  maxQuantity: 30
   healthValue: 1
   foodValue: 2

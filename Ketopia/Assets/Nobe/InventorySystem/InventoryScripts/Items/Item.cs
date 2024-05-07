@@ -15,9 +15,8 @@ public abstract class Item : ScriptableObject
     public GameObject physicalItem;
     public Texture itemSprite;
     public float itemId;
-    public int quantity;
-    public int maxQuantity;
     public ItemType itemType;
+    public int maxQuantity;
 
     public virtual void OnItemUse(GameObject objectToInteract)
     {

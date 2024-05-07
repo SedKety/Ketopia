@@ -15,6 +15,9 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public Vector3 originalPosition;
     public Transform inventoryTransform;
 
+    public int quantity;
+    public int maxQuantity;
+
     public void Start()
     {
         originalPosition = transform.position;
@@ -31,17 +34,19 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             itemImage.GetComponent<RawImage>().texture = item.itemSprite;
         }
     }
-    public void OnItemAdd(Item item)
+    public void OnItemAdd(Item item, int quantityToAdd)
     {
         this.item = item;
         if (item != null)
         {
+            quantity += quantityToAdd;
+            maxQuantity = item.maxQuantity;
             itemImage.gameObject.SetActive(true);
 
             itemImage.GetComponent<RawImage>().texture = item.itemSprite;
 
             quantityText.gameObject.SetActive(true);
-            quantityText.text = item.quantity.ToString();
+            quantityText.text = quantity.ToString();
         }
     }
     public void OnItemRemove()
@@ -50,18 +55,18 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         itemImage.gameObject.SetActive(false);
         quantityText.text = null;
         itemImage.GetComponent<RawImage>().texture = null;
+        quantity = 0;
     }
-    public int CalculateLeftOverSpace(int quantity)
+    public int CalculateLeftOverSpace(int amountToCalculate)
     {
-        var leftOverSpace = item.maxQuantity - quantity;
+        var leftOverSpace = maxQuantity - quantity;
         if (leftOverSpace >= quantity)
         {
-            item.quantity += quantity;
+            amountToCalculate += quantity;
             return 0;
         }
         else
         {
-            item.quantity += leftOverSpace;
             quantity -= leftOverSpace;
             return quantity;
         }
@@ -71,12 +76,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     {
         if (quantityText.isActiveAndEnabled && item != null)
         {
-            quantityText.text = item.quantity.ToString();
+            quantityText.text = quantity.ToString();
         }
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
         itemImage.GetComponent<RawImage>().raycastTarget = false;
+        itemImage.transform.SetAsLastSibling();
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -85,6 +91,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         itemImage.gameObject.transform.position = originalPosition;
+        itemImage.transform.SetAsFirstSibling();
 
         GameObject endDraggedObject = eventData.pointerCurrentRaycast.gameObject;
         if (endDraggedObject != null)
@@ -93,26 +100,48 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             {
                 if (endDraggedObject.GetComponent<InventorySlot>().item == null)
                 {
-                    endDraggedObject.GetComponent<InventorySlot>().OnItemAdd(item);
+                    endDraggedObject.GetComponent<InventorySlot>().OnItemAdd(item, quantity);
                     OnItemRemove();
                 }
                 else if (endDraggedObject.gameObject.GetComponent<InventorySlot>().item == item)
                 {
-                    int leftOverItems = endDraggedObject.gameObject.GetComponent<InventorySlot>().CalculateLeftOverSpace(item.quantity);
+                    int leftOverItems = endDraggedObject.gameObject.GetComponent<InventorySlot>().CalculateLeftOverSpace(quantity);
                     if (leftOverItems <= 0)
                     {
                         OnItemRemove();
                     }
                     else
                     {
-                        item.quantity = leftOverItems;
+                        quantity = leftOverItems;
+                    }
+                }
+            }
+            else if (endDraggedObject.GetComponent<ZuigbuisScript>())
+            {
+                print("zuigbuis");
+                if (item == null)
+                {
+                    print("okay");
+                    endDraggedObject.GetComponent<ZuigbuisScript>().OnItemAdd(item);
+                    OnItemRemove();
+                }
+               else if (endDraggedObject.GetComponent<ZuigbuisScript>().item == item)
+                {
+                    int leftOverItems = endDraggedObject.gameObject.GetComponent<ZuigbuisScript>().CalculateLeftOverSpace(quantity);
+                    if (leftOverItems <= 0)
+                    {
+                        OnItemRemove();
+                    }
+                    else
+                    {
+                        quantity = leftOverItems;
                     }
                 }
             }
             else if (endDraggedObject.CompareTag("DropZone"))
             {
                 var spawnedItem = Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
-                spawnedItem.GetComponent<PhysicalItemScript>().quantity = item.quantity;
+                spawnedItem.GetComponent<PhysicalItemScript>().quantity = quantity;
                 OnItemRemove();
             }
         }

@@ -6,10 +6,6 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
 {
     public Item item;
     public int quantity;
-    public void Start()
-    {
-        item.quantity = quantity;
-    }
     public void IInteractable()
     {
         int leftOverItems = InventoryManager.instance.OnItemAdd(item, quantity);
