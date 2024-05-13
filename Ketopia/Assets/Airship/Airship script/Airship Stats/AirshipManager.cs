@@ -47,6 +47,10 @@ public class AirshipManager : MonoBehaviour
             {
                 currentFuel -= fuelCost;
             }
+            else
+            {
+                AirshipMovement.instance.airshipMovementEnabled = false;
+            }
             yield return new WaitForSeconds(fuelDecreaseTimer);
         }
     }

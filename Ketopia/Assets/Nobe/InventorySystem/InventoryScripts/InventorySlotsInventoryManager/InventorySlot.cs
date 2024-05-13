@@ -138,7 +138,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                     }
                 }
             }
-            else if (endDraggedObject.CompareTag("DropZone"))
+            else if (endDraggedObject.CompareTag("DropZone") & item)
             {
                 var spawnedItem = Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
                 spawnedItem.GetComponent<PhysicalItemScript>().quantity = quantity;

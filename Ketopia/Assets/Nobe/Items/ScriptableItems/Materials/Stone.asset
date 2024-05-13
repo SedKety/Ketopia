@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8a7d39f15e46d4b8e0a6b96dbdbe72, type: 3}
+  m_Script: {fileID: 11500000, guid: 01ccee80a4b4da74cb0fd991e163cb0d, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  itemName: dsgaseg
-  itemDescription: sagdsadg
-  physicalItem: {fileID: 1852881735038724795, guid: 61f123550ce3a04408204b24b4f0e419,
+  itemName: Stone
+  itemDescription: Its stone
+  physicalItem: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb,
     type: 3}
-  itemSprite: {fileID: 2800000, guid: 81f7024a6cb0658419f4da0bcf9ab5d4, type: 3}
+  itemSprite: {fileID: 0}
   itemId: 1
-  itemType: 1
+  itemType: 0
   maxQuantity: 30
-  healthValue: 1
-  foodValue: 2

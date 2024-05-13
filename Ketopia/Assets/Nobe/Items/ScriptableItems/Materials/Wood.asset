@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood
   itemDescription: Its wood
-  physicalItem: {fileID: 0}
-  itemSprite: {fileID: 0}
+  physicalItem: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93,
+    type: 3}
+  itemSprite: {fileID: 2800000, guid: dd213ffdc187b7a41923344a20a8bcdc, type: 3}
   itemId: 0
   itemType: 0
-  maxQuantity: 60
+  maxQuantity: 30

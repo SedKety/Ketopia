@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482d429824d0e14479bfbbd40929f3f1, type: 3}
   m_Name: ItemLibrary
   m_EditorClassIdentifier: 
-  items:
+  materials:
   - name: Wood
+    id: 0
+    color: {r: 0.4811321, g: 0.3067223, b: 0.07489321, a: 0}
     scriptableItem: {fileID: 11400000, guid: cfd59ee6a752ae04cbfcc2a2306d0cd4, type: 2}
-    physicalItem: {fileID: 0}
+    physicalItem: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93,
+      type: 3}
+  - name: Stone
+    id: 1
+    color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0}
+    scriptableItem: {fileID: 11400000, guid: 60e49785ed7d6b747a57cb8492cf784a, type: 2}
+    physicalItem: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb,
+      type: 3}
+  consumables: []
+  fuel: []

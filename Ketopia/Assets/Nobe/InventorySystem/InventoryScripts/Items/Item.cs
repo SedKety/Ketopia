@@ -5,7 +5,6 @@ public enum ItemType
 {
     resource,
     consumable,
-    container,
     fuel,
 }
 public abstract class Item : ScriptableObject

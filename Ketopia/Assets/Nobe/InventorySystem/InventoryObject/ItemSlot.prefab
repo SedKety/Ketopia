@@ -65,6 +65,8 @@ MonoBehaviour:
   quantityText: {fileID: 7921561397595074008}
   originalPosition: {x: 0, y: 0, z: 0}
   inventoryTransform: {fileID: 0}
+  quantity: 0
+  maxQuantity: 0
 --- !u!114 &1590877589324100383
 MonoBehaviour:
   m_ObjectHideFlags: 0
