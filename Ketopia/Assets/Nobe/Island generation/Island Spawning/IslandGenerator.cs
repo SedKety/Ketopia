@@ -1,28 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class IslandGenerator : MonoBehaviour
 {
     public GameObject airship;
     public Vector3 lastSpawnedIslands;
 
     public Collider islandsSpawnPoint;
+    public chunk currentChunk;
 
     public int spawnDistance;
 
     public GameObject[] islands;
-    public int howManyToSpawn;
-
-    public island[] commonIslands;
-    public island[] uncommonIslands;
-    public island[] rareIslands;
-    public island[] epicIslands;
-    public island[] legendaryIslands;
+    public chunk[] chunks;
     [ContextMenu("SpawnIslands")]
 
     public void Start()
-    {
+    { 
         Invoke(nameof(SpawnIslands), 0.1f);
     }
     public void StartSpawning()
@@ -40,12 +34,40 @@ public class IslandGenerator : MonoBehaviour
 
     public void SpawnIslands()
     {
-        for (int i = 0; i < howManyToSpawn; i++)
+        for (int i = 0; i < currentChunk.howManyToSpawn; i++)
         {
             var randomSpawnLocation = SpawnPosition(islandsSpawnPoint.bounds);
-            var spawnedIsland = Instantiate(islands[Random.Range(0, islands.Length)], randomSpawnLocation, Quaternion.identity);
+            var randomRarity = Random.Range(0, 100);
+            GameObject islandTospawn = null;
+            if (randomRarity < 75)
+            {
+                islandTospawn = currentChunk.commonIslands[Random.Range(0, currentChunk.commonIslands.Length)];
+            }
+            else if (randomRarity < 90 & randomRarity >= 75)
+                {
+                islandTospawn = currentChunk.rareIslands[Random.Range(0, currentChunk.rareIslands.Length)];
+            }
+            else if ((randomRarity >= 90))
+            {
+                islandTospawn = currentChunk.legendaryIslands[Random.Range(0, currentChunk.legendaryIslands.Length)];
+            }
+            if(islandTospawn != null)
+            {
+                var spawnedIsland = Instantiate(islandTospawn, randomSpawnLocation, Quaternion.identity);
+            }
         }
         lastSpawnedIslands = airship.transform.position;
+        if(currentChunk.name == "SpawnChunk")
+        {
+            var randomChunk = Random.Range(0, chunks.Length);
+            currentChunk = chunks[randomChunk];
+        }
+        var getAnotherChunk = Random.Range(0, 6);
+        if(getAnotherChunk == 0 )
+        {
+            var randomChunk = Random.Range(0, chunks.Length);
+            currentChunk = chunks[randomChunk];
+        }
     }
 
     Vector3 SpawnPosition(Bounds bounds)
@@ -66,19 +88,16 @@ public class IslandGenerator : MonoBehaviour
     }
 
     [System.Serializable]
-    public struct island
+    public struct chunk
     {
-        [Header("IslandName")]
-        string name;
-        [Space]
-        [Space]
-        [Header("IslandObject")]
-        [SerializeField] GameObject islandGameobject;
-        [Space]
-        [Space]
-        [Header("ResourceNodes")]
-        [SerializeField] GameObject[] nodesToSpawnOnIsland;
-        [SerializeField] int howManyNodes;
+        [Header("ChunkName")]
+        public string name;
+        public int howManyToSpawn;
+        public Color chunkColour;
+        public GameObject[] commonIslands;
+        public GameObject[] rareIslands;
+        public GameObject[] legendaryIslands;
+        public Color chunkColour1;
     }
 }
 
