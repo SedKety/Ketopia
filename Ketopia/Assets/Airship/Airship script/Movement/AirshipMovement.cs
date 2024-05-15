@@ -14,7 +14,6 @@ public class AirshipMovement : MonoBehaviour
     public float airshipUpHeightMultiplier;
     public Vector3 airshipMovementDirection;
     public float groundDrag;
-    public float upForce;
 
     public Transform orientation;
     float horizontalInput;
@@ -47,10 +46,9 @@ public class AirshipMovement : MonoBehaviour
             SpeedControl();
             HandleRotation();
             airshipMovementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-            rb.AddForce(airshipMovementDirection.normalized * airshipMovementSpeed * 1000f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(airshipMovementDirection.normalized * airshipMovementSpeed * airshipMovementSpeedMultiplier * 10000f * Time.deltaTime, ForceMode.Force);
             rb.AddForce(0, airshipUpHeight * airshipUpHeightMultiplier * 1000, 0, ForceMode.Force);
-            //rb.MovePosition(rb.position += new Vector3(0, airshipUpHeight * 0.25f, 0));
-            propellor.transform.Rotate(0, 0, verticalInput * propellorRotationSpeed);
+            propellor.transform.Rotate(0, 0, verticalInput * propellorRotationSpeed * airshipMovementSpeedMultiplier);
             rb.drag = groundDrag;
         }
         else

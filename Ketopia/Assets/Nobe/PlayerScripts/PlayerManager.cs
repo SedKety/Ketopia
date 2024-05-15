@@ -56,7 +56,6 @@ public class PlayerManager : MonoBehaviour
                 AirshipMovement.instance.EnableMovement();
                 break;
 
-
             case PlayerState.normal:
                 player.GetComponent<PlayerMovement>().canMove = true;
                 player.GetComponent<PlayerCamMovement>().canILook = true;
@@ -66,8 +65,6 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<Rigidbody>().useGravity = true;
                 InventoryManager.instance.inventory.SetActive(false);
                 break;
-
-
 
             case PlayerState.inventory:
                 AirshipMovement.instance.DisableMovement();

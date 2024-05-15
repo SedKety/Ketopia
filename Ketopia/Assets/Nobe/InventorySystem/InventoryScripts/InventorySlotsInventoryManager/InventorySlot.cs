@@ -121,7 +121,6 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                 print("zuigbuis");
                 if (item == null)
                 {
-                    print("okay");
                     endDraggedObject.GetComponent<ZuigbuisScript>().OnItemAdd(item);
                     OnItemRemove();
                 }

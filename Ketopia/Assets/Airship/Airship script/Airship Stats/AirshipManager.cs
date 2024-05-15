@@ -23,8 +23,6 @@ public class AirshipManager : MonoBehaviour
         {
             instance = this;
         }
-
-        GameObject.FindObjectOfType<IslandGenerator>().StartSpawning();
     }
     public void SwitchState(AirshipState state)
     {

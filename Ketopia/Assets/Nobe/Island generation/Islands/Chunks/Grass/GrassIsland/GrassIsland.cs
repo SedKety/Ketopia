@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ResourceNodeSpawner : MonoBehaviour
+public class GrassIsland : ResourceNodeSpawner
 {
-    public GameObject[] spawnableGameobjects;
-    public Collider spawnCollider;
-    public int spawnCount;
-    public LayerMask spawnLayerMask;
-    public int maxRetries; 
-
-    void Start()
+    bool spawnedGrass;
+    public GameObject grass;
+    public int grassCount;
+    public override void SpawnObjects()
     {
-        SpawnObjects();
+        if(spawnedGrass)
+        {
+            base.SpawnObjects();
+        }
+        else
+        {
+            SpawnGrass();
+        }
     }
-
-    public virtual void SpawnObjects()
+    public void SpawnGrass()
     {
+
         if (spawnableGameobjects != null && spawnCollider != null)
         {
 
-            for (int i = 0; i < spawnCount; i++)
+            for (int i = 0; i < grassCount; i++)
             {
                 int retries = 0;
                 Vector3 whereToSpawn;
@@ -31,9 +35,10 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                     whereToSpawn.y += 20;
                     if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50, spawnLayerMask))
                     {
-                        if(hit.collider.transform == transform.parent)
+                        if (hit.collider.transform == transform.parent)
                         {
-                            GameObject spawnedObject = Instantiate(spawnableGameobjects[Random.Range(0, spawnableGameobjects.Length)], hit.point, Quaternion.identity);
+                            GameObject spawnedObject = Instantiate(grass, hit.point, Quaternion.identity);
+                            spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                             spawnedObject.transform.parent = transform;
                             break;
                         }
@@ -44,14 +49,12 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                         break;
                     }
                 }
+                if(i == 0)
+                {
+                    spawnedGrass = true;
+                    SpawnObjects();
+                }
             }
         }
-    }
-    public virtual Vector3 SpawnPosition(Bounds bounds)
-    {
-        float randomX = Random.Range(bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);
-        float randomZ = Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);
-
-        return new Vector3(randomX, bounds.min.y, randomZ);
     }
 }

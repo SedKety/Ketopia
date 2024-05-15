@@ -11,21 +11,16 @@ public class IslandGenerator : MonoBehaviour
 
     public int spawnDistance;
 
-    public GameObject[] islands;
     public chunk[] chunks;
-    [ContextMenu("SpawnIslands")]
 
+    public float distance;
     public void Start()
     { 
-        Invoke(nameof(SpawnIslands), 0.1f);
-    }
-    public void StartSpawning()
-    {
-        airship = AirshipManager.instance.gameObject;
-        islandsSpawnPoint = GameObject.FindGameObjectWithTag("IslandSpawnBox").GetComponent<Collider>();
+        currentChunk = chunks[0];
     }
     public void Update()
     {
+        distance = (Vector3.Distance(lastSpawnedIslands, airship.transform.position));
         if (Vector3.Distance(lastSpawnedIslands, airship.transform.position) >= spawnDistance)
         {
             SpawnIslands();
