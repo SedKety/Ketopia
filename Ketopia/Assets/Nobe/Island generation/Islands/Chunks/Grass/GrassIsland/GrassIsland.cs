@@ -32,8 +32,7 @@ public class GrassIsland : ResourceNodeSpawner
                 while (retries < maxRetries)
                 {
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
-                    whereToSpawn.y += 20;
-                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50, spawnLayerMask))
+                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                     {
                         if (hit.collider.transform == transform.parent)
                         {

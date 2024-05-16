@@ -9,7 +9,6 @@ public class PlayerCamMovement : MonoBehaviour
     public GameObject mainMenu;
     public float mouseSensitivity;
     public bool canILook;
-
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

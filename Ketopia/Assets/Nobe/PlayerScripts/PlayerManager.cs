@@ -16,9 +16,6 @@ public class PlayerManager : MonoBehaviour
     public Transform dropSpot;
     public Transform playerCamLocation;
     public Transform playerWheelLocation;
-
-    public int playerHealth;
-    public int playerFood;
     public void Start()
     {
         playerWheelLocation = GameObject.FindGameObjectWithTag("PlayerSteeringWheelPlacement").transform;
@@ -47,6 +44,7 @@ public class PlayerManager : MonoBehaviour
         switch (playerState)
         {
             case PlayerState.ship:
+                transform.rotation = playerWheelLocation.rotation;
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
                 player.GetComponent<Collider>().enabled = false;

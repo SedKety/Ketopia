@@ -12,11 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public bool onGround;
+
+    [Header("Misc")]
     public Transform orientation;
     float horizontalInput;
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
+    public Animator animator;
     //public Animator animator;
     private void Start()
     {
@@ -24,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
@@ -53,16 +56,8 @@ public class PlayerMovement : MonoBehaviour
     private void MyInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        animator.SetFloat("Movement", verticalInput);
         verticalInput = Input.GetAxis("Vertical");
-
-        //if (moveDirection != Vector3.zero)
-        //{
-        //    animator.SetBool("IsMoving", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("IsMoving", false);
-        //}
         
         if (Input.GetButton("Jump") && onGround && canMove)
         {

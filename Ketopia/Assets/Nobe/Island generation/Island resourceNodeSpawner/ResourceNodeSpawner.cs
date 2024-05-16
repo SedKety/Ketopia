@@ -12,14 +12,13 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnObjects();
+        Invoke("SpawnObjects", 0.1f);
     }
 
     public virtual void SpawnObjects()
     {
         if (spawnableGameobjects != null && spawnCollider != null)
         {
-
             for (int i = 0; i < spawnCount; i++)
             {
                 int retries = 0;
@@ -28,8 +27,7 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                 while (retries < maxRetries)
                 {
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
-                    whereToSpawn.y += 20;
-                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50, spawnLayerMask))
+                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                     {
                         if(hit.collider.transform == transform.parent)
                         {
@@ -45,6 +43,10 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                     }
                 }
             }
+        }
+        if(transform.childCount <= 10) 
+        {
+            Destroy(transform.parent.gameObject);
         }
     }
     public virtual Vector3 SpawnPosition(Bounds bounds)

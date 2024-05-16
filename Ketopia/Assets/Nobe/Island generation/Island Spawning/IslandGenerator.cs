@@ -9,11 +9,15 @@ public class IslandGenerator : MonoBehaviour
     public Collider islandsSpawnPoint;
     public chunk currentChunk;
 
-    public int spawnDistance;
 
     public chunk[] chunks;
 
     public float distance;
+    public int spawnDistance;
+
+    public List<GameObject> islands;
+    public int maxIslands;
+    public int islandsToRemove;
     public void Start()
     { 
         currentChunk = chunks[0];
@@ -38,17 +42,29 @@ public class IslandGenerator : MonoBehaviour
             {
                 islandTospawn = currentChunk.commonIslands[Random.Range(0, currentChunk.commonIslands.Length)];
             }
-            else if (randomRarity < 90 & randomRarity >= 75)
+            else if (randomRarity < 99 & randomRarity >= 75)
                 {
                 islandTospawn = currentChunk.rareIslands[Random.Range(0, currentChunk.rareIslands.Length)];
             }
-            else if ((randomRarity >= 90))
+            else if ((randomRarity >= 99))
             {
+                
                 islandTospawn = currentChunk.legendaryIslands[Random.Range(0, currentChunk.legendaryIslands.Length)];
+                print(islandTospawn.name);
             }
             if(islandTospawn != null)
             {
                 var spawnedIsland = Instantiate(islandTospawn, randomSpawnLocation, Quaternion.identity);
+                spawnedIsland.transform.Rotate(0f, Random.Range(0f, 360f), 0f);
+                islands.Add(spawnedIsland);
+                if (islands.Count >= maxIslands)
+                {
+                    for (int j = 0; j < islandsToRemove; j++)
+                    {
+                        Destroy(islands[j]);
+                        islands.Remove(islands[j]);
+                    }
+                }
             }
         }
         lastSpawnedIslands = airship.transform.position;
@@ -72,14 +88,6 @@ public class IslandGenerator : MonoBehaviour
         float randomZ = Random.Range(bounds.max.z, bounds.min.z);
 
         return new Vector3(randomX, randomY, randomZ);
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Island"))
-        {
-            Destroy(other.gameObject);
-        }
     }
 
     [System.Serializable]
