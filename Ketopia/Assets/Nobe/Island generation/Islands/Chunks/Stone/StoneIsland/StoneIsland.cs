@@ -117,6 +117,10 @@ public class StoneIsland : ResourceNodeSpawner
             }
 
         }
-
+        if(transform.childCount <= 10)
+        {
+            Destroy(transform.parent.gameObject);
+            print("kneiters");
+        }
     }
 }

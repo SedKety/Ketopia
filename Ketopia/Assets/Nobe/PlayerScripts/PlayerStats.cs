@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public int health;
     public int food;
 
+    public int age;
+
     public void Start()
     {
         instance = this;

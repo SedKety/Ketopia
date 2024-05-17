@@ -15,6 +15,7 @@ public class MagnetiteSpawner : MonoBehaviour
             var spawnLocation = new Vector3(0, 0, 0);
             spawnLocation = Random.insideUnitSphere * 16;
             spawnLocation.z += transform.position.z;
+            spawnLocation.z += Random.Range(-10, 10);
             spawnLocation.x += transform.position.x;
             spawnLocation.y += 50;
             RaycastHit hit;

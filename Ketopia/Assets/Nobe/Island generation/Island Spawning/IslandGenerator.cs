@@ -19,7 +19,7 @@ public class IslandGenerator : MonoBehaviour
     public int maxIslands;
     public int islandsToRemove;
     public void Start()
-    { 
+    {
         currentChunk = chunks[0];
     }
     public void Update()
@@ -43,16 +43,16 @@ public class IslandGenerator : MonoBehaviour
                 islandTospawn = currentChunk.commonIslands[Random.Range(0, currentChunk.commonIslands.Length)];
             }
             else if (randomRarity < 99 & randomRarity >= 75)
-                {
+            {
                 islandTospawn = currentChunk.rareIslands[Random.Range(0, currentChunk.rareIslands.Length)];
             }
             else if ((randomRarity >= 99))
             {
-                
+
                 islandTospawn = currentChunk.legendaryIslands[Random.Range(0, currentChunk.legendaryIslands.Length)];
                 print(islandTospawn.name);
             }
-            if(islandTospawn != null)
+            if (islandTospawn != null)
             {
                 var spawnedIsland = Instantiate(islandTospawn, randomSpawnLocation, Quaternion.identity);
                 spawnedIsland.transform.Rotate(0f, Random.Range(0f, 360f), 0f);
@@ -68,13 +68,13 @@ public class IslandGenerator : MonoBehaviour
             }
         }
         lastSpawnedIslands = airship.transform.position;
-        if(currentChunk.name == "SpawnChunk")
+        if (currentChunk.name == "SpawnChunk")
         {
             var randomChunk = Random.Range(0, chunks.Length);
             currentChunk = chunks[randomChunk];
         }
         var getAnotherChunk = Random.Range(0, 6);
-        if(getAnotherChunk == 0 )
+        if (getAnotherChunk == 0)
         {
             var randomChunk = Random.Range(0, chunks.Length);
             currentChunk = chunks[randomChunk];

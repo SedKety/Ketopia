@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public RaycastHit hit;
-
+    public int interactionDistance;
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 10))
+            if (Physics.Raycast(ray, out hit, interactionDistance))
             {
                 if (hit.collider.GetComponent<IInteractable>() != null)
                 {
