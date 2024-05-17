@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 28086184ae0ba074aa42652092f07467
+guid: 0879eb4cc515d454d9f2f1868ab5f606
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Buttons_0
+      name: Untitled design (1)-fotor-bg-remover-20240514163141_0
       rect:
         serializedVersion: 2
-        x: 886
-        y: 488
-        width: 350
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 30, y: 5, z: 38, w: 6}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da3a3904b27e08449a70fc060d3be1af
-      internalID: 303120231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buttons_1
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 488
-        width: 350
-        height: 66
+        x: 180
+        y: 8
+        width: 311
+        height: 163
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 26, y: 5, z: 41, w: 6}
+      border: {x: 23, y: 33, z: 23, w: 26}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a08a62a9b6773f44eb705d0f08b4976d
-      internalID: 792046063
+      spriteID: f905a2b918e93114fa3d328a8f53fbec
+      internalID: -1804902663
       vertices: []
       indices: 
       edges: []
@@ -154,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 213198367eedfa34596d24dd889a1b7c
+    spriteID: c73cac4ea9864ad4d85ee283ae6e8b8b
     internalID: 0
     vertices: []
     indices: 
@@ -162,8 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Buttons_0: 303120231
-      Buttons_1: -649712588
+      Untitled design (1)-fotor-bg-remover-20240514163141_0: -1804902663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
