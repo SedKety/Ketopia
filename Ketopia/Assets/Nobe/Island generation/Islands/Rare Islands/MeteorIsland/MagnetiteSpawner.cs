@@ -13,12 +13,10 @@ public class MagnetiteSpawner : MonoBehaviour
         for (int i = 0; i < spawnCount; i++)
         {
             var spawnLocation = new Vector3(0, 0, 0);
-            spawnLocation = Random.insideUnitCircle * 16;
+            spawnLocation = Random.insideUnitSphere * 16;
             spawnLocation.z += transform.position.z;
-            spawnLocation.z += Random.Range(-10, 10);
             spawnLocation.x += transform.position.x;
             spawnLocation.y += 50;
-            print(spawnLocation);
             RaycastHit hit;
             if (Physics.Raycast(spawnLocation, Vector3.down, out hit))
             {
