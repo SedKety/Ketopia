@@ -13,7 +13,7 @@ public abstract class Item : ScriptableObject
     public string itemName;
     public string itemDescription;
     public GameObject physicalItem;
-    public Texture itemSprite;
+    public Sprite itemSprite;
     public float itemId;
     public ItemType itemType;
     public int maxQuantity;

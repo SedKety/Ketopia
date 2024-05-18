@@ -18,6 +18,6 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   itemId: 0
   itemType: 3
-  maxQuantity: 0
+  maxQuantity: 1
   dmg: 1
   hitRange: 2
