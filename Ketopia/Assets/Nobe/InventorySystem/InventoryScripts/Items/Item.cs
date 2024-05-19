@@ -18,8 +18,14 @@ public abstract class Item : ScriptableObject
     public ItemType itemType;
     public int maxQuantity;
 
-    public virtual void OnItemUse(GameObject objectToInteract)
+    public virtual void OnItemUse()
     {
 
+    }
+
+    public virtual void BurnItem(float _fuelAmount, int quantityMultiplier)
+    {
+        AirshipManager.instance.currentFuel += _fuelAmount * quantityMultiplier;
+        Debug.Log(_fuelAmount * quantityMultiplier);
     }
 }

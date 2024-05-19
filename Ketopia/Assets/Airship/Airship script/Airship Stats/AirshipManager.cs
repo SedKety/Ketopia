@@ -24,6 +24,13 @@ public class AirshipManager : MonoBehaviour
             instance = this;
         }
     }
+    public void FixedUpdate()
+    {
+        if(currentFuel >= maxFuel)
+        {
+            currentFuel = maxFuel;
+        }
+    }
     public void SwitchState(AirshipState state)
     {
         airshipState = state;

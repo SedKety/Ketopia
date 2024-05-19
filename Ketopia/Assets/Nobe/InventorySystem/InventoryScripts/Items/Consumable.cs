@@ -7,7 +7,7 @@ public class Consumable : Item
 {
     public int healthValue;
     public int foodValue;
-    public override void OnItemUse(GameObject objectToInteract)
+    public override void OnItemUse()
     {
         PlayerStats.instance.food += foodValue;
         PlayerStats.instance.health += healthValue;

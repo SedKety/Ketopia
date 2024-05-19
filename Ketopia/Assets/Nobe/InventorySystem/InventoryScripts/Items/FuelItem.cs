@@ -6,8 +6,9 @@ using UnityEngine;
 public class FuelItem : Item
 {
     public int fuelAmount;
-    public override void OnItemUse(GameObject objectToInteract)
+    public override void BurnItem(float _fuelAmount, int quantityMultiplier)
     {
-        
+        _fuelAmount = fuelAmount;
+        base.BurnItem(fuelAmount, quantityMultiplier);
     }
 }

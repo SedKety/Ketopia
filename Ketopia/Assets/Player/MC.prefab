@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3936748385365560410}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -210,17 +210,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -395.92847
+      value: -0.2831068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.23135
+      value: -5.652179
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 941.29694
+      value: 0.42602634
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -271,7 +271,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 97eea4b59133d104c8d90f0f4b161983, type: 2}
+      objectReference: {fileID: 9100000, guid: ba7d4998a647b624d81b6bf132b9f289, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -316,6 +321,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5210993747234368582}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7822286581474876733}
   m_SourcePrefab: {fileID: 100100000, guid: 68324efdcc3be0e4fa69b1f5e9c15e95, type: 3}
 --- !u!4 &454925799973877102 stripped
 Transform:
@@ -393,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f4e7146486a9a42832d446d1e81df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDistance: 5
 --- !u!54 &8423137525398540999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,3 +476,30 @@ CapsuleCollider:
   m_Height: 0.8522799
   m_Direction: 1
   m_Center: {x: 0.0014953613, y: 0.50679624, z: 0}
+--- !u!114 &-7822286581474876733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63b0e350c9e36144bc00231fac14208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+  expNeededToLevelUp: 0
+  health: 4
+  maxHealth: 4
+  fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
+  halfHeart: {fileID: 21300000, guid: 05b32ca8343b29642b7f3af2be24f475, type: 3}
+  brokenHeart: {fileID: 21300000, guid: 85c57aae474891247a5e530398649871, type: 3}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  food: 0
+  age: 0

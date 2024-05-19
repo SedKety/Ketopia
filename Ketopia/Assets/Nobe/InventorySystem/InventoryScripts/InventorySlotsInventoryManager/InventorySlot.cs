@@ -12,23 +12,11 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
     public GameObject itemImage;
     public TextMeshProUGUI quantityText;
     public Button dropButton;
-
-    public Vector3 originalPosition;
-
     public int quantity;
     public int maxQuantity;
 
-    public void Start()
-    {
-        originalPosition = transform.position;
-    }
     public void OnEnable()
     {
-        if (originalPosition != null)
-        {
-            itemImage.gameObject.transform.position = originalPosition;
-            itemImage.GetComponent<Image>().raycastTarget = true;
-        }
         if (item & itemImage.GetComponent<Image>().sprite == null)
         {
             itemImage.GetComponent<Image>().sprite = item.itemSprite;
@@ -57,8 +45,13 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
     }
     public void OnItemDrop()
     {
-        Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
-        OnItemRemove();
+        if(item != null)
+        {
+            var spawnedItem = Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
+            spawnedItem.GetComponent<PhysicalItemScript>().quantity = quantity;
+            OnItemRemove();
+        }
+        dropButton.gameObject.SetActive(false);
     }
     public void OnItemRemove()
     {

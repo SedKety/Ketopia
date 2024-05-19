@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
     public GameObject inventory;
+    public GameObject inventorySlotsManager;
     public InvState inventoryState;
     public PlayerState playerState;
     public InventorySlot[] inventorySlots;
@@ -26,6 +27,7 @@ public class InventoryManager : MonoBehaviour
             playerState = PlayerManager.instance.playerState;
             PlayerManager.instance.SwitchState(PlayerState.inventory);
             inventory.SetActive(true);
+            SwitchState(InvState.normal);
         }
         else if (Input.GetKeyDown(KeyCode.E) & inventory.activeInHierarchy)
         {
@@ -47,6 +49,7 @@ public class InventoryManager : MonoBehaviour
 
     public int OnItemAdd(Item item, int quantity)
     {
+        SwitchState(InvState.normal);
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i].item == item)
@@ -83,18 +86,18 @@ public class InventoryManager : MonoBehaviour
         switch (state)
         {
             case InvState.drop:
-                for (int i = 0; i < inventory.transform.childCount; i++)
+                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
                 {
-                    if(inventory.transform.GetChild(i).GetComponent<InventorySlot>().item != null)
+                    if(inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().item != null)
                     {
-                        inventory.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(true);
+                        inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(true);
                     }
                 }
                 break;
             case InvState.normal:
                 for (int i = 0; i < inventory.transform.childCount; i++)
                 {
-                    inventory.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(false);
+                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(false);
                 }
                 break;
         }
