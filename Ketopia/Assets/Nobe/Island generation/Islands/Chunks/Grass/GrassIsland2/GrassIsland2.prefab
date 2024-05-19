@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731662012194856439}
   - component: {fileID: 3980802321070448079}
-  - component: {fileID: 4330408653667112339}
+  - component: {fileID: 5616909058079946377}
   m_Layer: 2
   m_Name: Spawner
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 80.0215, y: 5.86849, z: 51.176094}
   m_Center: {x: 1.9965973, y: 23.950542, z: -0.34524155}
---- !u!114 &4330408653667112339
+--- !u!114 &5616909058079946377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,14 +68,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnableGameobjects:
   - {fileID: 7702618663686812774, guid: 158a2cf017b58f245b4f930baf5f37dd, type: 3}
+  - {fileID: 9042939554157478514, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
   spawnCollider: {fileID: 3980802321070448079}
   spawnCount: 50
-  spawnLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  maxRetries: 10
+  maxRetries: 15
   grass: {fileID: 3450606834429453027, guid: 9491f5d62cf3ea74bbbfdcd736cc301c, type: 3}
   grassCount: 200
+  flowers:
+  - {fileID: 3058028897966703429, guid: f30a5c9debb1c45468f8f5bd7d4a21c4, type: 3}
+  - {fileID: 6007098656871967084, guid: de30fe5f376f3b84397a7963b1bcd461, type: 3}
+  - {fileID: 3685551985928193891, guid: c10c91b3b5e76f44c90abb4e95922842, type: 3}
+  - {fileID: 8966783209863026408, guid: 041cdfce557485f45896152fc24963ea, type: 3}
+  flowerCount: 30
 --- !u!1001 &8389578836795607161
 PrefabInstance:
   m_ObjectHideFlags: 0

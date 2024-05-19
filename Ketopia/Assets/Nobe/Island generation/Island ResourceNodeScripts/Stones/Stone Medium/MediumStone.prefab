@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2779237361000664706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533881269208779750}
+  m_Layer: 0
+  m_Name: DropSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533881269208779750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779237361000664706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8337987842672262136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8375783508147969043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,17 +97,31 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18921a79e7d4b174e97babb25c92c0cb,
         type: 3}
       propertyPath: m_Name
-      value: steen mid
+      value: MediumStone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18921a79e7d4b174e97babb25c92c0cb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533881269208779750}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18921a79e7d4b174e97babb25c92c0cb,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 385954305138649085}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18921a79e7d4b174e97babb25c92c0cb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4153790632768798760}
   m_SourcePrefab: {fileID: 100100000, guid: 18921a79e7d4b174e97babb25c92c0cb, type: 3}
+--- !u!4 &8337987842672262136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18921a79e7d4b174e97babb25c92c0cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8375783508147969043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8718312919687831874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18921a79e7d4b174e97babb25c92c0cb,
@@ -105,3 +150,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 289301614986012343, guid: 18921a79e7d4b174e97babb25c92c0cb, type: 3}
+--- !u!114 &-4153790632768798760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718312919687831874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6141e8cb4a0d8b41a0db7ee8407a5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeHp: 30
+  nodeType: 0
+  droppableItems:
+  - item: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb, type: 3}
+    maxDrop: 2
+    minDrop: 5
+  dropPoint: {fileID: 533881269208779750}

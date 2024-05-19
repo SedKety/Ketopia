@@ -58,20 +58,27 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         animator.SetFloat("Movement", verticalInput);
         verticalInput = Input.GetAxis("Vertical");
-        
+
         if (Input.GetButton("Jump") && onGround && canMove)
         {
-            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+            {
+                float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
 
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            onGround = false;
+                if (slopeAngle < 80f)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+                    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+                    onGround = false;
+                }
+            }
         }
     }
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        // limit velocity if needed
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;

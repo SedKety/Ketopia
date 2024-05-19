@@ -19,23 +19,32 @@ public class PlayerHarvesting : MonoBehaviour
             objectInHand = gameObject;
         }
     }
+    public void OnItemSwitch(Item item)
+    {
+        heldItem = item;
+    }
     public void Update()
     {
         if(heldItem == null)
         {
             heldItem = fist;
+            objectInHand = null;
         }
         if (Input.GetMouseButton(0) & canHit)
         {
-            canHit = false;
-            StartCoroutine(HitCooldown());
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, hitRange))
+            HoldableItemScript harvestingTool = heldItem as HoldableItemScript;
+            if (harvestingTool)
             {
-                if (hit.collider.gameObject.GetComponent<ResourceNode>() != null)
+                canHit = false;
+                StartCoroutine(HitCooldown());
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, hitRange))
                 {
-                    hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, objectInHand);
+                    if (hit.collider.gameObject.GetComponent<ResourceNode>() != null)
+                    {
+                        hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest);
+                    }
                 }
             }
         }

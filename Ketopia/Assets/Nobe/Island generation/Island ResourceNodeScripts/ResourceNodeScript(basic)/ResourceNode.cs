@@ -7,6 +7,7 @@ public enum NodeType
     stone,
     wood,
     plant,
+    everything,
 }
 public abstract class ResourceNode : MonoBehaviour, IDamagable
 {
@@ -14,15 +15,19 @@ public abstract class ResourceNode : MonoBehaviour, IDamagable
     public NodeType nodeType;
     public DroppableItems[] droppableItems;
     public Transform dropPoint;
-    public virtual void IDamagable(int dmgDone, GameObject weaponUsed)
+    public virtual void IDamagable(int dmgDone, NodeType typeUsed)
     {
-        dmgDone -= nodeHp;
-        if (nodeHp <= 0)
+        if(typeUsed == nodeType || typeUsed == NodeType.everything)
         {
-            var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
-            var item = currentItem.item;
-            var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
-            spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop);
+            nodeHp -= dmgDone;
+            if (nodeHp <= 0)
+            {
+                var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
+                var item = currentItem.item;
+                var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
+                spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop);
+                Destroy(gameObject);
+            }
         }
     }
 

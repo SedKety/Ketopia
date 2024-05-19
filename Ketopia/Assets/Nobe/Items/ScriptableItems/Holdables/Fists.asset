@@ -19,5 +19,6 @@ MonoBehaviour:
   itemId: 0
   itemType: 3
   maxQuantity: 1
+  typeToHarvest: 3
   dmg: 1
   hitRange: 2

@@ -55,6 +55,12 @@ MonoBehaviour:
   maxRetries: 15
   grass: {fileID: 3450606834429453027, guid: 9491f5d62cf3ea74bbbfdcd736cc301c, type: 3}
   grassCount: 200
+  flowers:
+  - {fileID: 3058028897966703429, guid: f30a5c9debb1c45468f8f5bd7d4a21c4, type: 3}
+  - {fileID: 6007098656871967084, guid: de30fe5f376f3b84397a7963b1bcd461, type: 3}
+  - {fileID: 3685551985928193891, guid: c10c91b3b5e76f44c90abb4e95922842, type: 3}
+  - {fileID: 8966783209863026408, guid: 041cdfce557485f45896152fc24963ea, type: 3}
+  flowerCount: 20
 --- !u!65 &9140447284399613956
 BoxCollider:
   m_ObjectHideFlags: 0

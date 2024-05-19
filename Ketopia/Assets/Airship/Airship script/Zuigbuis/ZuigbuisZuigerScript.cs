@@ -12,9 +12,12 @@ public class ZuigbuisZuigerScript : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<PhysicalItemScript>() != null & other.gameObject.GetComponent<PhysicalItemScript>().item.itemType == ItemType.fuel)
+        if(other.gameObject.GetComponent<PhysicalItemScript>() != null)
         {
-           StartCoroutine(Succ(other.gameObject.transform));
+            if(other.gameObject.GetComponent<PhysicalItemScript>().item.itemType == ItemType.fuel)
+            {
+                StartCoroutine(Succ(other.gameObject.transform));
+            }
         }
     }
 

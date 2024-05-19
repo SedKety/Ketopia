@@ -7,7 +7,6 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
     public GameObject[] spawnableGameobjects;
     public Collider spawnCollider;
     public int spawnCount;
-    public LayerMask spawnLayerMask;
     public int maxRetries; 
 
     void Start()

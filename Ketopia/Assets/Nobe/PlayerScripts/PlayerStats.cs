@@ -6,38 +6,55 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour, IDamagable
 {
     public static PlayerStats instance;
+
+    [Header("Levels/Exp")]
     public int level;
     public float exp;
     public float expNeededToLevelUp;
 
-
+    [Header("Health/Hearts")]
     public float health;
     public float maxHealth;
     public Sprite fullHeart, halfHeart, brokenHeart;
     public Image[] hearts;
-    public int food;
 
-    public int age;
+    [Header("Food")]
+    public int food;
+    public int maxFood;
     public void Start()
     {
         instance = this;
     }
-    public void Update()
+    public void FixedUpdate()
     {
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        if(food > maxFood)
+        {
+            food = maxFood;
+        }
         foreach (Image img in hearts)
         {
-            img.sprite = brokenHeart;
+            if(img != null && brokenHeart != null)
+            {
+                img.sprite = brokenHeart;
+            }
         }
         for (int i = 0; i < Mathf.FloorToInt(health); i++)
         {
-            hearts[i].sprite = fullHeart;
+            if (hearts[i] != null & fullHeart != null)
+            {
+                hearts[i].sprite = fullHeart;
+            }
         }
         if (health % 1 != 0)
         {
             hearts[Mathf.FloorToInt(health)].sprite = halfHeart;
         }
     }
-    public void IDamagable(int dmgDone, GameObject weaponUsed)
+    public void IDamagable(int dmgDone, NodeType type)
     {
         health -= dmgDone;
     }

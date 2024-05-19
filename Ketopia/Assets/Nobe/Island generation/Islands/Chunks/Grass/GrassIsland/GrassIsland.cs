@@ -7,9 +7,12 @@ public class GrassIsland : ResourceNodeSpawner
     bool spawnedGrass;
     public GameObject grass;
     public int grassCount;
+
+    public GameObject[] flowers;
+    public int flowerCount;
     public override void SpawnObjects()
     {
-        if(spawnedGrass)
+        if (spawnedGrass)
         {
             base.SpawnObjects();
         }
@@ -23,7 +26,6 @@ public class GrassIsland : ResourceNodeSpawner
 
         if (spawnableGameobjects != null && spawnCollider != null)
         {
-
             for (int i = 0; i < grassCount; i++)
             {
                 int retries = 0;
@@ -48,11 +50,43 @@ public class GrassIsland : ResourceNodeSpawner
                         break;
                     }
                 }
-                if(i == 0)
+                if (i == 0)
                 {
                     spawnedGrass = true;
-                    SpawnObjects();
+                    SpawnFlowers();
                 }
+            }
+        }
+    }
+    public void SpawnFlowers()
+    {
+        for (int i = 0; i < flowerCount; i++)
+        {
+            int retries = 0;
+            Vector3 whereToSpawn;
+            RaycastHit hit;
+            while (retries < maxRetries)
+            {
+                whereToSpawn = SpawnPosition(spawnCollider.bounds);
+                if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
+                {
+                    if (hit.collider.transform == transform.parent)
+                    {
+                        GameObject spawnedObject = Instantiate(flowers[Random.Range(0, flowers.Length)], hit.point, Quaternion.identity);
+                        spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
+                        spawnedObject.transform.parent = transform;
+                        break;
+                    }
+                }
+                retries++;
+                if (retries >= maxRetries)
+                {
+                    break;
+                }
+            }
+            if (i == 0)
+            {
+                SpawnObjects();
             }
         }
     }
