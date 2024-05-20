@@ -20,5 +20,6 @@ MonoBehaviour:
   itemType: 3
   maxQuantity: 1
   typeToHarvest: 3
-  dmg: 1
-  hitRange: 2
+  dmg: 5
+  hitRange: 1
+  toolStrength: 0

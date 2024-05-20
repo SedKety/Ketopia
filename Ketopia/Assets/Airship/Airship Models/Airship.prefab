@@ -471,9 +471,11 @@ MonoBehaviour:
     commonIslands:
     - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
     rareIslands:
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
     legendaryIslands:
     - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
     chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
   distance: 0
   spawnDistance: 350
@@ -1155,17 +1157,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -395.57907
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.88146
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 940.4357
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}

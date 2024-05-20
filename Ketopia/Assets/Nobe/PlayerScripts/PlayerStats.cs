@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour, IDamagable
             hearts[Mathf.FloorToInt(health)].sprite = halfHeart;
         }
     }
-    public void IDamagable(int dmgDone, NodeType type)
+    public void IDamagable(int dmgDone, NodeType type, int toolStrength)
     {
         health -= dmgDone;
     }

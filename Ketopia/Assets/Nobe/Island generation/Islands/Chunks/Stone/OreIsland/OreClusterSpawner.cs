@@ -8,10 +8,35 @@ public class OreClusterSpawner : MonoBehaviour
     public int howManyCommonOres;
     public GameObject[] rareOres;
     public int howManyRareOres;
-
     public Collider spawnCollider;
     public void SpawnOres()
     {
+        for (int i = 0; i < howManyRareOres; i++)
+        {
+            int retries = 0;
+            Vector3 whereToSpawn;
+            RaycastHit hit;
+            while (retries < 10)
+            {
+                whereToSpawn = SpawnPosition(spawnCollider.bounds);
+                if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
+                {
+                    if (hit.collider.transform == transform.parent)
+                    {
+                        GameObject spawnedObject = Instantiate(rareOres[Random.Range(0, rareOres.Length)], hit.point, Quaternion.identity);
+                        spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
+                        spawnedObject.transform.up = hit.normal;
+                        spawnedObject.transform.parent = transform;
+                        break;
+                    }
+                }
+                retries++;
+                if (retries >= 10)
+                {
+                    break;
+                }
+            }
+        }
         for (int i = 0; i < howManyCommonOres; i++)
         {
             int retries = 0;
@@ -20,7 +45,6 @@ public class OreClusterSpawner : MonoBehaviour
             while (retries < 10)
             {
                 whereToSpawn = SpawnPosition(spawnCollider.bounds);
-                whereToSpawn.y += 20;
                 if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                 {
                     if (hit.collider.transform == transform.parent)
@@ -40,6 +64,7 @@ public class OreClusterSpawner : MonoBehaviour
             }
         }
     }
+
     public virtual Vector3 SpawnPosition(Bounds bounds)
     {
         float randomX = Random.Range(bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x);

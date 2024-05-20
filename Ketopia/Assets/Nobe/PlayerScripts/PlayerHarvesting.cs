@@ -43,7 +43,7 @@ public class PlayerHarvesting : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<ResourceNode>() != null)
                     {
-                        hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest);
+                        hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
                     }
                 }
             }

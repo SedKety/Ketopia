@@ -13,20 +13,24 @@ public abstract class ResourceNode : MonoBehaviour, IDamagable
 {
     public int nodeHp;
     public NodeType nodeType;
+    public int nodeStrength;
     public DroppableItems[] droppableItems;
     public Transform dropPoint;
-    public virtual void IDamagable(int dmgDone, NodeType typeUsed)
+    public virtual void IDamagable(int dmgDone, NodeType typeUsed, int toolStrength)
     {
-        if(typeUsed == nodeType || typeUsed == NodeType.everything)
+        if(toolStrength >= nodeStrength)
         {
-            nodeHp -= dmgDone;
-            if (nodeHp <= 0)
+            if (typeUsed == nodeType || typeUsed == NodeType.everything)
             {
-                var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
-                var item = currentItem.item;
-                var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
-                spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop);
-                Destroy(gameObject);
+                nodeHp -= dmgDone;
+                if (nodeHp <= 0)
+                {
+                    var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
+                    var item = currentItem.item;
+                    var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
+                    spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop);
+                    Destroy(gameObject);
+                }
             }
         }
     }

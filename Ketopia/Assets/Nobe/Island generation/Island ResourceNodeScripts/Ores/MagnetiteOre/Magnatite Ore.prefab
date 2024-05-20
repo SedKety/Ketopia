@@ -86,5 +86,67 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 006815179bee6ae40837c6a9280d6ae1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 952769008986495245}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 006815179bee6ae40837c6a9280d6ae1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5004627554243985904}
   m_SourcePrefab: {fileID: 100100000, guid: 006815179bee6ae40837c6a9280d6ae1, type: 3}
+--- !u!1 &2441302835551591386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 006815179bee6ae40837c6a9280d6ae1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3251693692607129227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &952769008986495245
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441302835551591386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3329902420748629119, guid: 006815179bee6ae40837c6a9280d6ae1, type: 3}
+--- !u!114 &5004627554243985904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441302835551591386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29214f670a150454eb9936772601f212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeHp: 100
+  nodeType: 0
+  nodeStrength: 3
+  droppableItems:
+  - item: {fileID: 5121727486959603919, guid: 4581e1c0eec1d684f93e13232f9e4401, type: 3}
+    maxDrop: 7
+    minDrop: 2
+  dropPoint: {fileID: 3074532831444369760}
+--- !u!4 &3074532831444369760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 006815179bee6ae40837c6a9280d6ae1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3251693692607129227}
+  m_PrefabAsset: {fileID: 0}

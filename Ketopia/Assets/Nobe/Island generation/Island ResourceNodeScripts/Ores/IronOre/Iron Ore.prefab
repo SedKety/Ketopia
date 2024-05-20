@@ -86,5 +86,67 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c0e1a172704024744b93441dd4ce790a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2589876651195033465}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c0e1a172704024744b93441dd4ce790a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1858320436272161170}
   m_SourcePrefab: {fileID: 100100000, guid: c0e1a172704024744b93441dd4ce790a, type: 3}
+--- !u!4 &6122923568207641949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c0e1a172704024744b93441dd4ce790a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6012947574705576630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6895906203622336487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c0e1a172704024744b93441dd4ce790a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6012947574705576630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2589876651195033465
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895906203622336487}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2212009239438826721, guid: c0e1a172704024744b93441dd4ce790a, type: 3}
+--- !u!114 &1858320436272161170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895906203622336487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c47c0f99b0a7cc488ac58ff8369a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeHp: 30
+  nodeType: 0
+  nodeStrength: 2
+  droppableItems:
+  - item: {fileID: 728096370670785773, guid: 0c03c906ca93a5c46b7c0ac2a6a37958, type: 3}
+    maxDrop: 7
+    minDrop: 2
+  dropPoint: {fileID: 6122923568207641949}

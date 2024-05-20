@@ -13,6 +13,15 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
             Destroy(gameObject);
         }
     }
+
+    public void UpdateQuantity(int amountToRemove)
+    {
+        quantity -= amountToRemove;
+        if(quantity <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     public void IInteractable()
     {
         int leftOverItems = InventoryManager.instance.OnItemAdd(item, quantity);
