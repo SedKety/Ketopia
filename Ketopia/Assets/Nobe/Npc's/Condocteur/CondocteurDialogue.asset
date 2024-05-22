@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5c6e0f65b09c944a7439f788512e0c, type: 3}
+  m_Name: CondocteurDialogue
+  m_EditorClassIdentifier: 
+  title: 1
+  dialogue:
+  - Hey there captain, im Snuffles the engineer of this Airship, i can tell you important
+    things about the ship such as the fuel count, the current speed and the current
+    chunk!
+  - But for now im going to give you a quick rundown of how everything works here.
+    this ship has an limited amount of fuel.
+  - The only way to replenish this fuel is to put flammable items such as wood and
+    coal in the zuigbuis inside the cabin.
+  - I have given you some wood to start your journey with!
+  - 'Dont tell Cuddles but i stole some of his coal aswell! '
+  milestones:
+  - milestoneNumber: 2
+    itemToSpawn: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93,
+      type: 3}
+    itemQuantity: 5
+  - milestoneNumber: 4
+    itemToSpawn: {fileID: 296957500362164548, guid: b4947549319d64049b93c37431333d77,
+      type: 3}
+    itemQuantity: 3

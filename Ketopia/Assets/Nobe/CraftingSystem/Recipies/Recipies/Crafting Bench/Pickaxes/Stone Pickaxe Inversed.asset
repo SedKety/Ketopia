@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dd64f3d0e30974fbfff2228b5ece61, type: 3}
+  m_Name: Stone Pickaxe Inversed
+  m_EditorClassIdentifier: 
+  inputItem1: {fileID: 11400000, guid: 60e49785ed7d6b747a57cb8492cf784a, type: 2}
+  inputItem2: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
+  outputItem: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93,
+    type: 3}

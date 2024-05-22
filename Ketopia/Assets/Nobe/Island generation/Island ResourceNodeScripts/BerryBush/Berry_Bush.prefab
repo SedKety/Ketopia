@@ -129,8 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 5
   nodeType: 2
+  nodeStrength: 0
   droppableItems:
-  - item: {fileID: 0}
+  - item: {fileID: 6996174693367336750, guid: cc70fe5b7539e81479a0b3b5aa3993a5, type: 3}
     maxDrop: 3
     minDrop: 7
   dropPoint: {fileID: 8517759558260791496}

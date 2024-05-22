@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) & !inventory.activeInHierarchy & PlayerManager.instance.playerState != PlayerState.ship)
+        if (Input.GetKeyDown(KeyCode.E) & !inventory.activeInHierarchy & PlayerManager.instance.playerState != PlayerState.ship & PlayerManager.instance.playerState != PlayerState.dialogue & PlayerManager.instance.playerState != PlayerState.menu)
         {
             playerState = PlayerManager.instance.playerState;
             PlayerManager.instance.SwitchState(PlayerState.inventory);

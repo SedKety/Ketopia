@@ -52,11 +52,13 @@ public class Crafter : MonoBehaviour, IInteractable
         {
             foreach (PhysicalItemScript slot in slot)
             {
-                if (slot & slot.GetComponent<PhysicalItemScript>() != null)
+                if (slot != null)
                 {
-                    slot.UpdateQuantity(1);
+                    if (slot & slot.GetComponent<PhysicalItemScript>() != null)
+                    {
+                        slot.UpdateQuantity(1);
+                    }
                 }
-
             }
             var craftedItem = Instantiate(possibleRecipe[0].outputItem, outputItemSpot.position, Quaternion.identity);
             craftedItem.GetComponent<PhysicalItemScript>().quantity = 1;

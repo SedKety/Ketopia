@@ -21,6 +21,7 @@ public class IslandGenerator : MonoBehaviour
     public void Start()
     {
         currentChunk = chunks[0];
+        SpawnIslands();
     }
     public void Update()
     {
@@ -34,8 +35,7 @@ public class IslandGenerator : MonoBehaviour
     public void SpawnIslands()
     {
         for (int i = 0; i < currentChunk.howManyToSpawn; i++)
-        {
-            var randomSpawnLocation = SpawnPosition(islandsSpawnPoint.bounds);
+        {            
             var randomRarity = Random.Range(0, 100);
             GameObject islandTospawn = null;
             if (randomRarity < 75)
@@ -48,12 +48,13 @@ public class IslandGenerator : MonoBehaviour
             }
             else if ((randomRarity >= 99))
             {
-
                 islandTospawn = currentChunk.legendaryIslands[Random.Range(0, currentChunk.legendaryIslands.Length)];
                 print(islandTospawn.name);
             }
+
             if (islandTospawn != null)
             {
+                var randomSpawnLocation = SpawnPosition(islandsSpawnPoint.bounds);
                 var spawnedIsland = Instantiate(islandTospawn, randomSpawnLocation, Quaternion.identity);
                 spawnedIsland.transform.Rotate(0f, Random.Range(0f, 360f), 0f);
                 islands.Add(spawnedIsland);
