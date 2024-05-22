@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Crafter : MonoBehaviour, IInteractable
@@ -7,64 +8,62 @@ public class Crafter : MonoBehaviour, IInteractable
     public List<Recipe> recipes;
     public List<Recipe> possibleRecipe;
     public List<CrafterInput> crafterInputs;
-    public List<PhysicalItemScript> slot;
 
     public Transform outputItemSpot;
+
     public void CraftItem()
     {
-        if (slot != null)
-        {
-            for (int i = 0; i < slot.Count; i++)
-            {
-                if (slot[i] == null)
-                {
-                    slot.Remove(slot[i]);
-                }
-            }
-        }
-        slot.Clear();
         possibleRecipe.Clear();
-        for (int i = 0; i < crafterInputs.Count; i++)
+
+        PhysicalItemScript inputItem = crafterInputs[0].currentItem;
+        PhysicalItemScript inputItem1 = crafterInputs[1].currentItem;
+
+        if (inputItem == null || inputItem1 == null)
         {
-            slot.Add(crafterInputs[i].currentItem);
+            Debug.Log("Er mist een of meer van de items");
+            return;
         }
+
         foreach (Recipe recipe in recipes)
         {
-            if (slot[0])
+            bool matchOriginalOrder = recipe.inputItem1 == inputItem.item && recipe.inputItem1Amount <= inputItem.quantity &&
+                                      recipe.inputItem2 == inputItem1.item && recipe.inputItem2Amount <= inputItem1.quantity;
+            bool matchSwitchedOrder = recipe.inputItem1 == inputItem1.item && recipe.inputItem1Amount <= inputItem1.quantity &&
+                                      recipe.inputItem2 == inputItem.item && recipe.inputItem2Amount <= inputItem.quantity;
+
+            if (matchOriginalOrder || matchSwitchedOrder)
             {
-                if (recipe.inputItem1 == slot[0].item)
-                {
-                    possibleRecipe.Add(recipe);
-                }
+                possibleRecipe.Add(recipe);
             }
         }
-        foreach (Recipe recipe in recipes)
-        {
-            if (slot[1])
-            {
-                if (recipe.inputItem2 != slot[1].item)
-                {
-                    possibleRecipe.Remove(recipe);
-                }
-            }
-        }
+
         if (possibleRecipe.Count == 1)
         {
-            foreach (PhysicalItemScript slot in slot)
+            Recipe finalRecipe = possibleRecipe[0];
+            Debug.Log($"Matching recipe found: {finalRecipe.outputItem.name}");
+
+            if (finalRecipe.inputItem1 == inputItem.item)
             {
-                if (slot != null)
-                {
-                    if (slot & slot.GetComponent<PhysicalItemScript>() != null)
-                    {
-                        slot.UpdateQuantity(1);
-                    }
-                }
+                inputItem.UpdateQuantity(finalRecipe.inputItem1Amount);
+                inputItem1.UpdateQuantity(finalRecipe.inputItem2Amount);
             }
-            var craftedItem = Instantiate(possibleRecipe[0].outputItem, outputItemSpot.position, Quaternion.identity);
-            craftedItem.GetComponent<PhysicalItemScript>().quantity = 1;
+            else
+            {
+                inputItem.UpdateQuantity(finalRecipe.inputItem2Amount);
+                inputItem1.UpdateQuantity(finalRecipe.inputItem1Amount);
+            }
+
+            var craftedItem = Instantiate(finalRecipe.outputItem, outputItemSpot.position, Quaternion.identity);
+            var craftedItemScript = craftedItem.GetComponent<PhysicalItemScript>();
+            if (craftedItemScript != null)
+            {
+                craftedItemScript.quantity = finalRecipe.outputItemAmount;
+            }
         }
-        slot.Clear();
-        possibleRecipe.Clear();
+        else
+        {
+            Debug.Log("Nuh Uh, couldnt find anything");
+        }
     }
 
     public void IInteractable()

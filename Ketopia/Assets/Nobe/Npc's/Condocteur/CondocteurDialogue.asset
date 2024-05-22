@@ -15,8 +15,7 @@ MonoBehaviour:
   title: 1
   dialogue:
   - Hey there captain, im Snuffles the engineer of this Airship, i can tell you important
-    things about the ship such as the fuel count, the current speed and the current
-    chunk!
+    things about the ship such as the fuel count and the current chunk!
   - But for now im going to give you a quick rundown of how everything works here.
     this ship has an limited amount of fuel.
   - The only way to replenish this fuel is to put flammable items such as wood and

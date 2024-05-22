@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 
   dialogue:
-  - The french shall parish
-  - The french shall parish
-  - The french shall parish
-  - The french shall parish
-  - The french shall parish
+  - Some more important things to know about this world is that it consists of chunks,
+  - These chunks once where an biome back on Old ketopia, Cuddles probably has told
+    you this already so ill stop yapping
+  - Anyways, these chunks have different materials so you'll have to gather specific
+    resources in specific biomes,
+  - You will need to craft yourself some handy gear to destroy certain items such
+    as stronger rocks, bigger trees or stronger ores.
+  - If you are lucky  you might stumble across an "mysterious" island, they hold
+    information about the old world, and might hold good materials and treasures,
+  - Anyways, return to me upon Needing information about the current ship!!
   milestones: []

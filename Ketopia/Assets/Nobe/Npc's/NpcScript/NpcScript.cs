@@ -9,35 +9,27 @@ public class NpcScript : MonoBehaviour, IInteractable
     public List<Dialogue> dialogue;
     public Transform dropLocation;
     public Transform playerLocation;
-    public void IInteractable()
+    public int dialogueCounter;
+    public string interactionString;
+    public virtual void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
         if (UIScript.instance.currentDialogue == null) 
         {
-            if (dialogue.Count > 0)
+            if (dialogue.Contains(dialogue[dialogueCounter]))
             {
-                print("gushit");
-                UIScript.instance.currentDialogue = dialogue[0];
-                dialogue.Remove(dialogue[0]);
+                UIScript.instance.currentDialogue = dialogue[dialogueCounter];
                 UIScript.instance.DisplayDialogue(null);
                 UIScript.instance.npcDropLocation = dropLocation;
                 PlayerManager.instance.dialogueLocation = playerLocation;
                 PlayerManager.instance.SwitchState(PlayerState.dialogue);
+                dialogueCounter += 1;
             }
             else
             {
                 PlayerManager.instance.dialogueLocation = playerLocation;
                 PlayerManager.instance.SwitchState(PlayerState.dialogue);
                 UIScript.instance.DisplayText("I have nothing to say right now");
-            }
-        }
-        else
-        {
-            PlayerManager.instance.dialogueLocation = playerLocation;
-            PlayerManager.instance.SwitchState(PlayerState.dialogue);
-            if (UIScript.instance.lastInteractedNpc)
-            {
-                UIScript.instance.DisplayText("You already have an quest going on, return to:" + UIScript.instance.lastInteractedNpc.gameObject.name);
             }
         }
     }

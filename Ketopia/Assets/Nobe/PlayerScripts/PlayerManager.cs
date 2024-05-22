@@ -44,11 +44,11 @@ public class PlayerManager : MonoBehaviour
             Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
         }
     }
-    public void SwitchState(PlayerState state)
+    public void SwitchState(PlayerState newState)
     {
-        playerState = state;
+        playerState = newState;
 
-        switch (playerState)
+        switch (newState)
         {
             case PlayerState.ship:
                 transform.rotation = playerWheelLocation.rotation;

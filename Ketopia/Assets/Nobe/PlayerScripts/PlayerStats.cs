@@ -18,26 +18,36 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public Sprite fullHeart, halfHeart, brokenHeart;
     public Image[] hearts;
 
+    [Header("Healing")]
+    public int recoveryCooldown;
+    public int recoveryAmount;
+
+    [Header("Hunger")]
+    public int hungerCooldown;
+    public int hungerAmount;
+
     [Header("Food")]
     public int food;
     public int maxFood;
     public void Start()
     {
         instance = this;
+        StartCoroutine(HealthRecovery());
+        StartCoroutine(Hunger());
     }
     public void FixedUpdate()
     {
-        if(health > maxHealth)
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
-        if(food > maxFood)
+        if (food > maxFood)
         {
             food = maxFood;
         }
         foreach (Image img in hearts)
         {
-            if(img != null && brokenHeart != null)
+            if (img != null && brokenHeart != null)
             {
                 img.sprite = brokenHeart;
             }
@@ -60,12 +70,29 @@ public class PlayerStats : MonoBehaviour, IDamagable
     }
     public void AddExp(float expToAdd)
     {
+        var leftOverExp = exp - expToAdd;
         exp += expToAdd;
-        if(exp >= expNeededToLevelUp)
+        if (exp >= expNeededToLevelUp)
         {
             level++;
             expNeededToLevelUp *= 1.25f;
             exp = 0;
+            if (leftOverExp >= 0)
+            {
+                AddExp(leftOverExp);
+            }
         }
+    }
+
+
+    public IEnumerator HealthRecovery()
+    {
+        yield return new WaitForSeconds(recoveryCooldown);
+        health += recoveryAmount;
+    }
+    public IEnumerator Hunger()
+    {
+        yield return new WaitForSeconds(hungerCooldown);
+        health -= hungerAmount;
     }
 }

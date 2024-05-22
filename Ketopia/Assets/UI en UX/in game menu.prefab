@@ -5974,7 +5974,10 @@ MonoBehaviour:
   dialogueText: {fileID: 8911752224307573462}
   currentDialogueNumber: -1
   currentDialogue: {fileID: 0}
+  interacteDialogue: {fileID: 0}
+  lastInteractedNpc: {fileID: 0}
   hasClicked: 0
+  dialogueSwapper: {fileID: 0}
 --- !u!114 &319061843141886827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6182,8 +6185,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6749829097911563832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.018370729, y: 0.11385084}
-  m_AnchorMax: {x: 0.9842472, y: 0.9123106}
+  m_AnchorMin: {x: 0.027136045, y: 0.11385084}
+  m_AnchorMax: {x: 0.9772468, y: 0.9123106}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

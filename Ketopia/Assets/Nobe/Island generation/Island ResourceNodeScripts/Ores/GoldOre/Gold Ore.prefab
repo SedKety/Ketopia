@@ -145,8 +145,10 @@ MonoBehaviour:
   nodeHp: 50
   nodeType: 0
   nodeStrength: 2
+  expUponDestroy: 70
   droppableItems:
   - item: {fileID: 3132896234049286904, guid: eb4dfe0b8be54924f856e3ba45e948bc, type: 3}
     maxDrop: 7
     minDrop: 2
   dropPoint: {fileID: 8618867973606684581}
+  dissapearTimer: 2

@@ -139,11 +139,13 @@ MonoBehaviour:
   nodeHp: 100
   nodeType: 0
   nodeStrength: 3
+  expUponDestroy: 2
   droppableItems:
   - item: {fileID: 5121727486959603919, guid: 4581e1c0eec1d684f93e13232f9e4401, type: 3}
     maxDrop: 7
     minDrop: 2
   dropPoint: {fileID: 3074532831444369760}
+  dissapearTimer: 2
 --- !u!4 &3074532831444369760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 006815179bee6ae40837c6a9280d6ae1,

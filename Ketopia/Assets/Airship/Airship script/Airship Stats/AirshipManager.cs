@@ -9,6 +9,7 @@ public enum AirshipState
 public class AirshipManager : MonoBehaviour
 {
     public static AirshipManager instance;
+    public IslandGenerator islandGenerator;
     public AirshipState airshipState;
     public float currentFuel;
     public float maxFuel;

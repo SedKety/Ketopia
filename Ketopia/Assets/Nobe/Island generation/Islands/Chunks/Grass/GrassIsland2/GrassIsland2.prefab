@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnableGameobjects:
   - {fileID: 7702618663686812774, guid: 158a2cf017b58f245b4f930baf5f37dd, type: 3}
-  - {fileID: 9042939554157478514, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
+  - {fileID: 8529415716665215101, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
   spawnCollider: {fileID: 3980802321070448079}
   spawnCount: 50
   maxRetries: 15

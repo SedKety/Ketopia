@@ -173,8 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 10
   nodeType: 2
+  nodeStrength: 0
+  expUponDestroy: 5
   droppableItems: []
   dropPoint: {fileID: 1752812770651175509}
+  dissapearTimer: 2
 --- !u!4 &1740152359985797938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 95773e063f344694caf49d2a4b7a7dc3,

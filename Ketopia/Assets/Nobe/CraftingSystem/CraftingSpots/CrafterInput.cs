@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrafterInput : MonoBehaviour
 {
     public PhysicalItemScript currentItem;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PhysicalItemScript>() != null & currentItem == null)
