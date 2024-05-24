@@ -12,19 +12,21 @@ public class AirshipMovement : MonoBehaviour
     public bool airshipMovementEnabled;
     public float airshipUpHeight;
     public float airshipUpHeightMultiplier;
-    public Vector3 airshipMovementDirection;
     public float groundDrag;
 
     public Transform orientation;
-    float horizontalInput;
-    float verticalInput;
-    Rigidbody rb;
+    private float horizontalInput;
+    private float verticalInput;
+    private Rigidbody rb;
 
     public static AirshipMovement instance;
     public AirShipPlayerParentScript airshipPlayerParentScript;
     public Transform propellor;
     public float propellorRotationSpeed;
     public Transform steeringWheel;
+
+    private const float LiftForce = 9.81f;
+
     private void Start()
     {
         if (instance == null)
@@ -45,10 +47,14 @@ public class AirshipMovement : MonoBehaviour
             MyInput();
             SpeedControl();
             HandleRotation();
-            airshipMovementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-            rb.AddForce(airshipMovementDirection.normalized * airshipMovementSpeed * airshipMovementSpeedMultiplier * 10000f * Time.deltaTime, ForceMode.Force);
-            rb.AddForce(0, airshipUpHeight * airshipUpHeightMultiplier * 1000, 0, ForceMode.Force);
-            propellor.transform.Rotate(0, 0, verticalInput * propellorRotationSpeed * airshipMovementSpeedMultiplier);
+
+            Vector3 movementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            Vector3 forceToAdd = movementDirection.normalized * airshipMovementSpeed * airshipMovementSpeedMultiplier * 10000f * Time.deltaTime;
+            rb.AddForce(forceToAdd, ForceMode.Force);
+
+            rb.AddForce(Vector3.up * (LiftForce + airshipUpHeight * airshipUpHeightMultiplier * 1000), ForceMode.Force);
+
+            propellor.Rotate(0, 0, verticalInput * propellorRotationSpeed * airshipMovementSpeedMultiplier);
             rb.drag = groundDrag;
         }
         else
@@ -57,6 +63,7 @@ public class AirshipMovement : MonoBehaviour
             rb.drag = 100000;
         }
     }
+
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -64,27 +71,31 @@ public class AirshipMovement : MonoBehaviour
         if (flatVel.magnitude > airshipMovementSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * airshipMovementSpeed;
-            rb.velocity = new Vector3(limitedVel.x, limitedVel.y, limitedVel.z);
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
-    void HandleRotation()
+
+    private void HandleRotation()
     {
-        var rotation = Input.GetAxis("Horizontal") * airshipRotationSpeed;
-        var rotationValue = Quaternion.Euler(0, rotation, 0);
+        float rotation = horizontalInput * airshipRotationSpeed;
+        Quaternion rotationValue = Quaternion.Euler(0, rotation, 0);
         steeringWheel.Rotate(0, 0, rotation * -100);
-        rb.MoveRotation(rb.rotation * rotationValue);
     }
+
     private void MyInput()
     {
         verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
         airshipUpHeight = Input.GetAxis("AirshipHorizontal");
     }
+
     public void EnableMovement()
     {
         airshipMovementEnabled = true;
         AirshipManager.instance.SwitchState(AirshipState.enabled);
         airshipPlayerParentScript.DisableGravity();
     }
+
     public void DisableMovement()
     {
         airshipMovementEnabled = false;

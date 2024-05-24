@@ -18,6 +18,9 @@ public class AirshipManager : MonoBehaviour
     public float fuelDecreaseTimer;
 
     public Transform camHolderAirship;
+
+    public List<GameObject> npcs;
+    public List<GameObject> crafters;
     public void Start()
     {
         if (instance == null)

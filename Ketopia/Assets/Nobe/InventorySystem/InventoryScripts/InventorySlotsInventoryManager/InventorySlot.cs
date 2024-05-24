@@ -6,12 +6,14 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 
-public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandler, //IDragHandler, //IPointerClickHandler
+public class InventorySlot : MonoBehaviour 
 {
     public Item item;
     public GameObject itemImage;
     public TextMeshProUGUI quantityText;
     public Button dropButton;
+    public Button consumeButton;
+    public Button equipButton;
     public int quantity;
     public int maxQuantity;
 
@@ -20,13 +22,6 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
         if (item & itemImage.GetComponent<Image>().sprite == null)
         {
             itemImage.GetComponent<Image>().sprite = item.itemSprite;
-        }
-    }
-    public void Update()
-    {
-        if(quantity != 0)
-        {
-            quantityText.text = quantity.ToString();
         }
     }
     public void OnItemAdd(Item item, int quantityToAdd)
@@ -41,6 +36,7 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
             itemImage.GetComponent<Image>().sprite = item.itemSprite;
 
             quantityText.gameObject.SetActive(true);
+            quantityText.text = quantity.ToString();
         }
     }
     public void OnItemDrop()
@@ -52,6 +48,29 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
             OnItemRemove();
         }
         dropButton.gameObject.SetActive(false);
+    }
+    public void OnItemEquip()
+    {
+        if(item != null)
+        {
+            if (item.itemType == ItemType.holdable & quantity == 1)
+            {
+                InventoryManager.instance.EquipItem(item);
+                equipButton.gameObject.SetActive(false);
+                OnItemRemove();
+            }
+        }
+    }
+    public void OnItemConsume()
+    {
+        item.OnItemUse();
+        quantity -= 1;
+        if(quantity <= 0)
+        {
+            OnItemRemove();
+            consumeButton.gameObject.SetActive(false);
+            quantityText.text = quantity.ToString();
+        }
     }
     public void OnItemRemove()
     {
@@ -72,67 +91,9 @@ public class InventorySlot : MonoBehaviour //IBeginDragHandler, //IEndDragHandle
         else
         {
             quantity -= leftOverSpace;
+            quantityText.text = quantity.ToString();
             return quantity;
         }
     }
 
-    //public void Update()
-    //{
-    //    if (quantityText.isActiveAndEnabled && item != null)
-    //    {
-    //        quantityText.text = quantity.ToString();
-    //    }
-    //}
-    //public void OnBeginDrag(PointerEventData eventData)
-    //{
-    //    print("gudshit");
-    //    itemImage.GetComponent<Image>().raycastTarget = false;
-    //    itemImage.transform.SetAsLastSibling();
-    //}
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    itemImage.transform.position = eventData.position;
-    //}
-    //public void OnEndDrag(PointerEventData eventData)
-    //{
-    //    itemImage.gameObject.transform.position = originalPosition;
-    //    itemImage.transform.SetAsFirstSibling();
-
-    //    GameObject endDraggedObject = eventData.pointerCurrentRaycast.gameObject;
-    //    if (endDraggedObject != null)
-    //    {
-    //        if (endDraggedObject.GetComponent<InventorySlot>())
-    //        {
-    //            if (endDraggedObject.GetComponent<InventorySlot>().item == null)
-    //            {
-    //                endDraggedObject.GetComponent<InventorySlot>().OnItemAdd(item, quantity);
-    //                OnItemRemove();
-    //            }
-    //            else if (endDraggedObject.gameObject.GetComponent<InventorySlot>().item == item)
-    //            {
-    //                int leftOverItems = endDraggedObject.gameObject.GetComponent<InventorySlot>().CalculateLeftOverSpace(quantity);
-    //                if (leftOverItems <= 0)
-    //                {
-    //                    OnItemRemove();
-    //                }
-    //                else
-    //                {
-    //                    quantity = leftOverItems;
-    //                }
-    //            }
-    //        }
-    //        else if (endDraggedObject.CompareTag("DropZone") & item)
-    //        {
-    //            var spawnedItem = Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
-    //            spawnedItem.GetComponent<PhysicalItemScript>().quantity = quantity;
-    //            OnItemRemove();
-    //        }
-    //    }
-    //    itemImage.GetComponent<RawImage>().raycastTarget = true;
-    //}
-
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    print("gudshit");
-    //}
 }

@@ -27,11 +27,18 @@ public abstract class ResourceNode : MonoBehaviour, IDamagable
                 if (nodeHp <= 0)
                 {
                     PlayerStats.instance.AddExp(expUponDestroy);
-                    var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
-                    var item = currentItem.item;
-                    var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
-                    spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop + 1);
-                    StartCoroutine(CollapseAndDie());
+                    if(droppableItems != null)
+                    {
+                        var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
+                        var item = currentItem.item;
+                        var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
+                        spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop + 1);
+                        StartCoroutine(CollapseAndDie());
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

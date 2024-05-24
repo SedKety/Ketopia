@@ -19,16 +19,16 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public Image[] hearts;
 
     [Header("Healing")]
-    public int recoveryCooldown;
-    public int recoveryAmount;
+    public float recoveryCooldown;
+    public float recoveryAmount;
 
     [Header("Hunger")]
-    public int hungerCooldown;
-    public int hungerAmount;
+    public float hungerCooldown;
+    public float hungerAmount;
 
     [Header("Food")]
-    public int food;
-    public int maxFood;
+    public float food;
+    public float maxFood;
     public void Start()
     {
         instance = this;

@@ -16,7 +16,7 @@ public class NpcScript : MonoBehaviour, IInteractable
         PlayerManager.instance.canInteractWithNpc = false;
         if (UIScript.instance.currentDialogue == null) 
         {
-            if (dialogue.Contains(dialogue[dialogueCounter]))
+            if (dialogueCounter <= dialogue.Count - 1)
             {
                 UIScript.instance.currentDialogue = dialogue[dialogueCounter];
                 UIScript.instance.DisplayDialogue(null);

@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Item/Consumable")]
 public class Consumable : Item
 {
-    public int healthValue;
-    public int foodValue;
+    public float healthValue;
+    public float foodValue;
     public override void OnItemUse()
     {
         PlayerStats.instance.food += foodValue;

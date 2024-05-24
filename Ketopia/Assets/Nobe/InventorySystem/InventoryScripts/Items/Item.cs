@@ -7,6 +7,7 @@ public enum ItemType
     consumable,
     fuel,
     holdable,
+    recipeItem,
 }
 public abstract class Item : ScriptableObject
 {
@@ -22,7 +23,6 @@ public abstract class Item : ScriptableObject
     {
 
     }
-
     public virtual void BurnItem(float _fuelAmount, int quantityMultiplier)
     {
         AirshipManager.instance.currentFuel += _fuelAmount * quantityMultiplier;

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerHarvesting : MonoBehaviour
 {
     public Item heldItem;
-    public GameObject objectInHand;
     public Item fist;
     public int hitTime;
     public int hitRange;
@@ -14,10 +13,6 @@ public class PlayerHarvesting : MonoBehaviour
     public void Start()
     {
         canHit = true;
-        if(objectInHand == null)
-        {
-            objectInHand = gameObject;
-        }
     }
     public void OnItemSwitch(Item item)
     {
@@ -25,10 +20,9 @@ public class PlayerHarvesting : MonoBehaviour
     }
     public void Update()
     {
-        if(heldItem == null)
+        if (heldItem == null)
         {
             heldItem = fist;
-            objectInHand = null;
         }
         if (Input.GetMouseButton(0) & canHit)
         {

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Stone Pickaxe
   m_EditorClassIdentifier: 
   inputItem1: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
-  inputItem1Amount: 10
+  inputItem1Amount: 5
   inputItem2: {fileID: 11400000, guid: 60e49785ed7d6b747a57cb8492cf784a, type: 2}
-  inputItem2Amount: 3
+  inputItem2Amount: 10
   outputItem: {fileID: 9054268519451516410, guid: c7a67583ae35d09408487218653bdd65,
     type: 3}
   outputItemAmount: 1

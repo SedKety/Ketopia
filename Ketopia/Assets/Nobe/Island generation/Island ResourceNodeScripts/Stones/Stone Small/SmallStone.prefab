@@ -136,7 +136,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2903275673653081313, guid: 1e624fa3f6b2a5149978ecfb063b43fa, type: 3}
 --- !u!114 &2021585251481702603
@@ -153,11 +153,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 15
   nodeType: 0
+  nodeStrength: 0
+  expUponDestroy: 0
   droppableItems:
   - item: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb, type: 3}
     maxDrop: 1
     minDrop: 2
   dropPoint: {fileID: 9167180756496733617}
+  dissapearTimer: 0
 --- !u!4 &4092081957375866847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e624fa3f6b2a5149978ecfb063b43fa,

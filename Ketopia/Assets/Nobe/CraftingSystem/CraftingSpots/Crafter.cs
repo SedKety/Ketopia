@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum CrafterType
+{
+    craftingBench,
+    forge,
+    cooker,
+}
 public class Crafter : MonoBehaviour, IInteractable
 {
+    public CrafterType type;
     public List<Recipe> recipes;
     public List<Recipe> possibleRecipe;
     public List<CrafterInput> crafterInputs;
 
     public Transform outputItemSpot;
 
+    public void Start()
+    {
+        RecipeManager.crafters.Add(this);
+    }
     public void CraftItem()
     {
         possibleRecipe.Clear();
@@ -40,7 +51,7 @@ public class Crafter : MonoBehaviour, IInteractable
         if (possibleRecipe.Count == 1)
         {
             Recipe finalRecipe = possibleRecipe[0];
-            Debug.Log($"Matching recipe found: {finalRecipe.outputItem.name}");
+            Debug.Log(finalRecipe.outputItem.name);
 
             if (finalRecipe.inputItem1 == inputItem.item)
             {

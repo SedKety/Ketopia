@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Berry
   itemDescription: Hehe Nom Nom
-  physicalItem: {fileID: 6996174693367336750, guid: cc70fe5b7539e81479a0b3b5aa3993a5,
+  physicalItem: {fileID: 5149027015136937182, guid: cc70fe5b7539e81479a0b3b5aa3993a5,
     type: 3}
   itemSprite: {fileID: 21300000, guid: 1c0b1488f856c3d4686c90cc5ce6a980, type: 3}
   itemId: 0
   itemType: 1
   maxQuantity: 60
-  healthValue: 1
-  foodValue: 2
+  healthValue: 0.05
+  foodValue: 0.1

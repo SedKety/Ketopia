@@ -745,8 +745,8 @@ Transform:
   m_GameObject: {fileID: 1271618986825130563}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.012558937, y: -7.339, z: 0.981}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.012558937, y: -6.87, z: 0.981}
+  m_LocalScale: {x: 1, y: 1, z: 0.74657}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112486694498627873}
@@ -4708,9 +4708,10 @@ MonoBehaviour:
     - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
     - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
     rareIslands:
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
     legendaryIslands:
     - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
     chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
   - name: Desert
     howManyToSpawn: 10
@@ -6042,7 +6043,6 @@ MonoBehaviour:
   airshipMovementEnabled: 0
   airshipUpHeight: 0
   airshipUpHeightMultiplier: 5
-  airshipMovementDirection: {x: 0, y: 0, z: 0}
   groundDrag: 5
   orientation: {fileID: 1112486694498627873}
   airshipPlayerParentScript: {fileID: 2178561787678012570}
@@ -6068,6 +6068,10 @@ MonoBehaviour:
   fuelCost: 0.5
   fuelDecreaseTimer: 1
   camHolderAirship: {fileID: 6578037162560700733}
+  npcs:
+  - {fileID: 4820852245629794673}
+  - {fileID: 1789285837091732889}
+  crafters: []
 --- !u!65 &2592027715777510997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6433,7 +6437,7 @@ PrefabInstance:
     - target: {fileID: 6966585695807869310, guid: c8b3911970712d042a166d994a7f4026,
         type: 3}
       propertyPath: recipes.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6966585695807869310, guid: c8b3911970712d042a166d994a7f4026,
         type: 3}
@@ -10926,13 +10930,19 @@ PrefabInstance:
     - target: {fileID: 5420921991691321450, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5420921991691321450, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 7f980f5b883f96544a3caab162364277,
+        type: 2}
+    - target: {fileID: 5420921991691321450, guid: a089724ea2631dd408dbaea39002a2cc,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 33a39ea1a8e312847aea74b92dfdc4db,
         type: 2}
     - target: {fileID: 6172381598558769165, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
@@ -11492,6 +11502,12 @@ PrefabInstance:
 --- !u!4 &2217012386117667511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5278636586419870511, guid: 11cf6b5175d40754286324091e98dade,
+    type: 3}
+  m_PrefabInstance: {fileID: 6306469972453396888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4820852245629794673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1540810058070812905, guid: 11cf6b5175d40754286324091e98dade,
     type: 3}
   m_PrefabInstance: {fileID: 6306469972453396888}
   m_PrefabAsset: {fileID: 0}

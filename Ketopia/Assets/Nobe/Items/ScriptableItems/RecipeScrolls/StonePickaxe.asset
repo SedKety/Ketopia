@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df01a418f733f2a4385ce0edcdfb2a6e, type: 3}
+  m_Name: StonePickaxe
+  m_EditorClassIdentifier: 
+  itemName: StonePickaxeRecipe
+  itemDescription: 
+  physicalItem: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
+  itemId: 0
+  itemType: 4
+  maxQuantity: 1
+  heldRecipe: {fileID: 11400000, guid: 73c66b05875a25b4b90b59862b6438b4, type: 2}
+  type: 0

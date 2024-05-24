@@ -242,17 +242,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -396.04208
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2205622
+      value: -5.674
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 938.9772
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraHolder: {fileID: 8051293994352819444}
   mainMenu: {fileID: 0}
-  mouseSensitivity: 30
+  mouseSensitivity: 10
   canILook: 0
 --- !u!114 &703719820403647574
 MonoBehaviour:
@@ -430,11 +430,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ad45b0441b85f4f9a89c4e7fb9cc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inGameMenu: {fileID: 0}
   playerState: 1
   player: {fileID: 944603866700853204}
   dropSpot: {fileID: 2598285846868622298}
   playerCamLocation: {fileID: 8051293994352819444}
   playerWheelLocation: {fileID: 0}
+  canInteractWithNpc: 0
+  dialogueLocation: {fileID: 0}
 --- !u!114 &5160098669033299587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +476,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  recoveryCooldown: 0
+  recoveryAmount: 0
+  hungerCooldown: 0
+  hungerAmount: 0
   food: 4
   maxFood: 0
 --- !u!114 &8376558494072018894
@@ -488,7 +495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
-  objectInHand: {fileID: 0}
   fist: {fileID: 11400000, guid: d8960efd15168a5409c954ddac7e759a, type: 2}
   hitTime: 1
   hitRange: 3
@@ -592,5 +598,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  recoveryCooldown: 0
+  recoveryAmount: 0
+  hungerCooldown: 0
+  hungerAmount: 0
   food: 0
   maxFood: 0
