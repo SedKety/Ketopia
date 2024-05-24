@@ -48,7 +48,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -68,6 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnableGameobjects:
   - {fileID: 1399937746414502280, guid: 4986c04fcc3cacb4a81d79483cded8d9, type: 3}
+  - {fileID: 2085910529532410889, guid: 26387463564f29141be0b963cba3a962, type: 3}
+  - {fileID: 245447426679088549, guid: 0a5e29d9ef9021a40ad78a974d2e5a7a, type: 3}
   spawnCollider: {fileID: 6318791746375581677}
   spawnCount: 150
   maxRetries: 10

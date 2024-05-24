@@ -8,16 +8,16 @@ public enum NodeType
     plant,
     everything,
 }
-public abstract class ResourceNode : MonoBehaviour, IDamagable
+public class ResourceNode : MonoBehaviour, IDamagable
 {
-    public int nodeHp;
+    public float nodeHp;
     public NodeType nodeType;
     public int nodeStrength;
     public float expUponDestroy;
     public DroppableItems[] droppableItems;
     public Transform dropPoint;
     public int dissapearTimer;
-    public virtual void IDamagable(int dmgDone, NodeType typeUsed, int toolStrength)
+    public virtual void IDamagable(float dmgDone, NodeType typeUsed, int toolStrength)
     {
         if (toolStrength >= nodeStrength)
         {

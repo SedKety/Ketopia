@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamagable 
 {
-    public void IDamagable(int dmgDone, NodeType typeUsed, int toolStrength);
+    public void IDamagable(float dmgDone, NodeType typeUsed, int toolStrength);
 }

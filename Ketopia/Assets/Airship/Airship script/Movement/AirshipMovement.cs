@@ -77,8 +77,8 @@ public class AirshipMovement : MonoBehaviour
 
     private void HandleRotation()
     {
+        transform.Rotate(0, horizontalInput, 0);
         float rotation = horizontalInput * airshipRotationSpeed;
-        Quaternion rotationValue = Quaternion.Euler(0, rotation, 0);
         steeringWheel.Rotate(0, 0, rotation * -100);
     }
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone Pickaxe
   itemDescription: 
-  physicalItem: {fileID: 9054268519451516410, guid: c7a67583ae35d09408487218653bdd65,
+  physicalItem: {fileID: 4667231905557265630, guid: c7a67583ae35d09408487218653bdd65,
     type: 3}
   itemSprite: {fileID: 21300000, guid: 7a869e82ba187454083610c4fc792216, type: 3}
   itemId: 0

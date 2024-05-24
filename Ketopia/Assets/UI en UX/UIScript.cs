@@ -28,7 +28,7 @@ public class UIScript : MonoBehaviour
     }
     public void DisplayDialogue(string text)
     {
-        if(interacteDialogue = currentDialogue)
+        if (interacteDialogue = currentDialogue)
         {
             if (currentDialogue != null)
             {
@@ -75,6 +75,10 @@ public class UIScript : MonoBehaviour
             PlayerManager.instance.SwitchState(PlayerState.normal);
             PlayerManager.instance.canInteractWithNpc = true;
         }
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Hernia");
     }
 
     public void DisplayText(string text)

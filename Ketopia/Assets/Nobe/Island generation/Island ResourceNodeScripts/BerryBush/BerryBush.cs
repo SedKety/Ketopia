@@ -14,7 +14,7 @@ public class BerryBush : ResourceNode, IDamagable
             berries.Add(transform.GetChild(i).gameObject);
         }
     }
-    public override void IDamagable(int dmgDone, NodeType typeUsed, int toolStrength)
+    public override void IDamagable(float dmgDone, NodeType typeUsed, int toolStrength)
     {
         if (toolStrength >= nodeStrength)
         {
@@ -23,13 +23,13 @@ public class BerryBush : ResourceNode, IDamagable
                 nodeHp -= dmgDone;
                 if (nodeHp <= 0)
                 {
+                    PlayerStats.instance.AddExp(expUponDestroy);
                     var currentItem = droppableItems[Random.Range(0, droppableItems.Length)];
                     var item = currentItem.item;
                     var spawnedObject = Instantiate(item, dropPoint.position, Quaternion.identity);
                     spawnedObject.GetComponent<PhysicalItemScript>().quantity = Random.Range(currentItem.minDrop, currentItem.maxDrop + 1);
                     for (int i = 0; i < berries.Count; i++)
                     {
-                        PlayerStats.instance.AddExp(expUponDestroy);
                         berries[i].transform.parent = transform.parent;
                         var berryScript = berries[i].AddComponent<PhysicalItemScript>();
                         berries[i].AddComponent<Rigidbody>();

@@ -19,10 +19,15 @@ public class InventorySlot : MonoBehaviour
 
     public void OnEnable()
     {
+        quantityText.text = quantity.ToString();
         if (item & itemImage.GetComponent<Image>().sprite == null)
         {
             itemImage.GetComponent<Image>().sprite = item.itemSprite;
         }
+    }
+    public void UpdateQuantityTextValue()
+    {
+        quantityText.text = quantity.ToString();
     }
     public void OnItemAdd(Item item, int quantityToAdd)
     {

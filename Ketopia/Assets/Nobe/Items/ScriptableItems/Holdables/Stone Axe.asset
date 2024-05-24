@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone Axe
   itemDescription: 
-  physicalItem: {fileID: 4511167983845389674, guid: 10d4673a6a9af5b4eb146fa2e7a10ff1,
+  physicalItem: {fileID: 3648186121588255678, guid: 10d4673a6a9af5b4eb146fa2e7a10ff1,
     type: 3}
   itemSprite: {fileID: 0}
   itemId: 0

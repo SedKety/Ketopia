@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public int level;
     public float exp;
     public float expNeededToLevelUp;
+    public float expNeededToLevelUpMultiplier;
 
     [Header("Health/Hearts")]
     public float health;
@@ -34,6 +35,10 @@ public class PlayerStats : MonoBehaviour, IDamagable
         instance = this;
         StartCoroutine(HealthRecovery());
         StartCoroutine(Hunger());
+        if(expNeededToLevelUpMultiplier <= 0)
+        {
+            expNeededToLevelUpMultiplier = 1.25f;
+        }
     }
     public void FixedUpdate()
     {
@@ -64,7 +69,7 @@ public class PlayerStats : MonoBehaviour, IDamagable
             hearts[Mathf.FloorToInt(health)].sprite = halfHeart;
         }
     }
-    public void IDamagable(int dmgDone, NodeType type, int toolStrength)
+    public void IDamagable(float dmgDone, NodeType type, int toolStrength)
     {
         health -= dmgDone;
     }
@@ -75,7 +80,7 @@ public class PlayerStats : MonoBehaviour, IDamagable
         if (exp >= expNeededToLevelUp)
         {
             level++;
-            expNeededToLevelUp *= 1.25f;
+            expNeededToLevelUp *= expNeededToLevelUpMultiplier;
             exp = 0;
             if (leftOverExp >= 0)
             {
