@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 781077480467811550}
   - component: {fileID: 2995314759524729331}
   - component: {fileID: 6526213425136091832}
+  - component: {fileID: 6197142342383155995}
   m_Layer: 2
   m_Name: Spawner
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   spawnCollider: {fileID: 6526213425136091832}
   spawnCount: 15
   maxRetries: 10
+  spawnedObjects: []
   smallStone: {fileID: 3711580104155737445, guid: e2290b2fe71c02244941c7975cb646f2,
     type: 3}
   smallStoneAmount: 200
@@ -80,6 +82,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.0068207, y: 0.067490056, z: 4.9679036}
   m_Center: {x: -0.025245178, y: 1.2239923, z: -0.15896228}
+--- !u!135 &6197142342383155995
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254734137644165559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7533041023642355466
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GrassIsland : ResourceNodeSpawner
 {
-    bool spawnedGrass;
+    public bool spawnedGrass;
     public GameObject grass;
     public int grassCount;
 
     public GameObject[] flowers;
     public int flowerCount;
+    public void Start()
+    {
+        spawnedGrass = false;
+    }
     public override void SpawnObjects()
     {
-        if (spawnedGrass)
+        if (spawnedGrass == true)
         {
             base.SpawnObjects();
         }
@@ -36,11 +40,13 @@ public class GrassIsland : ResourceNodeSpawner
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
                     if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                     {
+                        print(hit.collider.name);
                         if (hit.collider.transform == transform.parent)
                         {
                             GameObject spawnedObject = Instantiate(grass, hit.point, Quaternion.identity);
                             spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                             spawnedObject.transform.parent = transform;
+                            spawnedObjects.Add(spawnedObject);
                             break;
                         }
                     }
@@ -50,12 +56,9 @@ public class GrassIsland : ResourceNodeSpawner
                         break;
                     }
                 }
-                if (i == 0)
-                {
-                    spawnedGrass = true;
-                    SpawnFlowers();
-                }
             }
+            spawnedGrass = true;
+            SpawnFlowers();
         }
     }
     public void SpawnFlowers()
@@ -75,6 +78,7 @@ public class GrassIsland : ResourceNodeSpawner
                         GameObject spawnedObject = Instantiate(flowers[Random.Range(0, flowers.Length)], hit.point, Quaternion.identity);
                         spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                         spawnedObject.transform.parent = transform;
+                        spawnedObjects.Add(spawnedObject);
                         break;
                     }
                 }
@@ -84,10 +88,7 @@ public class GrassIsland : ResourceNodeSpawner
                     break;
                 }
             }
-            if (i == 0)
-            {
-                SpawnObjects();
-            }
         }
+        SpawnObjects();
     }
 }

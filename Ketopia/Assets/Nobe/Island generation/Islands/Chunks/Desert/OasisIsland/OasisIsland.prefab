@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 9167070280110155635}
   - component: {fileID: 3956363292629017064}
   - component: {fileID: 3726156333624325195}
+  - component: {fileID: 6183856988486680067}
   m_Layer: 2
   m_Name: IslandResourceNodeSpawner
   m_TagString: Untagged
@@ -226,6 +227,28 @@ MonoBehaviour:
   spawnCollider: {fileID: 3956363292629017064}
   spawnCount: 100
   maxRetries: 10
+  spawnedObjects: []
+--- !u!135 &6183856988486680067
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231070253789655581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 350
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5235336202638738448
 GameObject:
   m_ObjectHideFlags: 0

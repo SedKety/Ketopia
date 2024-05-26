@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8660705953398328291}
   - component: {fileID: 4595235686699443684}
   - component: {fileID: 6682068879452620377}
+  - component: {fileID: 7560759250628401173}
   m_Layer: 2
   m_Name: IslandResourceNodeSpawner
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   spawnCollider: {fileID: 6682068879452620377}
   spawnCount: 200
   maxRetries: 50
+  spawnedObjects: []
   grass: {fileID: 8529415716665215101, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
   grassCount: 25
   flowers:
@@ -79,6 +81,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 49.36129, y: 5.073393, z: 50.306854}
   m_Center: {x: 1.6847878, y: 19.690037, z: 1.5103645}
+--- !u!135 &7560759250628401173
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393593709795043727}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 350
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4023242564040960720
 PrefabInstance:
   m_ObjectHideFlags: 0

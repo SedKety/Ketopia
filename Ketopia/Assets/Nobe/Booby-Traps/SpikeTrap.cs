@@ -23,19 +23,6 @@ public class SpikeTrap : MonoBehaviour
             StartCoroutine(OnTrap());
         }
     }
-    public IEnumerator MakeTheTrapGoDown()
-    {
-        StopCoroutine(OnTrap());
-        float upTime = 5;
-        float upSpeed = 0;
-        while (upTime < 1f)
-        {
-            upTime += Time.deltaTime * upSpeed;
-            spike.gameObject.transform.position = Vector3.Lerp(spike.gameObject.transform.position, originalSpikePosition, upTime);
-        }
-        spike.canDealDmg = true;
-        yield return null;
-    }
     public IEnumerator OnTrap()
     {
         canBeSteppedOn = false;

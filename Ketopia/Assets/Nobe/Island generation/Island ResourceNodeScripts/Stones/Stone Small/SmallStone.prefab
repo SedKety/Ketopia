@@ -158,9 +158,9 @@ MonoBehaviour:
   droppableItems:
   - item: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb, type: 3}
     maxDrop: 1
-    minDrop: 2
+    minDrop: 1
   dropPoint: {fileID: 9167180756496733617}
-  dissapearTimer: 0
+  dissapearTimer: 1
 --- !u!4 &4092081957375866847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e624fa3f6b2a5149978ecfb063b43fa,

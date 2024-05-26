@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class ResourceNodeSpawner : MonoBehaviour
@@ -7,12 +8,9 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
     public GameObject[] spawnableGameobjects;
     public Collider spawnCollider;
     public int spawnCount;
-    public int maxRetries; 
+    public int maxRetries;
 
-    void Start()
-    {
-        Invoke("SpawnObjects", 0.1f);
-    }
+    public List<GameObject> spawnedObjects;
 
     public virtual void SpawnObjects()
     {
@@ -28,10 +26,11 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
                     if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                     {
-                        if(hit.collider.transform == transform.parent)
+                        if (hit.collider.transform == transform.parent)
                         {
                             GameObject spawnedObject = Instantiate(spawnableGameobjects[Random.Range(0, spawnableGameobjects.Length)], hit.point, Quaternion.identity);
                             spawnedObject.transform.parent = transform;
+                            spawnedObjects.Add(spawnedObject);
                             break;
                         }
                     }
@@ -43,10 +42,11 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
                 }
             }
         }
-        if(transform.childCount <= 10) 
+        if (transform.childCount <= 10)
         {
             Destroy(transform.parent.gameObject);
         }
+        spawnCollider.enabled = false;
     }
     public virtual Vector3 SpawnPosition(Bounds bounds)
     {
@@ -54,5 +54,33 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
         float randomZ = Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z);
 
         return new Vector3(randomX, bounds.min.y, randomZ);
+    }
+
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.GetComponent<PlayerManager>() != null)
+        {
+            if (spawnedObjects.Count <= 0)
+            {
+                SpawnObjects();
+            }
+            else
+            {
+                for (int i = 0; i < spawnedObjects.Count; i++)
+                {
+                    spawnedObjects[i].SetActive(true);
+                }
+            }
+        }
+    }
+    public virtual void OnTriggerExit(Collider other)
+    {
+        if (other.transform.GetComponent<PlayerManager>() != null)
+        {
+            for (int i = 0; i < spawnedObjects.Count; i++)
+            {
+                spawnedObjects[i].SetActive(false);
+            }
+        }
     }
 }

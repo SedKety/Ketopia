@@ -142,11 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 15
   nodeType: 1
-  nodeStrength: 0
+  nodeStrength: 1
   expUponDestroy: 10
   droppableItems:
   - item: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93, type: 3}
-    maxDrop: 3
+    maxDrop: 5
     minDrop: 1
   dropPoint: {fileID: 5089837972740350211}
   dissapearTimer: 2

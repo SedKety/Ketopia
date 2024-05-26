@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17dd64f3d0e30974fbfff2228b5ece61, type: 3}
-  m_Name: Wooden Pickaxe
+  m_Name: Wooden Axe
   m_EditorClassIdentifier: 
   inputItem1: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
-  inputItem1Amount: 5
+  inputItem1Amount: 10
   inputItem2: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
   inputItem2Amount: 10
-  outputItem: {fileID: 4667231905557265630, guid: c7a67583ae35d09408487218653bdd65,
+  outputItem: {fileID: 3648186121588255678, guid: 10d4673a6a9af5b4eb146fa2e7a10ff1,
     type: 3}
   outputItemAmount: 1

@@ -30,6 +30,7 @@ public class StoneIsland : ResourceNodeSpawner
                         GameObject spawnedObject = Instantiate(smallStone, hit.point, Quaternion.identity);
                         spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                         spawnedObject.transform.parent = transform;
+                        spawnedObjects.Add(spawnedObject);
                         break;
                     }
                 }
@@ -55,6 +56,7 @@ public class StoneIsland : ResourceNodeSpawner
                         GameObject spawnedObject = Instantiate(mediumStone, hit.point, Quaternion.identity);
                         spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                         spawnedObject.transform.parent = transform;
+                        spawnedObjects.Add(spawnedObject);
                         break;
                     }
                 }
@@ -80,6 +82,7 @@ public class StoneIsland : ResourceNodeSpawner
                         GameObject spawnedObject = Instantiate(tree, hit.point, Quaternion.identity);
                         spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                         spawnedObject.transform.parent = transform;
+                            spawnedObjects.Add(spawnedObject);
                         break;
                     }
                 }
@@ -106,6 +109,7 @@ public class StoneIsland : ResourceNodeSpawner
                         GameObject spawnedObject = Instantiate(grass, hit.point, Quaternion.identity);
                         spawnedObject.transform.Rotate(0, Random.Range(0, 360), 0);
                         spawnedObject.transform.parent = transform;
+                        spawnedObjects.Add(spawnedObject);
                         break;
                     }
                 }
@@ -117,10 +121,10 @@ public class StoneIsland : ResourceNodeSpawner
             }
 
         }
-        if(transform.childCount <= 10)
+        if (transform.childCount <= 10)
         {
             Destroy(transform.parent.gameObject);
-            print("kneiters");
         }
+        spawnCollider.enabled = false;
     }
 }

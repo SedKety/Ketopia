@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1484159797739319708}
   - component: {fileID: 2815686042662106186}
   - component: {fileID: 8423247131404977898}
+  - component: {fileID: 4220909334387371036}
   m_Layer: 0
   m_Name: MagnetiteSpawner
   m_TagString: Untagged
@@ -73,6 +74,27 @@ MonoBehaviour:
   spawnMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!135 &4220909334387371036
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667816331797905509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 350
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6746455599954727031
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +106,7 @@ GameObject:
   - component: {fileID: 6509629114239615144}
   - component: {fileID: 4754603080296149679}
   - component: {fileID: 7923068584144664496}
+  - component: {fileID: 8927664266171765944}
   m_Layer: 2
   m_Name: IslandResourceNodeSpawner
   m_TagString: Untagged
@@ -123,6 +146,7 @@ MonoBehaviour:
   spawnCollider: {fileID: 7923068584144664496}
   spawnCount: 30
   maxRetries: 50
+  spawnedObjects: []
   grass: {fileID: 3450606834429453027, guid: 9491f5d62cf3ea74bbbfdcd736cc301c, type: 3}
   grassCount: 100
   flowers:
@@ -152,6 +176,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 49.36129, y: 5.073393, z: 50.306854}
   m_Center: {x: 1.6847878, y: 19.690037, z: 1.5103645}
+--- !u!135 &8927664266171765944
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746455599954727031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 350
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4169112167725857078
 PrefabInstance:
   m_ObjectHideFlags: 0

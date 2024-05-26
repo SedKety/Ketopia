@@ -7,8 +7,9 @@ public class BerryBush : ResourceNode, IDamagable
     public List<GameObject> berries;
     public Item berry;
 
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         for (int i = 0; i < transform.childCount; i++)
         {
             berries.Add(transform.GetChild(i).gameObject);

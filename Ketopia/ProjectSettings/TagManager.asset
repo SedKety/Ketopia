@@ -15,6 +15,7 @@ TagManager:
   - Stairs
   - Draggable
   - IgnoreParent
+  - TurnOnChunk
   layers:
   - Default
   - TransparentFX

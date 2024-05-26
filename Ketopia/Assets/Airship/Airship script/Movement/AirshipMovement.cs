@@ -48,7 +48,7 @@ public class AirshipMovement : MonoBehaviour
             SpeedControl();
             HandleRotation();
 
-            Vector3 movementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            Vector3 movementDirection = orientation.forward * verticalInput + orientation.right * 0;
             Vector3 forceToAdd = movementDirection.normalized * airshipMovementSpeed * airshipMovementSpeedMultiplier * 10000f * Time.deltaTime;
             rb.AddForce(forceToAdd, ForceMode.Force);
 

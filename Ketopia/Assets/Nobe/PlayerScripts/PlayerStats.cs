@@ -19,23 +19,29 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public Sprite fullHeart, halfHeart, brokenHeart;
     public Image[] hearts;
 
+    [Header("Food")]
+    public float food;
+    public float maxFood;
+    public Sprite fullFood, halfFood, brokenFood;
+    public Image[] foods;
+
+
     [Header("Healing")]
     public float recoveryCooldown;
     public float recoveryAmount;
+    bool canRecoverHealth;
 
     [Header("Hunger")]
     public float hungerCooldown;
     public float hungerAmount;
+    public float hungerHpDecrease;
 
-    [Header("Food")]
-    public float food;
-    public float maxFood;
     public void Start()
     {
         instance = this;
         StartCoroutine(HealthRecovery());
         StartCoroutine(Hunger());
-        if(expNeededToLevelUpMultiplier <= 0)
+        if (expNeededToLevelUpMultiplier <= 0)
         {
             expNeededToLevelUpMultiplier = 1.25f;
         }
@@ -46,10 +52,21 @@ public class PlayerStats : MonoBehaviour, IDamagable
         {
             health = maxHealth;
         }
+        if(health < 0)
+        {
+            health = 0;
+        }
+
         if (food > maxFood)
         {
             food = maxFood;
         }
+        if (food < 0)
+        {
+            food = 0;
+        }
+
+
         foreach (Image img in hearts)
         {
             if (img != null && brokenHeart != null)
@@ -92,12 +109,31 @@ public class PlayerStats : MonoBehaviour, IDamagable
 
     public IEnumerator HealthRecovery()
     {
-        yield return new WaitForSeconds(recoveryCooldown);
-        health += recoveryAmount;
+        while (true)
+        {
+            if (canRecoverHealth)
+            {
+                yield return new WaitForSeconds(recoveryCooldown);
+                health += recoveryAmount;
+            }
+            yield return null;
+        }
     }
     public IEnumerator Hunger()
     {
-        yield return new WaitForSeconds(hungerCooldown);
-        health -= hungerAmount;
+        while (true)
+        {
+            yield return new WaitForSeconds(hungerCooldown);
+            if (food >= 0)
+            {
+                food -= hungerAmount;
+                canRecoverHealth = true;
+            }
+            else
+            {
+                canRecoverHealth = false;
+                health -= hungerHpDecrease;
+            }
+        }
     }
 }

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfeab61b800416479c5df455f181dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgToDo: 5
+  dmgToDo: 1
   trap: {fileID: 962925153168822777}
   canDealDmg: 1
 --- !u!54 &4589090374424302594

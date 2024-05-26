@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 public class Ticker : MonoBehaviour
 {
-    public static float tickTime = 0.1f;
+    public float tickTime;
 
     public float tickerTimer;
 
