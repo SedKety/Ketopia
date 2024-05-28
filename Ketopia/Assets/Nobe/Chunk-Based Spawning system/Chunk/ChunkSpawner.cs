@@ -13,8 +13,9 @@ public class ChunkSpawner : MonoBehaviour
     public List<chunk> placeHolder;
     public static List<chunk> chunkTypes;
 
-    public static int maxChunkCount = 104;
-    public static int chunkSize = 1000;
+    public static int maxChunkCount = 1040;
+    public static int chunkSize = 500;
+
     public void Start()
     {
         chunkToSpawn = chunk;
@@ -27,49 +28,88 @@ public class ChunkSpawner : MonoBehaviour
     {
         Vector3[] directions = new Vector3[]
         {
-            new Vector3(1, 0, 0), 
-            new Vector3(-1, 0, 0), 
-            new Vector3(0, 0, 1), 
-            new Vector3(0, 0, -1), 
-            new Vector3(1, 0, 1), 
-            new Vector3(1, 0, -1), 
-            new Vector3(-1, 0, 1), 
-            new Vector3(-1, 0, -1) 
+            new Vector3(1, 0, 0),
+            new Vector3(-1, 0, 0),
+            new Vector3(0, 0, 1),
+            new Vector3(0, 0, -1),
+            new Vector3(1, 0, 1),
+            new Vector3(1, 0, -1),
+            new Vector3(-1, 0, 1),
+            new Vector3(-1, 0, -1),
+            new Vector3(1, 1, 0),
+            new Vector3(-1, 1, 0),
+            new Vector3(0, 1, 1),
+            new Vector3(0, 1, -1),
+            new Vector3(1, 1, 1),
+            new Vector3(1, 1, -1),
+            new Vector3(-1, 1, 1),
+            new Vector3(-1, 1, -1),
+            new Vector3(0, 1, 0),
+            new Vector3(1, -1, 0),
+            new Vector3(-1, -1, 0),
+            new Vector3(0, -1, 1),
+            new Vector3(0, -1, -1),
+            new Vector3(1, -1, 1),
+            new Vector3(1, -1, -1),
+            new Vector3(-1, -1, 1),
+            new Vector3(-1, -1, -1),
+            new Vector3(0, -1, 0)
         };
+
+        List<GameObject> newChunks = new List<GameObject>();
+
 
         for (int i = 0; i < directions.Length; i++)
         {
             Vector3 newPosition = pos.position + directions[i] * chunkSize;
             if (!IsChunkAtPosition(newPosition))
             {
-                float chunkTypeAmount = 0;
-                if (chunkTypeAmount <= 0)
+                GameObject newChunk = SpawnNewChunkAtPosition(newPosition);
+                newChunks.Add(newChunk);
+            }
+        }
+
+        foreach (GameObject chunk in newChunks)
+        {
+            for (int i = 0; i < directions.Length; i++)
+            {
+                Vector3 newPosition = chunk.transform.position + directions[i] * chunkSize;
+                if (!IsChunkAtPosition(newPosition))
                 {
-                    chunkTypeAmount = Random.Range(0, 4);
-                    chunkTypeAmount *= 90;
-                    chunk lastChunk = currentChunk;
-                    currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
-                    if(currentChunk.name == lastChunk.name)
-                    {
-                        currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
-                    }
-                }
-                GameObject newChunk = Instantiate(chunkToSpawn, newPosition, Quaternion.identity);
-                chunkTypeAmount -= 1;
-                chunks.Add(newChunk);
-                chunkCounter++;
-                newChunk.GetComponent<ChunkScript>().chunk = currentChunk;
-                newChunk.GetComponent<ChunkScript>().chunkCount = chunkCounter;
-                if (chunks.Count > maxChunkCount)
-                {
-                    for(int j = 0; j < 9; j++)
-                    {
-                        Destroy(chunks[j]);
-                        chunks.Remove(chunks[j]);
-                    }
+                    SpawnNewChunkAtPosition(newPosition);
                 }
             }
         }
+    }
+
+    private static GameObject SpawnNewChunkAtPosition(Vector3 newPosition)
+    {
+        float chunkTypeAmount = 0;
+        if (chunkTypeAmount <= 0)
+        {
+            chunkTypeAmount = Random.Range(500, 1000);
+            chunk lastChunk = currentChunk;
+            currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
+            if (currentChunk.name == lastChunk.name)
+            {
+                currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
+            }
+        }
+        GameObject newChunk = Instantiate(chunkToSpawn, newPosition, Quaternion.identity);
+        chunkTypeAmount -= 1;
+        chunks.Add(newChunk);
+        chunkCounter++;
+        newChunk.GetComponent<ChunkScript>().chunk = currentChunk;
+        newChunk.GetComponent<ChunkScript>().chunkCount = chunkCounter;
+        if (chunks.Count > maxChunkCount)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                Destroy(chunks[j]);
+                chunks.RemoveAt(j);
+            }
+        }
+        return newChunk;
     }
 
     public static bool IsChunkAtPosition(Vector3 position)

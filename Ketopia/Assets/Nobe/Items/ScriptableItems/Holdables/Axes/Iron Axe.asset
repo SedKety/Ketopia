@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0309b6728471ef641b54bd40465b83b3, type: 3}
+  m_Name: Iron Axe
+  m_EditorClassIdentifier: 
+  itemName: Iron Axe
+  itemDescription: 
+  physicalItem: {fileID: 8628121912786204697, guid: 5782e1626b0aa6a48897cf94c4375b94,
+    type: 3}
+  itemSprite: {fileID: 21300000, guid: 2001cdf46110cd748836b3c344bc4d06, type: 3}
+  itemId: 0
+  itemType: 3
+  maxQuantity: 1
+  typeToHarvest: 1
+  dmg: 5
+  hitRange: 1
+  toolStrength: 3

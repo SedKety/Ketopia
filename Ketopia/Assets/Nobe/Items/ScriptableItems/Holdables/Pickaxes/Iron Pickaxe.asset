@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0309b6728471ef641b54bd40465b83b3, type: 3}
+  m_Name: Iron Pickaxe
+  m_EditorClassIdentifier: 
+  itemName: Iron Pickaxe
+  itemDescription: 
+  physicalItem: {fileID: 9193307176871476903, guid: e7b9bda28a0091d469b4aadac75e22fc,
+    type: 3}
+  itemSprite: {fileID: 21300000, guid: b7f1afdeef7e14647bcbce7bbdbc9cb0, type: 3}
+  itemId: 0
+  itemType: 3
+  maxQuantity: 1
+  typeToHarvest: 0
+  dmg: 5
+  hitRange: 1
+  toolStrength: 3

@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableGameobjects:
-  - {fileID: 7702618663686812774, guid: 158a2cf017b58f245b4f930baf5f37dd, type: 3}
+  - {fileID: 579729345182400342, guid: f4021e273dbd49b499a0860594327144, type: 3}
+  - {fileID: 674903738698313099, guid: c2fe28834ef61c4409d905f866726637, type: 3}
+  - {fileID: 1995126331227846761, guid: b6a3fd268a0d99345bd006b3eac6ae68, type: 3}
   - {fileID: 8529415716665215101, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
   spawnCollider: {fileID: 9140447284399613956}
   spawnCount: 50

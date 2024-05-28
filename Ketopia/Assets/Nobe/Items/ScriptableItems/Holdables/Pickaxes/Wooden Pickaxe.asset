@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0309b6728471ef641b54bd40465b83b3, type: 3}
-  m_Name: Stone Axe
+  m_Name: Wooden Pickaxe
   m_EditorClassIdentifier: 
-  itemName: Stone Axe
+  itemName: Wooden Pickaxe
   itemDescription: 
-  physicalItem: {fileID: 3648186121588255678, guid: 10d4673a6a9af5b4eb146fa2e7a10ff1,
+  physicalItem: {fileID: 1520433293849976755, guid: c14813af8d83421478b2ceaca9beef2e,
     type: 3}
   itemSprite: {fileID: 0}
   itemId: 0
   itemType: 3
   maxQuantity: 1
-  typeToHarvest: 1
+  typeToHarvest: 0
   dmg: 5
-  hitRange: 2
-  toolStrength: 2
+  hitRange: 1
+  toolStrength: 1

@@ -40,7 +40,6 @@ public class GrassIsland : ResourceNodeSpawner
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
                     if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
                     {
-                        print(hit.collider.name);
                         if (hit.collider.transform == transform.parent)
                         {
                             GameObject spawnedObject = Instantiate(grass, hit.point, Quaternion.identity);

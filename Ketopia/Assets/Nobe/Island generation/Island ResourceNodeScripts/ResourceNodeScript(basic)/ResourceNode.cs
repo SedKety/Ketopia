@@ -20,7 +20,7 @@ public class ResourceNode : MonoBehaviour, IDamagable
 
     public float shakeDuration = 0.1f;
     public float shakeMagnitude = 0.1f;
-    private Vector3 originalPosition;
+    protected Vector3 originalPosition;
 
    public virtual void Start()
     {

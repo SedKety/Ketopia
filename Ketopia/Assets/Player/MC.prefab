@@ -98,7 +98,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -242,17 +242,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.55
+      value: 0.18940783
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.674
+      value: -5.705701
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.17
+      value: -0.30358565
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -294,6 +294,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_Name
@@ -375,6 +395,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -7822286581474876733}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8968620673536577396}
   m_SourcePrefab: {fileID: 100100000, guid: 68324efdcc3be0e4fa69b1f5e9c15e95, type: 3}
 --- !u!4 &454925799973877102 stripped
 Transform:
@@ -402,11 +426,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   moveSpeed: 2
-  groundDrag: 1
+  groundDrag: 10
   jumpForce: 5
   onGround: 0
   orientation: {fileID: 454925799973877102}
-  animator: {fileID: 0}
+  animator: {fileID: 8968620673536577396}
 --- !u!114 &5031011553808536049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +495,7 @@ MonoBehaviour:
   level: 0
   exp: 0
   expNeededToLevelUp: 100
+  expNeededToLevelUpMultiplier: 0
   health: 4
   maxHealth: 4
   fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
@@ -481,12 +506,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  food: 4
+  maxFood: 0
+  fullFood: {fileID: 0}
+  halfFood: {fileID: 0}
+  brokenFood: {fileID: 0}
+  foods: []
   recoveryCooldown: 0
   recoveryAmount: 0
   hungerCooldown: 0
   hungerAmount: 0
-  food: 4
-  maxFood: 0
+  hungerHpDecrease: 0
 --- !u!114 &8376558494072018894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +623,7 @@ MonoBehaviour:
   level: 0
   exp: 0
   expNeededToLevelUp: 0
+  expNeededToLevelUpMultiplier: 0
   health: 4
   maxHealth: 4
   fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
@@ -603,9 +634,35 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  food: 0
+  maxFood: 0
+  fullFood: {fileID: 0}
+  halfFood: {fileID: 0}
+  brokenFood: {fileID: 0}
+  foods: []
   recoveryCooldown: 0
   recoveryAmount: 0
   hungerCooldown: 0
   hungerAmount: 0
-  food: 0
-  maxFood: 0
+  hungerHpDecrease: 0
+--- !u!95 &8968620673536577396
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 68324efdcc3be0e4fa69b1f5e9c15e95, type: 3}
+  m_Controller: {fileID: 9100000, guid: ba7d4998a647b624d81b6bf132b9f289, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

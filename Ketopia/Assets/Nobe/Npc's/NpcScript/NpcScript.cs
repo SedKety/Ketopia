@@ -11,6 +11,10 @@ public class NpcScript : MonoBehaviour, IInteractable
     public Transform playerLocation;
     public int dialogueCounter;
     public string interactionString;
+    public void Start()
+    {
+        animator.SetBool("ShouldIdle", true);
+    }
     public virtual void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
