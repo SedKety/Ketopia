@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDescription: Its stone
   physicalItem: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb,
     type: 3}
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: f09de38a592541c409812c93b3e5817e, type: 3}
   itemId: 1
   itemType: 0
   maxQuantity: 30

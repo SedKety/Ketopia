@@ -38,6 +38,7 @@ public class InventoryManager : MonoBehaviour
         heldItemImage.gameObject.SetActive(true);
         heldItemImage.sprite = playerHarvesting.heldItem.itemSprite;
         playerHarvesting.heldItem = item;
+        playerHarvesting.OnItemSwitch(item);
     }
 
     public void UnEquipItem()

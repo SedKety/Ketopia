@@ -10,13 +10,25 @@ public class PlayerHarvesting : MonoBehaviour
     public int hitRange;
     public int objectInHandDmg;
     public bool canHit;
+
+    public GameObject hand;
     public void Start()
     {
         canHit = true;
     }
     public void OnItemSwitch(Item item)
     {
+        for (int i = 0; i < hand.transform.childCount; i++)
+        {
+            if (hand.transform.GetChild(i).gameObject)
+            {
+                Destroy(hand.transform.GetChild(i).gameObject);
+            }
+        }
         heldItem = item;
+        var itemInHand = Instantiate(heldItem.physicalItem, hand.transform.position, hand.transform.rotation, hand.transform);
+        Destroy(itemInHand.GetComponent<Rigidbody>());
+        Destroy(itemInHand.GetComponent<PhysicalItemScript>());
     }
     public void Update()
     {

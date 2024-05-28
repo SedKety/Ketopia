@@ -114,6 +114,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnCollisionExit(Collision collision)
     {
-
+        if (collision.collider.CompareTag("Stairs"))
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 }

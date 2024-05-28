@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5265853276103706985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2, y: 0.29525375, z: 0.99487734}
+  m_LocalPosition: {x: 4.5, y: 0.3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 7403497662576470244}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 4.2, y: -0.004746437, z: 1.9948773}
+  m_LocalPosition: {x: 4.55, y: 0, z: 2.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,16 +196,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847a2069445715d4eb3275ab602341af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 577384498426892493}
-  dialogue: {fileID: 11400000, guid: 7f980f5b883f96544a3caab162364277, type: 2}
+  animator: {fileID: 0}
+  dialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dropLocation: {fileID: 7353654034333284383}
   playerLocation: {fileID: 813074464286116486}
---- !u!95 &577384498426892493 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 678499a364508ee4caf54de1d986643c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6442924342212685148}
-  m_PrefabAsset: {fileID: 0}
+  dialogueCounter: 0
+  interactionString: 
 --- !u!4 &6837419645040888503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 678499a364508ee4caf54de1d986643c,

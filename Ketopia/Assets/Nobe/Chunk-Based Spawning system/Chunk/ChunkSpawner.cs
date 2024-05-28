@@ -87,7 +87,7 @@ public class ChunkSpawner : MonoBehaviour
         float chunkTypeAmount = 0;
         if (chunkTypeAmount <= 0)
         {
-            chunkTypeAmount = Random.Range(500, 1000);
+            chunkTypeAmount = Random.Range(750, 1000);
             chunk lastChunk = currentChunk;
             currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
             if (currentChunk.name == lastChunk.name)

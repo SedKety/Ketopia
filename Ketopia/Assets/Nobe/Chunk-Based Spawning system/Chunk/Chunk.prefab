@@ -68,14 +68,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunk:
     name: 
-    howManyToSpawn: 3
+    howManyToSpawn: 1
     chunkColour: {r: 0, g: 0, b: 0, a: 0}
     commonIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
     rareIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
     legendaryIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
     chunkColour1: {r: 0, g: 0, b: 0, a: 0}
   chunkCount: 0
   islandsSpawnPoint: {fileID: 0}

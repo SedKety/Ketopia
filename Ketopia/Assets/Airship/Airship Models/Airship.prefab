@@ -1941,7 +1941,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2107562545909497653}
   - component: {fileID: 3775250564030867313}
-  - component: {fileID: 2809919876382340864}
   - component: {fileID: 8715661487585530674}
   m_Layer: 0
   m_Name: SchipFront.003 (1)
@@ -1972,28 +1971,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3377732714721412092}
-  m_Mesh: {fileID: 3735377804053634132, guid: 0862257a5ff8039409aa8f7ba314308e, type: 3}
---- !u!64 &2809919876382340864
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3377732714721412092}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
   m_Mesh: {fileID: 3735377804053634132, guid: 0862257a5ff8039409aa8f7ba314308e, type: 3}
 --- !u!23 &8715661487585530674
 MeshRenderer:
@@ -4571,7 +4548,7 @@ GameObject:
   - component: {fileID: 4626308965125162838}
   - component: {fileID: 4514251250766569830}
   m_Layer: 0
-  m_Name: IslandSpawner
+  m_Name: ChunkSpawner
   m_TagString: TurnOnChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4689,7 +4666,7 @@ MonoBehaviour:
   chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
   placeHolder:
   - name: Grass
-    howManyToSpawn: 10
+    howManyToSpawn: 1
     chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
     commonIslands:
     - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
@@ -4701,7 +4678,7 @@ MonoBehaviour:
     - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
     chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
   - name: Desert
-    howManyToSpawn: 10
+    howManyToSpawn: 1
     chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
     commonIslands:
     - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
@@ -4711,7 +4688,7 @@ MonoBehaviour:
     - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
     chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
   - name: Stone
-    howManyToSpawn: 10
+    howManyToSpawn: 1
     chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
     commonIslands:
     - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
@@ -4723,7 +4700,7 @@ MonoBehaviour:
     - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
     chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
   - name: Stone/grass
-    howManyToSpawn: 10
+    howManyToSpawn: 1
     chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
     commonIslands:
     - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
@@ -6005,7 +5982,7 @@ MonoBehaviour:
   airshipRotationSpeed: 0.2
   airshipMovementEnabled: 0
   airshipUpHeight: 0
-  airshipUpHeightMultiplier: 5
+  airshipUpHeightMultiplier: 50
   groundDrag: 5
   orientation: {fileID: 1112486694498627873}
   airshipPlayerParentScript: {fileID: 2178561787678012570}
@@ -10911,7 +10888,7 @@ PrefabInstance:
     - target: {fileID: 6837419645040888503, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.842
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 6837419645040888503, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
@@ -10921,7 +10898,7 @@ PrefabInstance:
     - target: {fileID: 6837419645040888503, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.012
+      value: -7.42
       objectReference: {fileID: 0}
     - target: {fileID: 6837419645040888503, guid: a089724ea2631dd408dbaea39002a2cc,
         type: 3}
@@ -11396,7 +11373,7 @@ PrefabInstance:
     - target: {fileID: 2173512631763645011, guid: 11cf6b5175d40754286324091e98dade,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.92
+      value: -4.45
       objectReference: {fileID: 0}
     - target: {fileID: 2173512631763645011, guid: 11cf6b5175d40754286324091e98dade,
         type: 3}
@@ -11448,6 +11425,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snuffles
       objectReference: {fileID: 0}
+    - target: {fileID: 7105983569141789838, guid: 11cf6b5175d40754286324091e98dade,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: e339bccc736f15048a73b35099901d3e, type: 3}
     m_RemovedComponents:
     - {fileID: 1138185926467448799, guid: 11cf6b5175d40754286324091e98dade, type: 3}
     m_RemovedGameObjects: []
