@@ -85,6 +85,11 @@ public class InventorySlot : MonoBehaviour
         quantityText.text = null;
         itemImage.GetComponent<Image>().sprite = null;
         quantity = 0;
+        
+        consumeButton.gameObject.SetActive(false);  
+        dropButton.gameObject.SetActive(false);
+        buildButton.gameObject.SetActive(false);
+        equipButton.gameObject.SetActive(false);
 
     }
     public int CalculateLeftOverSpace(int amountToCalculate)
