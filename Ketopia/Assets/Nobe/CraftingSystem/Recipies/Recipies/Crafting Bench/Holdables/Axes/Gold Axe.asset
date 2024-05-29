@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dd64f3d0e30974fbfff2228b5ece61, type: 3}
   m_Name: Gold Axe
   m_EditorClassIdentifier: 
-  inputItem1: {fileID: 0}
-  inputItem1Amount: 0
-  inputItem2: {fileID: 0}
-  inputItem2Amount: 0
-  outputItem: {fileID: 0}
-  outputItemAmount: 0
+  inputItem1: {fileID: 11400000, guid: e70856a6f3a95264faa6fc425ea6ec0b, type: 2}
+  inputItem1Amount: 1
+  inputItem2: {fileID: 11400000, guid: f91e3a1c78e7034499ef5821c10e6373, type: 2}
+  inputItem2Amount: 5
+  outputItem: {fileID: 4676911482215602258, guid: 232347d2a520ab64eb80bc17884404ae,
+    type: 3}
+  outputItemAmount: 1

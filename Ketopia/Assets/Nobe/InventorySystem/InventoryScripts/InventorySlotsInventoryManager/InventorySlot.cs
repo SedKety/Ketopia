@@ -14,6 +14,7 @@ public class InventorySlot : MonoBehaviour
     public Button dropButton;
     public Button consumeButton;
     public Button equipButton;
+    public Button buildButton;
     public int quantity;
     public int maxQuantity;
 
@@ -84,6 +85,7 @@ public class InventorySlot : MonoBehaviour
         quantityText.text = null;
         itemImage.GetComponent<Image>().sprite = null;
         quantity = 0;
+
     }
     public int CalculateLeftOverSpace(int amountToCalculate)
     {

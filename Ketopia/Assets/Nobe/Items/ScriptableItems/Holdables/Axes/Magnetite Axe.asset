@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   itemDescription: 
-  physicalItem: {fileID: 0}
+  physicalItem: {fileID: 7738287445799277081, guid: 2790a683ee8bd564f97fdf4cbf000ce9,
+    type: 3}
   itemSprite: {fileID: 21300000, guid: 279c73ca7bdda284392837e599a2bb94, type: 3}
   itemId: 0
   itemType: 3

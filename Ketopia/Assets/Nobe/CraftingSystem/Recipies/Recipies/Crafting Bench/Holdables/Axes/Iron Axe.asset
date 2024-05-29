@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dd64f3d0e30974fbfff2228b5ece61, type: 3}
   m_Name: Iron Axe
   m_EditorClassIdentifier: 
-  inputItem1: {fileID: 0}
-  inputItem1Amount: 0
-  inputItem2: {fileID: 0}
-  inputItem2Amount: 0
-  outputItem: {fileID: 0}
-  outputItemAmount: 0
+  inputItem1: {fileID: 11400000, guid: afcfbc1b2efaa7640a325b15f962e9b9, type: 2}
+  inputItem1Amount: 1
+  inputItem2: {fileID: 11400000, guid: dc509c38dacf1c142b99a50aff7fe53c, type: 2}
+  inputItem2Amount: 5
+  outputItem: {fileID: 8628121912786204697, guid: 5782e1626b0aa6a48897cf94c4375b94,
+    type: 3}
+  outputItemAmount: 1

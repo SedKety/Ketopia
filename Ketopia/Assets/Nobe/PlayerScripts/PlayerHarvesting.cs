@@ -12,6 +12,7 @@ public class PlayerHarvesting : MonoBehaviour
     public bool canHit;
 
     public GameObject hand;
+    public Animator animator;
     public void Start()
     {
         canHit = true;
@@ -42,13 +43,14 @@ public class PlayerHarvesting : MonoBehaviour
             if (harvestingTool)
             {
                 canHit = false;
-                StartCoroutine(HitCooldown());
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                StartCoroutine(HitCooldown());
                 if (Physics.Raycast(ray, out hit, hitRange))
                 {
                     if (hit.collider.gameObject.GetComponent<ResourceNode>() != null)
                     {
+                        animator.SetBool("Swing", true);
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
                     }
                 }

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wooden Axe
   m_EditorClassIdentifier: 
   inputItem1: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
-  inputItem1Amount: 10
+  inputItem1Amount: 5
   inputItem2: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
-  inputItem2Amount: 10
-  outputItem: {fileID: 3648186121588255678, guid: 10d4673a6a9af5b4eb146fa2e7a10ff1,
+  inputItem2Amount: 5
+  outputItem: {fileID: 7373202030993564749, guid: 2f2f2b13ed6584f4499da51fcbbcd3b3,
     type: 3}
   outputItemAmount: 1

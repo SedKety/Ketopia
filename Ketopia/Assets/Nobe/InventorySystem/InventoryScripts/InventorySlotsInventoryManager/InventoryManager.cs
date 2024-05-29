@@ -151,32 +151,10 @@ public class InventoryManager : MonoBehaviour
                         inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(true);
                     }
                 }
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().consumeButton.gameObject.SetActive(false);
-                }
                 break;
-
-
-            //NormalMode
-            case InvState.normal:
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(false);
-                }
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().consumeButton.gameObject.SetActive(false);
-                }
-                break;
-
 
             //ConsumeMode
             case InvState.consume:
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(false);
-                }
                 for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
                 {
                     if (inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().item != null)
@@ -194,17 +172,6 @@ public class InventoryManager : MonoBehaviour
                 if (playerHarvesting.heldItem != null & playerHarvesting.heldItem != playerHarvesting.fist)
                 {
                     unequipHeldItemButton.gameObject.SetActive(true);
-                }
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().dropButton.gameObject.SetActive(false);
-                }
-                for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
-                {
-                    if (inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().item != null)
-                    {
-                        inventorySlotsManager.transform.GetChild(i).GetComponent<InventorySlot>().consumeButton.gameObject.SetActive(false);
-                    }
                 }
                 for (int i = 0; i < inventorySlotsManager.transform.childCount; i++)
                 {
