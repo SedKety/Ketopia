@@ -59,7 +59,7 @@ public class InventorySlot : MonoBehaviour
     {
         if(item != null)
         {
-            if (item.itemType == ItemType.holdable & quantity == 1)
+            if (item.itemType == ItemType.holdable)
             {
                 InventoryManager.instance.EquipItem(item);
                 equipButton.gameObject.SetActive(false);

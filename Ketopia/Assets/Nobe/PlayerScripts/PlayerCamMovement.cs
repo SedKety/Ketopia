@@ -9,6 +9,12 @@ public class PlayerCamMovement : MonoBehaviour
     public GameObject mainMenu;
     public float mouseSensitivity;
     public bool canILook;
+    public float rotationSpeed;
+    public float positionSpeed;
+
+    public bool shouldFollow;
+    public Transform player;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -16,20 +22,34 @@ public class PlayerCamMovement : MonoBehaviour
         cameraHolder = Camera.main.gameObject.transform;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (canILook)
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-            transform.Rotate(Input.GetAxis("Mouse X") * mouseSensitivity * Vector3.up);
-            verticalLookRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+            transform.Rotate(Input.GetAxis("Mouse X") * mouseSensitivity * Vector3.up * Time.deltaTime);
+            verticalLookRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
             verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
             cameraHolder.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
         }
-        else if (!canILook)
+        else if (canILook == false & shouldFollow == false)
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+        if (shouldFollow)
+        {
+            RotateAndMoveTowardsTarget(player);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    public void RotateAndMoveTowardsTarget(Transform target)
+    {
+        Quaternion targetRotation = target.rotation;
+        cameraHolder.rotation = Quaternion.Lerp(cameraHolder.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+        cameraHolder.position = AirshipManager.instance.camHolderAirship.position;
     }
 }

@@ -74,6 +74,7 @@ MonoBehaviour:
   spawnCount: 50
   maxRetries: 15
   spawnedObjects: []
+  spawnedGrass: 0
   grass: {fileID: 3450606834429453027, guid: 9491f5d62cf3ea74bbbfdcd736cc301c, type: 3}
   grassCount: 200
   flowers:
@@ -101,7 +102,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 350
+  m_Radius: 700
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8389578836795607161
 PrefabInstance:

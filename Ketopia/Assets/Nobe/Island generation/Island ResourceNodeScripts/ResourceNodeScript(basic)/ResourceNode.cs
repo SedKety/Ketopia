@@ -18,8 +18,8 @@ public class ResourceNode : MonoBehaviour, IDamagable
     public Transform dropPoint;
     public int dissapearTimer;
 
-    public float shakeDuration = 0.1f;
-    public float shakeMagnitude = 0.1f;
+    public float shakeDuration;
+    public float shakeMagnitude;
     protected Vector3 originalPosition;
 
    public virtual void Start()
@@ -54,6 +54,7 @@ public class ResourceNode : MonoBehaviour, IDamagable
             }
         }
     }
+
     private IEnumerator Shake()
     {
         float elapsed = 0.0f;
@@ -72,14 +73,17 @@ public class ResourceNode : MonoBehaviour, IDamagable
         transform.localPosition = originalPosition;
     }
 
-
     public IEnumerator CollapseAndDie()
     {
         var collider = GetComponent<MeshCollider>();
         collider.convex = true;
         collider.isTrigger = true;
-        gameObject.AddComponent<Rigidbody>();
+        if(gameObject.GetComponent<Rigidbody>() == null)
+        {
+            gameObject.AddComponent<Rigidbody>();
+        }
         yield return new WaitForSeconds(dissapearTimer);
+        Destroy(gameObject);
     }
 
     [System.Serializable]

@@ -36,6 +36,16 @@ public class PlayerHarvesting : MonoBehaviour
         if (heldItem == null)
         {
             heldItem = fist;
+            if(hand.transform.childCount != 0)
+            {
+                for (int i = 0; i < hand.transform.childCount; i++)
+                {
+                    if (hand.transform.GetChild(i).gameObject)
+                    {
+                        Destroy(hand.transform.GetChild(i).gameObject);
+                    }
+                }
+            }
         }
         if (Input.GetMouseButton(0) & canHit)
         {
@@ -48,7 +58,7 @@ public class PlayerHarvesting : MonoBehaviour
                 StartCoroutine(HitCooldown());
                 if (Physics.Raycast(ray, out hit, hitRange))
                 {
-                    if (hit.collider.gameObject.GetComponent<ResourceNode>() != null)
+                    if (hit.collider.gameObject.GetComponent<IDamagable>() != null)
                     {
                         animator.SetBool("Swing", true);
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);

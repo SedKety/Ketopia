@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 15
   nodeType: 1
-  nodeStrength: 1
+  nodeStrength: 0
   expUponDestroy: 10
   droppableItems:
   - item: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93, type: 3}
@@ -150,6 +150,8 @@ MonoBehaviour:
     minDrop: 1
   dropPoint: {fileID: 5089837972740350211}
   dissapearTimer: 2
+  shakeDuration: 0.5
+  shakeMagnitude: 1
 --- !u!64 &-2297605453486228389
 MeshCollider:
   m_ObjectHideFlags: 0

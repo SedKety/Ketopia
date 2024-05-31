@@ -90,13 +90,6 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Airship"))
-        {
-            transform.parent = other.transform;
-        }
-    }
 
     private void OnTriggerExit(Collider other)
     {

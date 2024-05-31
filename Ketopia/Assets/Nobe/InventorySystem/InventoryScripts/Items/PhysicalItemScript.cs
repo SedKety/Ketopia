@@ -13,7 +13,6 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
             Destroy(gameObject);
         }
     }
-
     public void UpdateQuantity(int amountToRemove)
     {
         quantity -= amountToRemove;

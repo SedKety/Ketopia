@@ -77,7 +77,7 @@ public class AirshipMovement : MonoBehaviour
 
     private void HandleRotation()
     {
-        transform.Rotate(0, horizontalInput, 0);
+        transform.Rotate(0, horizontalInput * airshipRotationSpeed, 0);
         float rotation = horizontalInput * airshipRotationSpeed;
         steeringWheel.Rotate(0, 0, rotation * -100);
     }

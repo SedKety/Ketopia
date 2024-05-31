@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeHp: 5
-  nodeType: 2
+  nodeType: 1
   nodeStrength: 0
   expUponDestroy: 5
   droppableItems:
@@ -740,6 +740,8 @@ MonoBehaviour:
     minDrop: 1
   dropPoint: {fileID: 9013183672517825223}
   dissapearTimer: 1
+  shakeDuration: 0.1
+  shakeMagnitude: 0.1
   berries: []
   berry: {fileID: 11400000, guid: 169cf72a51ad4cc4e93df61199a67e53, type: 2}
 --- !u!64 &4683251936996283587

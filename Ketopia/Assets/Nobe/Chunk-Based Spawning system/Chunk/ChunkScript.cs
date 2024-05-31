@@ -85,7 +85,7 @@ public class ChunkScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Airship"))
+        if (other.CompareTag("Player"))
         {
             if(hasBeenTriggered == false)
             {

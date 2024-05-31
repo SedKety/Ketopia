@@ -17,17 +17,24 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     public Transform dropSpot;
     public Transform playerCamLocation;
+    public PlayerCamMovement playerCamMovement;
     public Transform playerWheelLocation;
+    public GameObject cursor;
 
     public bool canInteractWithNpc;
 
     public Transform dialogueLocation;
+
+    public float playerToBoatDistance;
+    public float distanceDamage;
     public void Start()
     {
         playerWheelLocation = GameObject.FindGameObjectWithTag("PlayerSteeringWheelPlacement").transform;
         instance = this;
         playerState = PlayerState.normal;
         player = gameObject;
+
+        Ticker.OnTickAction += OnTick;
     }
     public void Update()
     {
@@ -40,8 +47,14 @@ public class PlayerManager : MonoBehaviour
         {
             transform.position = playerWheelLocation.position;
             transform.rotation = playerWheelLocation.rotation;
-            Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
-            Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
+        }
+    }
+
+    public void OnTick()
+    {
+        if(Vector3.Distance(transform.position, AirshipManager.instance.transform.position) >= playerToBoatDistance)
+        {
+            PlayerStats.instance.IDamagable(distanceDamage, NodeType.everything, 0);
         }
     }
     public void SwitchState(PlayerState newState)
@@ -60,6 +73,12 @@ public class PlayerManager : MonoBehaviour
                 UIScript.instance.inventory.SetActive(false);
                 UIScript.instance.dialogue.SetActive(false);
                 AirshipMovement.instance.EnableMovement();
+                Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
+                Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
+                playerCamMovement.shouldFollow = true;
+                Camera.main.transform.parent = null;
+                cursor.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
                 break;
 
             case PlayerState.normal:
@@ -71,6 +90,10 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<Rigidbody>().useGravity = true;
                 UIScript.instance.dialogue.SetActive(false);
                 UIScript.instance.inventory.SetActive(false);
+                playerCamMovement.shouldFollow = false;
+                Camera.main.transform.parent = gameObject.transform;
+                cursor.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
                 break;
 
             case PlayerState.inventory:

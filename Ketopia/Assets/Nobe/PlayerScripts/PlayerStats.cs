@@ -85,6 +85,25 @@ public class PlayerStats : MonoBehaviour, IDamagable
         {
             hearts[Mathf.FloorToInt(health)].sprite = halfHeart;
         }
+        
+        foreach (Image img in foods)
+        {
+            if (img != null && brokenFood != null)
+            {
+                img.sprite = brokenFood;
+            }
+        }
+        for (int i = 0; i < Mathf.FloorToInt(food); i++)
+        {
+            if (foods[i] != null & fullFood != null)
+            {
+                foods[i].sprite = fullFood;
+            }
+        }
+        if (food % 1 != 0)
+        {
+            foods[Mathf.FloorToInt(food)].sprite = halfFood;
+        }
     }
     public void IDamagable(float dmgDone, NodeType type, int toolStrength)
     {

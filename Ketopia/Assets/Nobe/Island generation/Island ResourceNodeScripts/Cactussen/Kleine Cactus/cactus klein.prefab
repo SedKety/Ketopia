@@ -129,9 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeHp: 5
-  nodeType: 2
+  nodeType: 1
   nodeStrength: 0
   expUponDestroy: 5
   droppableItems: []
   dropPoint: {fileID: 1709525350326134451}
   dissapearTimer: 1
+  shakeDuration: 0.5
+  shakeMagnitude: 0.1

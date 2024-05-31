@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 4079284508370886832}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.898, z: 0.012}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -200,6 +200,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7518627255525472476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4849136413773991845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7426225525213365011}
+  - component: {fileID: 7720153743707947019}
+  m_Layer: 0
+  m_Name: ChunkSpawner
+  m_TagString: TurnOnChunk
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7426225525213365011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849136413773991845}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.55, y: 5.674, z: -0.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 454925799973877102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7720153743707947019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849136413773991845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2000, y: 2000, z: 2000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7779281521872195767
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,13 +277,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7779281521872195767}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.40557975, y: 0.579228, z: 0.40557975, w: 0.579228}
+  m_LocalRotation: {x: -0.3535534, y: 0.61237246, z: 0.3535534, w: 0.61237246}
   m_LocalPosition: {x: 0.0174, y: 0.0294, z: 0.0351}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7675342260993999628}
-  m_LocalEulerAnglesHint: {x: -70, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -60, y: 90, z: 0}
 --- !u!1 &8218567328093156195
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 8218567328093156195}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.898, z: 0.012}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,17 +326,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.18940783
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.705701
+      value: -5.674
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.30358565
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -385,6 +438,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8051293994352819444}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7426225525213365011}
     - targetCorrespondingSourceObject: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
@@ -417,6 +474,14 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2829402151834619672}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7822286581474876733}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8423137525398540999}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -426,10 +491,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5210993747234368582}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -7822286581474876733}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
@@ -461,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   moveSpeed: 2
-  groundDrag: 10
+  groundDrag: 0
   jumpForce: 5
   onGround: 0
   orientation: {fileID: 454925799973877102}
@@ -482,6 +543,9 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   mouseSensitivity: 10
   canILook: 0
+  shipCam: 0
+  target: {fileID: 454925799973877102}
+  smoothTime: 0.25
 --- !u!114 &703719820403647574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,9 +563,12 @@ MonoBehaviour:
   player: {fileID: 944603866700853204}
   dropSpot: {fileID: 2598285846868622298}
   playerCamLocation: {fileID: 8051293994352819444}
+  playerCamMovement: {fileID: 5031011553808536049}
   playerWheelLocation: {fileID: 0}
   canInteractWithNpc: 0
   dialogueLocation: {fileID: 0}
+  playerToBoatDistance: 250
+  distanceDamage: 0.25
 --- !u!114 &5160098669033299587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,16 +609,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   food: 4
-  maxFood: 0
+  maxFood: 4
   fullFood: {fileID: 0}
   halfFood: {fileID: 0}
   brokenFood: {fileID: 0}
   foods: []
-  recoveryCooldown: 0
-  recoveryAmount: 0
-  hungerCooldown: 0
-  hungerAmount: 0
-  hungerHpDecrease: 0
+  recoveryCooldown: 1
+  recoveryAmount: 0.05
+  hungerCooldown: 1
+  hungerAmount: 0.005
+  hungerHpDecrease: 1
 --- !u!114 &8376558494072018894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +638,107 @@ MonoBehaviour:
   objectInHandDmg: 5
   canHit: 1
   hand: {fileID: 7779281521872195767}
-  animator: {fileID: 0}
+  animator: {fileID: 8968620673536577396}
+--- !u!114 &2829402151834619672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc35a453e8be6e8469257d572c41faf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
+  placeHolder:
+  - name: Grass
+    howManyToSpawn: 1
+    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
+    legendaryIslands:
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
+    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
+  - name: Desert
+    howManyToSpawn: 1
+    chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    rareIslands:
+    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    legendaryIslands:
+    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
+    chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
+  - name: Stone
+    howManyToSpawn: 1
+    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    commonIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    rareIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    legendaryIslands:
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
+  - name: Stone/grass
+    howManyToSpawn: 1
+    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    commonIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    legendaryIslands:
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
+--- !u!114 &-7822286581474876733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63b0e350c9e36144bc00231fac14208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+  expNeededToLevelUp: 0
+  expNeededToLevelUpMultiplier: 0
+  health: 4
+  maxHealth: 4
+  fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
+  halfHeart: {fileID: 21300000, guid: 05b32ca8343b29642b7f3af2be24f475, type: 3}
+  brokenHeart: {fileID: 21300000, guid: 85c57aae474891247a5e530398649871, type: 3}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  food: 0
+  maxFood: 0
+  fullFood: {fileID: 0}
+  halfFood: {fileID: 0}
+  brokenFood: {fileID: 0}
+  foods: []
+  recoveryCooldown: 0
+  recoveryAmount: 0
+  hungerCooldown: 0
+  hungerAmount: 0
+  hungerHpDecrease: 0
 --- !u!54 &8423137525398540999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -645,43 +812,6 @@ CapsuleCollider:
   m_Height: 1.0749345
   m_Direction: 1
   m_Center: {x: 0, y: 0.6007695, z: 0.099243164}
---- !u!114 &-7822286581474876733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944603866700853204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63b0e350c9e36144bc00231fac14208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  exp: 0
-  expNeededToLevelUp: 0
-  expNeededToLevelUpMultiplier: 0
-  health: 4
-  maxHealth: 4
-  fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
-  halfHeart: {fileID: 21300000, guid: 05b32ca8343b29642b7f3af2be24f475, type: 3}
-  brokenHeart: {fileID: 21300000, guid: 85c57aae474891247a5e530398649871, type: 3}
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  food: 0
-  maxFood: 0
-  fullFood: {fileID: 0}
-  halfFood: {fileID: 0}
-  brokenFood: {fileID: 0}
-  foods: []
-  recoveryCooldown: 0
-  recoveryAmount: 0
-  hungerCooldown: 0
-  hungerAmount: 0
-  hungerHpDecrease: 0
 --- !u!95 &8968620673536577396
 Animator:
   serializedVersion: 5
