@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public bool canMove;
     public float moveSpeed;
+    public float sprintSpeed;
     public float groundDrag;
     public float jumpForce;
 
@@ -20,7 +21,12 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
     public Animator animator;
-    //public Animator animator;
+    public float ladderSpeed;
+
+    public bool isSprinting;
+    public float lastWPressTime;
+    public float doubleTapTime;
+
     private void Start()
     {
         canMove = true;
@@ -29,37 +35,39 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         animator = GetComponent<Animator>();
     }
+
     private void FixedUpdate()
     {
-        if(canMove)
+        if (canMove)
         {
-            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-            rb.AddForce(moveDirection.normalized * moveSpeed * 1000f * Time.deltaTime, ForceMode.Force);
+            MovePlayer();
         }
     }
+
     private void Update()
     {
         MyInput();
         SpeedControl();
 
-        if (onGround == true)
+        if (onGround)
         {
             rb.drag = groundDrag;
         }
-
-        if (onGround == false)
+        else
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
             rb.drag = 0;
         }
+
+        CheckSprinting();
     }
+
     private void MyInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        animator.SetFloat("Movement", verticalInput);
         verticalInput = Input.GetAxis("Vertical");
+        animator.SetFloat("Movement", verticalInput + horizontalInput);
 
-        if (Input.GetButton("Jump") && onGround && canMove)
+        if (Input.GetButtonDown("Jump") && onGround && canMove)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
@@ -75,21 +83,74 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    private void MovePlayer()
+    {
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        float currentSpeed = isSprinting ? sprintSpeed : moveSpeed;
+        Vector3 targetVelocity = moveDirection.normalized * currentSpeed;
+        targetVelocity.y = rb.velocity.y;
+
+        if (horizontalInput == 0 && verticalInput == 0)
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        }
+        else
+        {
+            rb.velocity = targetVelocity;
+        }
+    }
+
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > (isSprinting ? sprintSpeed : moveSpeed))
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            Vector3 limitedVel = flatVel.normalized * (isSprinting ? sprintSpeed : moveSpeed);
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Stairs"))
+        {
+            rb.velocity = new Vector3(0, verticalInput * ladderSpeed, 0);
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Stairs"))
+        {
+            rb.velocity = Vector3.zero;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
     {
         onGround = true;
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<ResourceNodeSpawner>() != null)
+        {
+            var spawner = other.GetComponent<ResourceNodeSpawner>();
+            if (spawner.spawnedObjects.Count <= 0)
+            {
+                spawner.SpawnObjects();
+            }
+            else
+            {
+                foreach (var obj in spawner.spawnedObjects)
+                {
+                    obj.SetActive(true);
+                }
+            }
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -97,19 +158,30 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.parent = null;
         }
-    }
-    public void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.CompareTag("Stairs"))
+
+        if (other.GetComponent<ResourceNodeSpawner>() != null)
         {
-            rb.velocity = new Vector3(0, verticalInput, 0);
+            foreach (var obj in other.GetComponent<ResourceNodeSpawner>().spawnedObjects)
+            {
+                obj.SetActive(false);
+            }
         }
     }
-    public void OnCollisionExit(Collision collision)
+
+    private void CheckSprinting()
     {
-        if (collision.collider.CompareTag("Stairs"))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector3(0, 0, 0);
+            if (Time.time - lastWPressTime < doubleTapTime)
+            {
+                isSprinting = true;
+            }
+            lastWPressTime = Time.time;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            isSprinting = false;
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2815686042662106186}
   - component: {fileID: 8423247131404977898}
   - component: {fileID: 4220909334387371036}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagnetiteSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

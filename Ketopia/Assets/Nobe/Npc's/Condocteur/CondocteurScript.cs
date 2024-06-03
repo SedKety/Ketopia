@@ -7,6 +7,7 @@ public class CondocteurScript : NpcScript, IInteractable
     public override void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
+        animator.SetBool("Wavey", true);
         if (UIScript.instance.currentDialogue == null)
         {
             if (dialogueCounter <= dialogue.Count - 1)

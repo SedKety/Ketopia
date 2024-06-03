@@ -18,6 +18,7 @@ public class NpcScript : MonoBehaviour, IInteractable
     public virtual void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
+        animator.SetBool("Wavey", true);
         if (UIScript.instance.currentDialogue == null) 
         {
             if (dialogueCounter <= dialogue.Count - 1)
@@ -35,21 +36,6 @@ public class NpcScript : MonoBehaviour, IInteractable
                 PlayerManager.instance.SwitchState(PlayerState.dialogue);
                 UIScript.instance.DisplayText("I have nothing to say right now");
             }
-        }
-    }
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.GetComponent<PlayerManager>() != null)
-        {
-            print(other.gameObject.GetComponent<PlayerManager>().gameObject.name);
-            animator.SetBool("ShouldIdle", true);
-        }
-    }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<PlayerManager>() != null)
-        {
-            animator.SetBool("ShouldIdle", false);
         }
     }
 }

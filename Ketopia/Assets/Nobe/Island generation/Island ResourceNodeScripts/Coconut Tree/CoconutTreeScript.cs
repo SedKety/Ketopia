@@ -32,10 +32,8 @@ public class CoconutTreeScript : BerryBush
     {
         for (int i = 0; i < berries.Count; i++)
         {
-            print("gudshit");
             if (berries[i] != null)
             {
-                print("gudshit2");
                 var spawnedCoconut = Instantiate(coconut, berries[i].transform.position, Quaternion.identity);
                 spawnedCoconut.GetComponent<PhysicalItemScript>().quantity = 1;
                 Destroy(berries[i]);

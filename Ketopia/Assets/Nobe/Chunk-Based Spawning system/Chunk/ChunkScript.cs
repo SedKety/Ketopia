@@ -32,6 +32,7 @@ public class ChunkScript : MonoBehaviour
         {
             StartSpawningIslands();
         }
+        chunk = ChunkSpawner.currentChunk;
     }
 
     private void StartSpawningIslands()
@@ -69,7 +70,7 @@ public class ChunkScript : MonoBehaviour
             }
 
             islandsSpawnedThisCycle++;
-            yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

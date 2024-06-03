@@ -203,9 +203,21 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Jump
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Land
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: Base Layer
+    m_Name: Walking
     m_StateMachine: {fileID: 736673115237158699}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -219,7 +231,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Mining Layer
     m_StateMachine: {fileID: 1011677890361115353}
-    m_Mask: {fileID: 31900000, guid: cfa43e8e3e81b2f4a8a2583ae4b1ac24, type: 2}
+    m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 1
@@ -235,7 +247,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Base Layer
+  m_Name: Walking
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8953045731133953363}

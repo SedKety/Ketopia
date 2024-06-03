@@ -78,20 +78,19 @@ public class PlayerManager : MonoBehaviour
                 playerCamMovement.shouldFollow = true;
                 Camera.main.transform.parent = null;
                 cursor.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
                 break;
 
             case PlayerState.normal:
                 player.GetComponent<PlayerMovement>().canMove = true;
                 player.GetComponent<PlayerCamMovement>().canILook = true;
-                Camera.main.transform.position = playerCamLocation.position;
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 player.GetComponent<Collider>().enabled = true;
                 player.GetComponent<Rigidbody>().useGravity = true;
                 UIScript.instance.dialogue.SetActive(false);
                 UIScript.instance.inventory.SetActive(false);
                 playerCamMovement.shouldFollow = false;
-                Camera.main.transform.parent = gameObject.transform;
+                Camera.main.transform.parent = playerCamLocation;
+                Camera.main.transform.position = playerCamLocation.position;
                 cursor.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 break;

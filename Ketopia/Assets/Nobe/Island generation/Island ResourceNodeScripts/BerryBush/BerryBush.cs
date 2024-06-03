@@ -35,7 +35,10 @@ public class BerryBush : ResourceNode, IDamagable
                     {
                         berries[i].transform.parent = transform.parent;
                         var berryScript = berries[i].AddComponent<PhysicalItemScript>();
-                        berries[i].AddComponent<Rigidbody>();
+                        if (berries[i].GetComponent<Rigidbody>() == null)
+                        {
+                            berries[i].AddComponent<Rigidbody>();
+                        }
                         berryScript.quantity = 1;
                         berryScript.item = berry;
                     }

@@ -10,7 +10,6 @@ public class PlayerCamMovement : MonoBehaviour
     public float mouseSensitivity;
     public bool canILook;
     public float rotationSpeed;
-    public float positionSpeed;
 
     public bool shouldFollow;
     public Transform player;

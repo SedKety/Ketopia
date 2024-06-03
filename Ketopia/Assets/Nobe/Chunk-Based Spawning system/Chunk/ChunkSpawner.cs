@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -87,7 +86,7 @@ public class ChunkSpawner : MonoBehaviour
         float chunkTypeAmount = 0;
         if (chunkTypeAmount <= 0)
         {
-            chunkTypeAmount = Random.Range(750, 1000);
+            chunkTypeAmount = Random.Range(100, 500);
             chunk lastChunk = currentChunk;
             currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
             if (currentChunk.name == lastChunk.name)
@@ -99,8 +98,8 @@ public class ChunkSpawner : MonoBehaviour
         chunkTypeAmount -= 1;
         chunks.Add(newChunk);
         chunkCounter++;
-        newChunk.GetComponent<ChunkScript>().chunk = currentChunk;
         newChunk.GetComponent<ChunkScript>().chunkCount = chunkCounter;
+        newChunk.GetComponent<ChunkScript>().chunk = currentChunk;
         if (chunks.Count > maxChunkCount)
         {
             for (int j = 0; j < 9; j++)

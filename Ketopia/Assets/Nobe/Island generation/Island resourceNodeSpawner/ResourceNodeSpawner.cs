@@ -55,32 +55,4 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
 
         return new Vector3(randomX, bounds.min.y, randomZ);
     }
-
-    public virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.GetComponent<PlayerManager>() != null)
-        {
-            if (spawnedObjects.Count <= 0)
-            {
-                SpawnObjects();
-            }
-            else
-            {
-                for (int i = 0; i < spawnedObjects.Count; i++)
-                {
-                    spawnedObjects[i].SetActive(true);
-                }
-            }
-        }
-    }
-    public virtual void OnTriggerExit(Collider other)
-    {
-        if (other.transform.GetComponent<PlayerManager>() != null)
-        {
-            for (int i = 0; i < spawnedObjects.Count; i++)
-            {
-                spawnedObjects[i].SetActive(false);
-            }
-        }
-    }
 }

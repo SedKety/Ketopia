@@ -151,7 +151,7 @@ MonoBehaviour:
   dropPoint: {fileID: 5089837972740350211}
   dissapearTimer: 2
   shakeDuration: 0.5
-  shakeMagnitude: 1
+  shakeMagnitude: 0.25
 --- !u!64 &-2297605453486228389
 MeshCollider:
   m_ObjectHideFlags: 0

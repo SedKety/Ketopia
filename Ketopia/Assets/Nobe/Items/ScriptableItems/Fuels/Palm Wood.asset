@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab984023c85fe14d8ad5853429c99a0, type: 3}
+  m_Name: Palm Wood
+  m_EditorClassIdentifier: 
+  itemName: Palm Wood
+  itemDescription: 
+  physicalItem: {fileID: 3722143927206145614, guid: a371deced5f8e334ebd2f2e3fbc4d2f3,
+    type: 3}
+  itemSprite: {fileID: 0}
+  itemId: 0
+  itemType: 2
+  maxQuantity: 30
+  fuelAmount: 4

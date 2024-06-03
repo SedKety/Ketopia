@@ -58,13 +58,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4079284508370886832}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0.1}
+  m_LocalRotation: {x: -0, y: -5.820767e-11, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5415437477280435964}
-  m_Father: {fileID: 454925799973877102}
+  m_Father: {fileID: 8051293994352819444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1213578619876649753
 Camera:
@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 4800812540052131658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 7426225525213365011}
   - component: {fileID: 7720153743707947019}
   m_Layer: 0
-  m_Name: ChunkSpawner
+  m_Name: TurnOnChunk
   m_TagString: TurnOnChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 4849136413773991845}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.55, y: 5.674, z: -0.17}
+  m_LocalPosition: {x: 1.55, y: 5.674, z: 0.2716934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,6 +253,123 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2000, y: 2000, z: 2000}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6385026163971414584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373670204517919819}
+  - component: {fileID: 618668235439261406}
+  - component: {fileID: 5330394703919046200}
+  m_Layer: 2
+  m_Name: ChunkSpawner
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373670204517919819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385026163971414584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 454925799973877102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &618668235439261406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385026163971414584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc35a453e8be6e8469257d572c41faf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
+  placeHolder:
+  - name: Grass
+    howManyToSpawn: 5
+    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
+    legendaryIslands:
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
+    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
+  - name: Desert
+    howManyToSpawn: 5
+    chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    rareIslands:
+    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    legendaryIslands:
+    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
+    chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
+  - name: Stone
+    howManyToSpawn: 5
+    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    commonIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    rareIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    legendaryIslands:
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
+  - name: Stone/grass
+    howManyToSpawn: 5
+    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    commonIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    legendaryIslands:
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
+--- !u!65 &5330394703919046200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385026163971414584}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &7779281521872195767
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,12 +425,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8218567328093156195}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0.1}
+  m_LocalRotation: {x: -0.002130638, y: -0.00060680223, z: -0.0000049696296, w: 0.99999756}
+  m_LocalPosition: {x: -0.011, y: 0.107, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 454925799973877102}
+  m_Children:
+  - {fileID: 7518627255525472476}
+  m_Father: {fileID: 1962692376588409421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &133561970986521221
 PrefabInstance:
@@ -326,37 +444,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.55
+      value: 8.305
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.674
+      value: -10.117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.17
+      value: 0.502
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.20461039
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.97884357
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -366,7 +484,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -156.387
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -433,19 +551,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7518627255525472476}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8051293994352819444}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7426225525213365011}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 373670204517919819}
     - targetCorrespondingSourceObject: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5910762968585663083}
+    - targetCorrespondingSourceObject: {fileID: -7285025709699086136, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8051293994352819444}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -471,10 +589,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8376558494072018894}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2829402151834619672}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
@@ -522,11 +636,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   moveSpeed: 2
+  sprintSpeed: 0
   groundDrag: 0
   jumpForce: 5
   onGround: 0
   orientation: {fileID: 454925799973877102}
   animator: {fileID: 8968620673536577396}
+  ladderSpeed: 2
+  isSprinting: 0
+  lastWPressTime: 0
+  timeBetweenTaps: 0
 --- !u!114 &5031011553808536049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,11 +660,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraHolder: {fileID: 8051293994352819444}
   mainMenu: {fileID: 0}
-  mouseSensitivity: 10
+  mouseSensitivity: 270
   canILook: 0
-  shipCam: 0
-  target: {fileID: 454925799973877102}
-  smoothTime: 0.25
+  rotationSpeed: 2.5
+  shouldFollow: 0
+  player: {fileID: 454925799973877102}
 --- !u!114 &703719820403647574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,9 +681,10 @@ MonoBehaviour:
   playerState: 1
   player: {fileID: 944603866700853204}
   dropSpot: {fileID: 2598285846868622298}
-  playerCamLocation: {fileID: 8051293994352819444}
+  playerCamLocation: {fileID: 1962692376588409421}
   playerCamMovement: {fileID: 5031011553808536049}
   playerWheelLocation: {fileID: 0}
+  cursor: {fileID: 0}
   canInteractWithNpc: 0
   dialogueLocation: {fileID: 0}
   playerToBoatDistance: 250
@@ -582,6 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 10
+  debugName: 1
 --- !u!114 &1621978923392240804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +723,7 @@ MonoBehaviour:
   maxHealth: 4
   fullHeart: {fileID: 21300000, guid: 45f26599427d6024ba78465bc6e0dbf4, type: 3}
   halfHeart: {fileID: 21300000, guid: 05b32ca8343b29642b7f3af2be24f475, type: 3}
-  brokenHeart: {fileID: 21300000, guid: 85c57aae474891247a5e530398649871, type: 3}
+  brokenHeart: {fileID: 0}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -610,10 +731,14 @@ MonoBehaviour:
   - {fileID: 0}
   food: 4
   maxFood: 4
-  fullFood: {fileID: 0}
-  halfFood: {fileID: 0}
-  brokenFood: {fileID: 0}
-  foods: []
+  fullFood: {fileID: 21300000, guid: f2c264aa6091798479cdf5563868981e, type: 3}
+  halfFood: {fileID: 21300000, guid: 4e5d4b0a32214f0439d2a94d38ce1ed4, type: 3}
+  brokenFood: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  foods:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   recoveryCooldown: 1
   recoveryAmount: 0.05
   hungerCooldown: 1
@@ -639,69 +764,6 @@ MonoBehaviour:
   canHit: 1
   hand: {fileID: 7779281521872195767}
   animator: {fileID: 8968620673536577396}
---- !u!114 &2829402151834619672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944603866700853204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc35a453e8be6e8469257d572c41faf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
-  placeHolder:
-  - name: Grass
-    howManyToSpawn: 1
-    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
-    legendaryIslands:
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
-    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
-  - name: Desert
-    howManyToSpawn: 1
-    chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    rareIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    legendaryIslands:
-    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
-    chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
-  - name: Stone
-    howManyToSpawn: 1
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
-  - name: Stone/grass
-    howManyToSpawn: 1
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
 --- !u!114 &-7822286581474876733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +895,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1962692376588409421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7285025709699086136, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+    type: 3}
+  m_PrefabInstance: {fileID: 133561970986521221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7675342260993999628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
