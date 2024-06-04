@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SoundSlider : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider = null;
-    [SerializeField] private Text volumeTextUI = null;
+    [SerializeField] private TMP_Text volumeTextUI = null;
     void Start()
     {
         LoadValues();
@@ -14,7 +15,7 @@ public class SoundSlider : MonoBehaviour
 
     public void VolumeSlider(float volume)
     {
-        volumeTextUI.text = volume.ToString("0.0");
+        volumeTextUI.text = volume.ToString("0");
     }
     public void saveVolumeButton()
     {

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 668d8530a96a6794f89dac6eac373a7e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -391,11 +391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: main menu
       objectReference: {fileID: 0}
-    - target: {fileID: 1224309430355186134, guid: b2544d725e1038b4f8d3344265c2ba4b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2423014851488166023, guid: b2544d725e1038b4f8d3344265c2ba4b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -522,6 +517,11 @@ PrefabInstance:
     - target: {fileID: 3756202866291186747, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791398032838725474, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322474306238670789, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
