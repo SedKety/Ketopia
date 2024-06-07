@@ -645,7 +645,7 @@ MonoBehaviour:
   ladderSpeed: 2
   isSprinting: 0
   lastWPressTime: 0
-  timeBetweenTaps: 0
+  doubleTapTime: 0
 --- !u!114 &5031011553808536049
 MonoBehaviour:
   m_ObjectHideFlags: 0

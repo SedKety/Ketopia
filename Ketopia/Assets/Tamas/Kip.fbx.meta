@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig|KipEet
-      takeName: rig|KipEet
+      name: rig|WalkKip (1)
+      takeName: rig|WalkKip
       internalID: 7604756689451304856
       firstFrame: 0
-      lastFrame: 37
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25, y: 1, z: 0.5}
+  m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6486081542039542118
 GameObject:
@@ -174,11 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f2ae35201d2264181a81e34c38d904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   recipes:
   - {fileID: 11400000, guid: 73c66b05875a25b4b90b59862b6438b4, type: 2}
   possibleRecipe: []
   crafterInputs: []
-  slot: []
   outputItemSpot: {fileID: 0}
 --- !u!1 &7655151753372778608
 GameObject:
@@ -231,7 +231,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25, y: 1, z: 0.5}
+  m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7953548679769983514
 GameObject:

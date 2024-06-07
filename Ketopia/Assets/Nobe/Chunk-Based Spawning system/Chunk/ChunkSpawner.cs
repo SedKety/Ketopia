@@ -5,22 +5,24 @@ public class ChunkSpawner : MonoBehaviour
 {
     public GameObject chunk;
     public static GameObject chunkToSpawn;
-    public static List<GameObject> chunks = new List<GameObject>();
+    public static List<GameObject> chunks = new();
     public static int chunkCounter;
 
-    public static chunk currentChunk;
-    public List<chunk> placeHolder;
-    public static List<chunk> chunkTypes;
+    public static Chunk currentChunk;
+    public List<Chunk> placeHolder;
+    public static List<Chunk> chunkTypes;
 
     public static int maxChunkCount = 1040;
     public static int chunkSize = 500;
 
+    public static float chunkTypeAmount = 0;
     public void Start()
     {
         chunkToSpawn = chunk;
         chunkTypes = placeHolder;
         chunks.Add(Instantiate(chunkToSpawn));
         SpawnChunk(chunkToSpawn.transform);
+        chunkTypeAmount = Random.Range(200, 400);
     }
 
     public static void SpawnChunk(Transform pos)
@@ -55,7 +57,7 @@ public class ChunkSpawner : MonoBehaviour
             new Vector3(0, -1, 0)
         };
 
-        List<GameObject> newChunks = new List<GameObject>();
+        List<GameObject> newChunks = new();
 
 
         for (int i = 0; i < directions.Length; i++)
@@ -83,15 +85,15 @@ public class ChunkSpawner : MonoBehaviour
 
     private static GameObject SpawnNewChunkAtPosition(Vector3 newPosition)
     {
-        float chunkTypeAmount = 0;
         if (chunkTypeAmount <= 0)
         {
-            chunkTypeAmount = Random.Range(100, 500);
-            chunk lastChunk = currentChunk;
+            chunkTypeAmount = Random.Range(200, 400);
+            Chunk lastChunk = currentChunk;
             currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
             if (currentChunk.name == lastChunk.name)
             {
                 currentChunk = chunkTypes[Random.Range(0, chunkTypes.Count)];
+                print(currentChunk.name);
             }
         }
         GameObject newChunk = Instantiate(chunkToSpawn, newPosition, Quaternion.identity);

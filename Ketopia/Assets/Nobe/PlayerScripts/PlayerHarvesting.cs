@@ -30,6 +30,7 @@ public class PlayerHarvesting : MonoBehaviour
         var itemInHand = Instantiate(heldItem.physicalItem, hand.transform.position, hand.transform.rotation, hand.transform);
         Destroy(itemInHand.GetComponent<Rigidbody>());
         Destroy(itemInHand.GetComponent<PhysicalItemScript>());
+        Destroy(itemInHand.GetComponent<Collider>());
     }
     public void Update()
     {
@@ -53,10 +54,9 @@ public class PlayerHarvesting : MonoBehaviour
             if (harvestingTool)
             {
                 canHit = false;
-                RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 StartCoroutine(HitCooldown());
-                if (Physics.Raycast(ray, out hit, hitRange))
+                if (Physics.Raycast(ray, out RaycastHit hit, hitRange))
                 {
                     if (hit.collider.gameObject.GetComponent<IDamagable>() != null)
                     {

@@ -45,8 +45,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (playerState == PlayerState.ship)
         {
-            transform.position = playerWheelLocation.position;
-            transform.rotation = playerWheelLocation.rotation;
+            transform.SetPositionAndRotation(playerWheelLocation.position, playerWheelLocation.rotation);
         }
     }
 
@@ -60,7 +59,7 @@ public class PlayerManager : MonoBehaviour
     public void SwitchState(PlayerState newState)
     {
         playerState = newState;
-
+        AirshipManager.instance.TurnOffColliders();
         switch (newState)
         {
             case PlayerState.ship:
@@ -73,11 +72,13 @@ public class PlayerManager : MonoBehaviour
                 UIScript.instance.inventory.SetActive(false);
                 UIScript.instance.dialogue.SetActive(false);
                 AirshipMovement.instance.EnableMovement();
+                AirshipManager.instance.TurnOffColliders();
                 Camera.main.transform.position = AirshipManager.instance.camHolderAirship.position;
                 Camera.main.transform.rotation = AirshipManager.instance.camHolderAirship.rotation;
                 playerCamMovement.shouldFollow = true;
                 Camera.main.transform.parent = null;
                 cursor.SetActive(false);
+
                 break;
 
             case PlayerState.normal:

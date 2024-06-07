@@ -21,6 +21,7 @@ public class UIScript : MonoBehaviour
     public bool hasClicked;
     public Button dialogueSwapper;
 
+    public PopUpScript popup;
     public void Start()
     {
         instance = this;

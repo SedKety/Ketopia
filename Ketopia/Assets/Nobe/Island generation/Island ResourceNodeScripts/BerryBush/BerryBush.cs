@@ -21,6 +21,7 @@ public class BerryBush : ResourceNode, IDamagable
         {
             if (typeUsed == nodeType || typeUsed == NodeType.everything)
             {
+                UIScript.instance.popup.gameObject.SetActive(false);
                 StartCoroutine(Shake());
                 nodeHp -= dmgDone;
                 if (nodeHp <= 0)
@@ -43,6 +44,65 @@ public class BerryBush : ResourceNode, IDamagable
                         berryScript.item = berry;
                     }
                     StartCoroutine(CollapseAndDie());
+                }
+            }
+        }
+        else
+        {
+            if (nodeType == NodeType.wood)
+            {
+                if (nodeStrength == 1)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Wooden axe to destroy this!";
+                }
+                if (nodeStrength == 2)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Stone axe to destroy this!";
+                }
+                if (nodeStrength == 3)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Iron axe to destroy this!";
+                }
+                if (nodeStrength == 4)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Golden axe to destroy this!";
+                }
+                if (nodeStrength == 5)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Magnetite axe to destroy this!";
+                }
+            }
+            else if (nodeType == NodeType.stone)
+            {
+                if (nodeStrength == 1)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Wooden pickaxe to destroy this!";
+                }
+                if (nodeStrength == 2)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Stone pickaxe to destroy this!";
+                }
+                if (nodeStrength == 3)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Iron pickaxe to destroy this!";
+                }
+                if (nodeStrength == 4)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Golden pickaxe to destroy this!";
+                }
+                if (nodeStrength == 5)
+                {
+                    UIScript.instance.popup.gameObject.SetActive(true);
+                    UIScript.instance.popup.displayText.text = "You need atleast an Magnetite pickaxe to destroy this!";
                 }
             }
         }

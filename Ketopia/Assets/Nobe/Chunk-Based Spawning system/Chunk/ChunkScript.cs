@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public struct chunk
+public struct Chunk
 {
     [Header("ChunkName")]
     public string name;
@@ -15,7 +15,7 @@ public struct chunk
 }
 public class ChunkScript : MonoBehaviour
 {
-    public chunk chunk;
+    public Chunk chunk;
     public int chunkCount;
     public Collider islandsSpawnPoint;
 
@@ -32,7 +32,6 @@ public class ChunkScript : MonoBehaviour
         {
             StartSpawningIslands();
         }
-        chunk = ChunkSpawner.currentChunk;
     }
 
     private void StartSpawningIslands()
@@ -58,7 +57,6 @@ public class ChunkScript : MonoBehaviour
             else if (randomRarity >= 99)
             {
                 islandToSpawn = chunk.legendaryIslands[Random.Range(0, chunk.legendaryIslands.Length)];
-                print(islandToSpawn.name);
             }
 
             if (islandToSpawn != null)

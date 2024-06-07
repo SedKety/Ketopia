@@ -7,9 +7,9 @@ public class IslandGenerator : MonoBehaviour
     public Vector3 lastSpawnedIslands;
 
     public Collider islandsSpawnPoint;
-    public chunk currentChunk;
+    public Chunk currentChunk;
 
-    public chunk[] chunks;
+    public Chunk[] chunks;
 
     public float distance;
     public int spawnDistance;

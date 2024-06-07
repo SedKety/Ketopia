@@ -11,9 +11,11 @@ public class AirshipManager : MonoBehaviour
     public static AirshipManager instance;
     public IslandGenerator islandGenerator;
     public AirshipState airshipState;
+
+    public Transform turnOffColliderObject;
+    public bool collidersOn;
     public float currentFuel;
     public float maxFuel;
-
     public float fuelCost;
     public float fuelDecreaseTimer;
 
@@ -30,9 +32,13 @@ public class AirshipManager : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        if(currentFuel >= maxFuel)
+        if (currentFuel >= maxFuel)
         {
             currentFuel = maxFuel;
+        }
+        if (currentFuel <= 0)
+        {
+            currentFuel = 0;
         }
     }
     public void SwitchState(AirshipState state)
@@ -61,6 +67,32 @@ public class AirshipManager : MonoBehaviour
                 AirshipMovement.instance.airshipMovementEnabled = false;
             }
             yield return new WaitForSeconds(fuelDecreaseTimer);
+        }
+    }
+
+    public void TurnOffColliders()
+    {
+        if (collidersOn)
+        {
+            for (int i = 0; i < turnOffColliderObject.childCount; i++)
+            {
+                if (turnOffColliderObject.GetChild(i).GetComponent<Collider>())
+                {
+                    turnOffColliderObject.GetChild(i).GetComponent<Collider>().enabled = false;
+                    collidersOn = false;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < turnOffColliderObject.childCount; i++)
+            {
+                if (turnOffColliderObject.GetChild(i).GetComponent<Collider>())
+                {
+                    turnOffColliderObject.GetChild(i).GetComponent<Collider>().enabled = true;
+                    collidersOn = true;
+                }
+            }
         }
     }
 }
