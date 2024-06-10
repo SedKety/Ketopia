@@ -10,13 +10,13 @@ public class ResolutionM : MonoBehaviour
     private List<Resolution> resolutionList;
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+    [System.Obsolete]
     void Start()
     {
         resolutions = Screen.resolutions;
         resolutionList = new List<Resolution>();
         dropdown.ClearOptions();
         currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
-
         for (int i = 0; i < resolutions.Length; i++)
         {
             if (resolutions[i].refreshRate > currentRefreshRate)
@@ -36,10 +36,8 @@ public class ResolutionM : MonoBehaviour
             dropdown.AddOptions(options);
             dropdown.value = currentResolutionIndex;
             dropdown.RefreshShownValue();
-
         }
     }
-
     public void SetResolution(int resolutionIndex) 
     {
         Resolution resolution = resolutionList[resolutionIndex];

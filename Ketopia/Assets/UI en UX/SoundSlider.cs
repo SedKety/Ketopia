@@ -12,7 +12,6 @@ public class SoundSlider : MonoBehaviour
     {
         LoadValues();
     }
-
     public void VolumeSlider(float volume)
     {
         volumeTextUI.text = volume.ToString("0");

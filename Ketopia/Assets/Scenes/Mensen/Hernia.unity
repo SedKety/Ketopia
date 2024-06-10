@@ -391,6 +391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: main menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1248369609997794268, guid: b2544d725e1038b4f8d3344265c2ba4b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2423014851488166023, guid: b2544d725e1038b4f8d3344265c2ba4b,
         type: 3}
       propertyPath: m_Pivot.x
