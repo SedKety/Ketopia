@@ -60,6 +60,7 @@ Material:
     - _TwirlStrength: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
-    - _LavaColor: {r: 1, g: 0.28504565, b: 0, a: 0}
+    - _Emission_Color: {r: 1, g: 0.3896273, b: 0.06132078, a: 0}
+    - _LavaColor: {r: 1, g: 0, b: 0.12741709, a: 0}
     - _PanSpeed: {r: 14.3, g: 0.66, b: 0, a: 0}
   m_BuildTextureStacks: []
