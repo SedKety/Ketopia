@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6812893328082136846}
   - component: {fileID: 5704985755408195279}
   - component: {fileID: 6533160737956239726}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,3 +81,4 @@ MonoBehaviour:
   islandsSpawnPoint: {fileID: 0}
   islands: []
   hasBeenTriggered: 0
+  maxRetries: 10

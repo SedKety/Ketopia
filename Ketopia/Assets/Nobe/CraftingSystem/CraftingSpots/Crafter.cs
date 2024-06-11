@@ -27,11 +27,7 @@ public class Crafter : MonoBehaviour, IInteractable
         possibleRecipe.Clear();
 
         PhysicalItemScript inputItem = crafterInputs[0].currentItem;
-        print(inputItem.name);
-        print(inputItem.GetComponent<PhysicalItemScript>().quantity);
         PhysicalItemScript inputItem1 = crafterInputs[1].currentItem;
-        print(inputItem1.name);
-        print(inputItem1.GetComponent<PhysicalItemScript>().quantity);
         if (inputItem == null || inputItem1 == null)
         {
             Debug.Log("Er mist een of meer van de items");
@@ -68,8 +64,7 @@ public class Crafter : MonoBehaviour, IInteractable
             }
 
             var craftedItem = Instantiate(finalRecipe.outputItem, outputItemSpot.position, Quaternion.identity);
-            var craftedItemScript = craftedItem.GetComponent<PhysicalItemScript>();
-            if (craftedItemScript != null)
+            if (craftedItem.TryGetComponent<PhysicalItemScript>(out var craftedItemScript))
             {
                 craftedItemScript.quantity = finalRecipe.outputItemAmount;
             }

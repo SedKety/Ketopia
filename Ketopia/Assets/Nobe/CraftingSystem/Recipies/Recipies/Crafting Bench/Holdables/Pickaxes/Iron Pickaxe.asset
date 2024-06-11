@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17dd64f3d0e30974fbfff2228b5ece61, type: 3}
-  m_Name: Stone Pickaxe
+  m_Name: Iron Pickaxe
   m_EditorClassIdentifier: 
-  inputItem1: {fileID: 11400000, guid: 92299ea6628bee047a34bec48a8a4371, type: 2}
-  inputItem1Amount: 5
-  inputItem2: {fileID: 11400000, guid: 60e49785ed7d6b747a57cb8492cf784a, type: 2}
-  inputItem2Amount: 10
-  outputItem: {fileID: 4667231905557265630, guid: c7a67583ae35d09408487218653bdd65,
+  inputItem1: {fileID: 11400000, guid: 348a13fcdf519da49924be4ecadfe2c9, type: 2}
+  inputItem1Amount: 1
+  inputItem2: {fileID: 11400000, guid: 6a5f53621c4d2614e94f2650e0733fb8, type: 2}
+  inputItem2Amount: 5
+  outputItem: {fileID: 9193307176871476903, guid: e7b9bda28a0091d469b4aadac75e22fc,
     type: 3}
   outputItemAmount: 1

@@ -72,7 +72,11 @@ public class AirshipMovement : MonoBehaviour
     private void HandleRotation()
     {
         float rotationAmount = horizontalInput * airshipRotationSpeed;
-        transform.Rotate(0, rotationAmount, 0);
+        Vector3 currentRotation = transform.rotation.eulerAngles;
+        currentRotation.y += rotationAmount;
+        Quaternion rotate = Quaternion.Euler(currentRotation);
+        rb.MoveRotation(rotate);
+
         steeringWheel.Rotate(0, 0, rotationAmount * -100 * steeringWheelSpeedMultiplier);
     }
 

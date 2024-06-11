@@ -175,8 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  recipes:
-  - {fileID: 11400000, guid: 73c66b05875a25b4b90b59862b6438b4, type: 2}
+  recipes: []
   possibleRecipe: []
   crafterInputs: []
   outputItemSpot: {fileID: 0}

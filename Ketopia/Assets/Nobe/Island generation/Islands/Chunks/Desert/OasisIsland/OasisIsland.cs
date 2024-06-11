@@ -16,11 +16,10 @@ public class OasisIsland : ResourceNodeSpawner
             {
                 int retries = 0;
                 Vector3 whereToSpawn;
-                RaycastHit hit;
                 while (retries < maxRetries)
                 {
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
-                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
+                    if (Physics.Raycast(whereToSpawn, Vector3.down, out RaycastHit hit, 50))
                     {
                         if (hit.collider.transform == transform.parent)
                         {
@@ -52,11 +51,10 @@ public class OasisIsland : ResourceNodeSpawner
             {
                 int retries = 0;
                 Vector3 whereToSpawn;
-                RaycastHit hit;
                 while (retries < maxRetries)
                 {
                     whereToSpawn = SpawnPosition(spawnCollider.bounds);
-                    if (Physics.Raycast(whereToSpawn, Vector3.down, out hit, 50))
+                    if (Physics.Raycast(whereToSpawn, Vector3.down, out RaycastHit hit, 50))
                     {
                         if (hit.collider.transform == transform.parent)
                         {

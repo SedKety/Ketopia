@@ -24,6 +24,8 @@ public class ChunkScript : MonoBehaviour
     private int islandsSpawnedThisCycle = 0;
 
     public bool hasBeenTriggered;
+
+    public int maxRetries;
     private void Start()
     {
         hasBeenTriggered = false;
@@ -62,9 +64,17 @@ public class ChunkScript : MonoBehaviour
             if (islandToSpawn != null)
             {
                 var randomSpawnLocation = SpawnPosition(islandsSpawnPoint.bounds);
-                var spawnedIsland = Instantiate(islandToSpawn, randomSpawnLocation, Quaternion.identity, gameObject.transform);
-                spawnedIsland.transform.Rotate(0f, Random.Range(0f, 360f), 0f);
-                islands.Add(spawnedIsland);
+                randomSpawnLocation.y += 100;
+                for(int i = 0; i < maxRetries; i++)
+                {
+                    if (!Physics.Raycast(randomSpawnLocation, Vector3.down))
+                    {
+                        var spawnedIsland = Instantiate(islandToSpawn, randomSpawnLocation, Quaternion.identity, gameObject.transform);
+                        spawnedIsland.transform.Rotate(0f, Random.Range(0f, 360f), 0f);
+                        islands.Add(spawnedIsland);
+                        break;
+                    }
+                }
             }
 
             islandsSpawnedThisCycle++;
