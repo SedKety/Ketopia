@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void Update()
     {
-        if (playerState == PlayerState.ship & Input.GetKeyDown(KeyCode.G))
+        if (playerState == PlayerState.ship && Input.GetKeyDown(KeyCode.G))
         {
             SwitchState(PlayerState.normal);
             AirshipMovement.instance.DisableMovement();
@@ -46,12 +46,13 @@ public class PlayerManager : MonoBehaviour
         if (playerState == PlayerState.ship)
         {
             transform.SetPositionAndRotation(playerWheelLocation.position, playerWheelLocation.rotation);
+
         }
     }
 
     public void OnTick()
     {
-        if(Vector3.Distance(transform.position, AirshipManager.instance.transform.position) >= playerToBoatDistance)
+        if (Vector3.Distance(transform.position, AirshipManager.instance.transform.position) >= playerToBoatDistance)
         {
             PlayerStats.instance.IDamagable(distanceDamage, NodeType.everything, 0);
         }
@@ -78,7 +79,6 @@ public class PlayerManager : MonoBehaviour
                 playerCamMovement.shouldFollow = true;
                 Camera.main.transform.parent = null;
                 cursor.SetActive(false);
-
                 break;
 
             case PlayerState.normal:
@@ -104,11 +104,19 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                player.transform.position = dialogueLocation.position;
-                player.transform.rotation = dialogueLocation.rotation;
-                player.GetComponentInChildren<Camera>().gameObject.transform.rotation = dialogueLocation.transform.rotation;
+                if(dialogueLocation != null)
+                {
+                    player.transform.position = dialogueLocation.position;
+                    player.transform.rotation = dialogueLocation.rotation;
+                    player.GetComponentInChildren<Camera>().gameObject.transform.rotation = dialogueLocation.transform.rotation;
+                }
                 UIScript.instance.dialogue.SetActive(true);
                 UIScript.instance.inventory.SetActive(false);
+                break;
+            case PlayerState.menu:
+                player.GetComponent<PlayerMovement>().canMove = false;
+                player.GetComponent<PlayerCamMovement>().canILook = false;
+                UIScript.instance.winScreen.SetActive(true);
                 break;
 
         }

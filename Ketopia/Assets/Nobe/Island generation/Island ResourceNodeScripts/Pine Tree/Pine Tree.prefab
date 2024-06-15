@@ -42,17 +42,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7f47b9b026b8cc44792c27fc5ea64099,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -378.58936
+      value: -619.02325
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f47b9b026b8cc44792c27fc5ea64099,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2065973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f47b9b026b8cc44792c27fc5ea64099,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 934.93274
+      value: 835.72504
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f47b9b026b8cc44792c27fc5ea64099,
         type: 3}
@@ -145,7 +145,7 @@ MonoBehaviour:
   nodeStrength: 0
   expUponDestroy: 10
   droppableItems:
-  - item: {fileID: 4355495951894376030, guid: 0609dda604339e84b92b59361b984a93, type: 3}
+  - item: {fileID: 3369585189928735531, guid: 837a6ef3c615e724b92984951b4e3ef8, type: 3}
     maxDrop: 5
     minDrop: 1
   dropPoint: {fileID: 5089837972740350211}

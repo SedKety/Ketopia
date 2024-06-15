@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5c6e0f65b09c944a7439f788512e0c, type: 3}
+  m_Name: Archeologist - Smelting
+  m_EditorClassIdentifier: 
+  title: Crafting tutorial
+  dialogue:
+  - See that furnace over there? its how you will be able to gain metal bars to craft
+    tools,
+  - Go gather yourself some metals and some fuel to start using it.
+  - To use it you have to put some coal in the furnace to ignite it, then put the
+    raw metal ore in the furnace
+  - After some time it will become an metal bar.
+  milestones: []

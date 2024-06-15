@@ -8,6 +8,7 @@ public enum ItemType
     fuel,
     holdable,
     recipeItem,
+    ore,
 }
 public abstract class Item : ScriptableObject
 {

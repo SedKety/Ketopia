@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public static UIScript instance;
-    public GameObject inventory, playerstats, settings, dialogue;
+    public GameObject inventory, playerstats, settings, dialogue, winScreen, cursor;
 
 
     public Transform npcDropLocation;
@@ -85,6 +85,7 @@ public class UIScript : MonoBehaviour
     public void DisplayText(string text)
     {
         dialogueText.text = text;
+        PlayerManager.instance.SwitchState(PlayerState.dialogue);
     }
     public void PlayButton()
     {

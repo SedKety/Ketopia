@@ -6,22 +6,22 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
 {
     public Item item;
     public int quantity;
-    public void Start()
+    public virtual void Start()
     {
-        if (quantity <=  0)
+        if (quantity <= 0)
         {
             Destroy(gameObject);
         }
     }
-    public void UpdateQuantity(int amountToRemove)
+    public virtual void UpdateQuantity(int amountToRemove)
     {
         quantity -= amountToRemove;
-        if(quantity <= 0)
+        if (quantity <= 0)
         {
             Destroy(gameObject);
         }
     }
-    public void IInteractable()
+    public virtual void IInteractable()
     {
         int leftOverItems = InventoryManager.instance.OnItemAdd(item, quantity);
         if (leftOverItems <= 0)
@@ -33,7 +33,7 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
             quantity = leftOverItems;
         }
     }
-    private void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Airship"))
         {
@@ -41,12 +41,11 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Airship"))
         {
             transform.parent = null;
         }
     }
-
 }

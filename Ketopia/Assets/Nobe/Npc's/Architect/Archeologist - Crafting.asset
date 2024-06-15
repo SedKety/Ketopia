@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5c6e0f65b09c944a7439f788512e0c, type: 3}
-  m_Name: Archeologist - Crafting
+  m_Name: Archeologist - crafting
   m_EditorClassIdentifier: 
-  title: Crafting tutorial
+  title: Crafting
   dialogue:
-  - 'See that crafting bench over there? pretty neat huh. '
-  - like snuffles has probably already told you, you are going to need to make tools
-    to progress.
-  - To start crafting stuff you'll need recipe's, ill give you one for free right
-    now.
-  - First off make yourself an wooden pickaxe, you will need to put 5 wood in both
-    crafting slots and out will come the crafted item
-  - To get more recipe's you'll need to go to explore, good luck adventurer and bring
-    me back any clue you have found!
+  - See that crafting bench next to me? thats how you will make tools and items.
+  - Go get 10 wood, place 5 in the left slot and 5 in the right slot.
+  - To craft tools it always takes 5 bars of the next tier and the previous tier!
   milestones: []

@@ -2539,6 +2539,7 @@ GameObject:
   - component: {fileID: 3752800756552730909}
   - component: {fileID: 3537846626764911525}
   - component: {fileID: 6027069874873525014}
+  - component: {fileID: 8337089940591268162}
   m_Layer: 0
   m_Name: Balloon (1)
   m_TagString: Untagged
@@ -2611,6 +2612,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8337089940591268162
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536545364698275853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6740441130372897478, guid: 0862257a5ff8039409aa8f7ba314308e, type: 3}
 --- !u!1 &5091514485371322100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,11 +3355,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6578037162560700733}
-  - {fileID: 6347398129383221849}
   - {fileID: 6883858159392162470}
   - {fileID: 6694372090341458850}
   - {fileID: 6114095068624981099}
   - {fileID: 1621464901731963292}
+  - {fileID: 2005527992160531203}
   m_Father: {fileID: 3754923868444653671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6002269631975857630
@@ -4513,206 +4536,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1813397007527624960, guid: 0862257a5ff8039409aa8f7ba314308e, type: 3}
---- !u!1 &8750024921335994324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6347398129383221849}
-  - component: {fileID: 8507955597649137448}
-  - component: {fileID: 4626308965125162838}
-  - component: {fileID: 4514251250766569830}
-  m_Layer: 0
-  m_Name: ChunkSpawner
-  m_TagString: TurnOnChunk
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6347398129383221849
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750024921335994324}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9135298160687432621}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8507955597649137448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750024921335994324}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9515f8b6cef6ebe418a6bc36a317f286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  airship: {fileID: 304987404601666459}
-  lastSpawnedIslands: {x: 0, y: 0, z: 0}
-  islandsSpawnPoint: {fileID: 0}
-  currentChunk:
-    name: Grass
-    howManyToSpawn: 15
-    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    rareIslands:
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    legendaryIslands:
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    chunkColour1: {r: 0.15417282, g: 0.4433962, b: 0.11503205, a: 0}
-  chunks:
-  - name: Grass
-    howManyToSpawn: 10
-    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
-    legendaryIslands:
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
-    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
-  - name: Desert
-    howManyToSpawn: 10
-    chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    rareIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    legendaryIslands:
-    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
-    chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
-  - name: Stone
-    howManyToSpawn: 10
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
-  - name: Stone/grass
-    howManyToSpawn: 10
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
-  distance: 0
-  spawnDistance: 350
-  islands: []
-  maxIslands: 60
-  islandsToRemove: 10
---- !u!114 &4626308965125162838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750024921335994324}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc35a453e8be6e8469257d572c41faf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
-  placeHolder:
-  - name: Grass
-    howManyToSpawn: 1
-    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
-    legendaryIslands:
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
-    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
-  - name: Desert
-    howManyToSpawn: 1
-    chunkColour: {r: 1, g: 0.9744202, b: 0, a: 0}
-    commonIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    rareIslands:
-    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
-    legendaryIslands:
-    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
-    chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
-  - name: Stone
-    howManyToSpawn: 1
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    chunkColour1: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 0}
-  - name: Stone/grass
-    howManyToSpawn: 1
-    chunkColour: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
-    commonIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
-    rareIslands:
-    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
-    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
-    legendaryIslands:
-    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
-    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
-    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
-    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
-    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
---- !u!65 &4514251250766569830
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750024921335994324}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2000, y: 2000, z: 2000}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8816032980478970239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,7 +5350,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.3
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0862257a5ff8039409aa8f7ba314308e,
         type: 3}
@@ -6015,7 +5838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7875bfa1939a8204499034b944259dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islandGenerator: {fileID: 8507955597649137448}
+  islandGenerator: {fileID: 0}
   airshipState: 1
   turnOffColliderObject: {fileID: 3754923868444653671}
   collidersOn: 0
@@ -9190,6 +9013,105 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.60000044, y: 0.18439358, z: 0.358098}
   m_Center: {x: -0.000000029802322, y: 0.09219679, z: 0}
+--- !u!1001 &4000095921931419948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9135298160687432621}
+    m_Modifications:
+    - target: {fileID: 2818676904600725653, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_Name
+      value: Furnace
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.561284
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.30070582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.953717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825155500822020768, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: fuelSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825155500822020768, guid: 120a33ca68b685649b1c1bddad532b76,
+        type: 3}
+      propertyPath: fuelDecreaseAmount
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 120a33ca68b685649b1c1bddad532b76, type: 3}
+--- !u!4 &2005527992160531203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3194779577723564591, guid: 120a33ca68b685649b1c1bddad532b76,
+    type: 3}
+  m_PrefabInstance: {fileID: 4000095921931419948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4054696021782498303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13069,6 +12991,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9135298160687432621}
     m_Modifications:
+    - target: {fileID: 4819257523092278464, guid: fbe57c80f3b870c4fa9a8bf7abb3858c,
+        type: 3}
+      propertyPath: recipes.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819257523092278464, guid: fbe57c80f3b870c4fa9a8bf7abb3858c,
+        type: 3}
+      propertyPath: recipes.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f2d4a8eda278fa4989da72b94ae1b7f,
+        type: 2}
     - target: {fileID: 7368328167325073943, guid: fbe57c80f3b870c4fa9a8bf7abb3858c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13235,7 +13168,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3634f84eff26fd4dbdb6cd9d7338900,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8877165291073397846}
+      addedObject: {fileID: 4585429195541013575}
   m_SourcePrefab: {fileID: 100100000, guid: f3634f84eff26fd4dbdb6cd9d7338900, type: 3}
 --- !u!4 &8570118355446293371 stripped
 Transform:
@@ -13249,7 +13182,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8171100108475270288}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8877165291073397846
+--- !u!65 &4585429195541013575
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13268,8 +13201,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.70105, y: 0.19353037, z: 3.1392577}
-  m_Center: {x: 0.047094822, y: -0.0162959, z: -0.0000014876875}
+  m_Size: {x: 4.6, y: 0.16093689, z: 3.1392577}
+  m_Center: {x: 0.00000047683716, y: 0.0000008307399, z: -0.0000017881397}
 --- !u!1001 &8340202130401711530
 PrefabInstance:
   m_ObjectHideFlags: 0

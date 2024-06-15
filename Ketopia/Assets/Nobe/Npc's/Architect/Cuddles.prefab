@@ -210,7 +210,9 @@ MonoBehaviour:
   animator: {fileID: 6839731200465615326}
   dialogue:
   - {fileID: 11400000, guid: 7f980f5b883f96544a3caab162364277, type: 2}
+  - {fileID: 11400000, guid: 7265dbbba5836824793238dfe6e49483, type: 2}
   - {fileID: 11400000, guid: 33a39ea1a8e312847aea74b92dfdc4db, type: 2}
+  - {fileID: 11400000, guid: 4c9d56fecefd33c4aaf9a125bc7ed076, type: 2}
   dropLocation: {fileID: 8748076042879354068}
   playerLocation: {fileID: 602923648875096892}
   dialogueCounter: 0
