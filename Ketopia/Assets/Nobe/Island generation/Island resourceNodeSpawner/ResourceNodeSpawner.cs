@@ -56,3 +56,4 @@ public abstract class ResourceNodeSpawner : MonoBehaviour
         return new Vector3(randomX, bounds.min.y, randomZ);
     }
 }
+

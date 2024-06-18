@@ -68,6 +68,11 @@ public class Crafter : MonoBehaviour, IInteractable
             {
                 craftedItemScript.quantity = finalRecipe.outputItemAmount;
             }
+
+            if (finalRecipe.shouldDisplay)
+            {
+                UIScript.instance.DisplayText(finalRecipe.outputText);
+            }
         }
         else
         {

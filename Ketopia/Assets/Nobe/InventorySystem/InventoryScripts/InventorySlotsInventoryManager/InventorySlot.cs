@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 
-public class InventorySlot : MonoBehaviour 
+public class InventorySlot : MonoBehaviour
 {
     public Item item;
     public GameObject itemImage;
@@ -30,6 +30,12 @@ public class InventorySlot : MonoBehaviour
     {
         quantityText.text = quantity.ToString();
     }
+
+    //dit start het dropProcess
+    public void EnterDropMode()
+    {
+        InventoryManager.instance.EnableDropSlider(this);
+    }
     public void OnItemAdd(Item item, int quantityToAdd)
     {
         this.item = item;
@@ -45,19 +51,26 @@ public class InventorySlot : MonoBehaviour
             quantityText.text = quantity.ToString();
         }
     }
-    public void OnItemDrop()
+    public void OnItemDrop(int amountToDrop)
     {
-        if(item != null)
+        if (item != null)
         {
             var spawnedItem = Instantiate(item.physicalItem, PlayerManager.instance.dropSpot.position, Quaternion.identity);
-            spawnedItem.GetComponent<PhysicalItemScript>().quantity = quantity;
-            OnItemRemove();
+            spawnedItem.GetComponent<PhysicalItemScript>().quantity = amountToDrop;
+
+            quantity -= amountToDrop;
+            if (quantity <= 0)
+            {
+                OnItemRemove();
+                InventoryManager.instance.sliderPopUp.SetActive(false);
+            }
+            InventoryManager.instance.sliderPopUp.SetActive(false);
         }
-        dropButton.gameObject.SetActive(false);
+        UpdateQuantityTextValue();
     }
     public void OnItemEquip()
     {
-        if(item != null)
+        if (item != null)
         {
             if (item.itemType == ItemType.holdable)
             {
@@ -71,7 +84,7 @@ public class InventorySlot : MonoBehaviour
     {
         item.OnItemUse();
         quantity -= 1;
-        if(quantity <= 0)
+        if (quantity <= 0)
         {
             OnItemRemove();
             consumeButton.gameObject.SetActive(false);
@@ -85,8 +98,8 @@ public class InventorySlot : MonoBehaviour
         quantityText.text = null;
         itemImage.GetComponent<Image>().sprite = null;
         quantity = 0;
-        
-        consumeButton.gameObject.SetActive(false);  
+
+        consumeButton.gameObject.SetActive(false);
         dropButton.gameObject.SetActive(false);
         buildButton.gameObject.SetActive(false);
         equipButton.gameObject.SetActive(false);
@@ -107,5 +120,4 @@ public class InventorySlot : MonoBehaviour
             return quantity;
         }
     }
-
 }

@@ -7,9 +7,15 @@ public class RecipeItemScript : Item
     public Recipe heldRecipe;
     public CrafterType type;
 
+    public string displayString;
+    public bool shouldDisplay;
+
     public override void OnItemUse()
     {
         RecipeManager.OnRecipeAdd(this);
-        UIScript.instance.DisplayText("The Scroll reads:  To craft the magnet you shall craft 5 magnets, and make 10 magnetite bars, combine these and behold the power. Of the magnet");
+        if(shouldDisplay)
+        {
+            UIScript.instance.DisplayText(displayString);
+        }
     }
 }

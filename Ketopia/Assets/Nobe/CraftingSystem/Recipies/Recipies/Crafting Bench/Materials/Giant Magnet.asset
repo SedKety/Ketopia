@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Giant Magnet
   m_EditorClassIdentifier: 
   inputItem1: {fileID: 11400000, guid: 931c46665c073a748854622317a713b0, type: 2}
-  inputItem1Amount: 5
+  inputItem1Amount: 2
   inputItem2: {fileID: 11400000, guid: 2ef895abf5f985347a6b16df08af83d5, type: 2}
   inputItem2Amount: 10
   outputItem: {fileID: 1003050406681608371, guid: e85518e95a317c948892f9b06d18a537,
     type: 3}
   outputItemAmount: 1
+  outputText: The core of the world will show itself, travel to 1000 in all axis
+    and behold its beauty
+  shouldDisplay: 1
