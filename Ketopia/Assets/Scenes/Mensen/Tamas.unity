@@ -869,8 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textHeight: 0.3
-  highlightMat: {fileID: 2100000, guid: e922faddecc43fe48b3b247bb8165457, type: 2}
-  defaultMat: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+  textToDisplay: F to pickup
   displayText: {fileID: 1584504436}
 --- !u!1001 &167412194
 PrefabInstance:
@@ -3295,6 +3294,99 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 883947130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &924726407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -117
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -425
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5226892595383314264, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: -1439730007547781893, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: 919132149155446097, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Name
+      value: Tyfus_groot_eiland
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321514657177891973, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: 7071182760956848314, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    - target: {fileID: 7202271454713460447, guid: 52e0d7baf2c15804a825d550518ff1d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 679e1e3847809224cab15cd4c3051257, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52e0d7baf2c15804a825d550518ff1d9, type: 3}
 --- !u!1001 &966686391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7801,3 +7893,4 @@ SceneRoots:
   - {fileID: 239741943}
   - {fileID: 1584504438}
   - {fileID: 336422439}
+  - {fileID: 924726407}
