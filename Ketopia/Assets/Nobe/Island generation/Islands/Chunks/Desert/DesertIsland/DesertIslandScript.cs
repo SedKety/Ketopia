@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class DesertIslandScript : ResourceNodeSpawner
 {
-    public void Start()
-    {
-        SpawnObjects();
-    }
+
 }

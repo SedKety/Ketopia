@@ -13,4 +13,7 @@ public class Recipe : ScriptableObject
     [Header("Output")]
     public GameObject outputItem;
     public int outputItemAmount;
+
+    public string outputText;
+    public bool shouldDisplay;
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,39 +26,18 @@ public class InventoryManager : MonoBehaviour
     public Button unequipHeldItemButton;
     public PlayerHarvesting playerHarvesting;
 
-    public bool dropMode;
-    public bool consumeMode;
-    public bool equipMode;
-    public bool buildMode;
+    public bool dropMode, buildMode, equipMode, consumeMode;
+    
+
+    public GameObject sliderPopUp;
+    public Slider dropItemSlider;
+    public TextMeshProUGUI currentDropAmountText;
+    public InventorySlot currentSelectedSlot;
 
     public void Start()
     {
         instance = this;
         playerHarvesting = FindAnyObjectByType<PlayerHarvesting>();
-    }
-    public void EquipItem(Item item)
-    {
-        if (playerHarvesting.heldItem != null & playerHarvesting.heldItem != playerHarvesting.fist)
-        {
-            OnItemAdd(playerHarvesting.heldItem, 1);
-        }
-        playerHarvesting.heldItem = item;
-        heldItemImage.gameObject.SetActive(true);
-        heldItemImage.sprite = playerHarvesting.heldItem.itemSprite;
-        playerHarvesting.heldItem = item;
-        playerHarvesting.OnItemSwitch(item);
-    }
-
-    public void UnEquipItem()
-    {
-        if (playerHarvesting.heldItem != null & playerHarvesting.heldItem != playerHarvesting.fist)
-        {
-            heldItemImage.gameObject.SetActive(false);
-            unequipHeldItemButton.gameObject.SetActive(false);
-            heldItemImage.sprite = null;
-            OnItemAdd(playerHarvesting.heldItem, 1);
-            playerHarvesting.heldItem = null;
-        }
     }
     public void Update()
     {
@@ -72,6 +52,55 @@ public class InventoryManager : MonoBehaviour
         {
             PlayerManager.instance.SwitchState(playerState);
             inventory.SetActive(false);
+        }
+
+        if (sliderPopUp)
+        {
+            currentDropAmountText.text = dropItemSlider.value.ToString();
+        }
+    }
+
+    public void EquipItem(Item item)
+    {
+        if (playerHarvesting.heldItem != null & playerHarvesting.heldItem != playerHarvesting.fist)
+        {
+            OnItemAdd(playerHarvesting.heldItem, 1);
+        }
+        playerHarvesting.heldItem = item;
+        heldItemImage.gameObject.SetActive(true);
+        heldItemImage.sprite = playerHarvesting.heldItem.itemSprite;
+        playerHarvesting.heldItem = item;
+        playerHarvesting.OnItemSwitch(item);
+    }
+
+    public void EnableDropSlider(InventorySlot slot)
+    {
+        if(sliderPopUp)
+        {
+           sliderPopUp.SetActive(false);
+        }
+        sliderPopUp.SetActive(true);
+        dropItemSlider.maxValue = slot.quantity;
+        currentSelectedSlot = slot;
+    }
+
+    //Deze activeer je wanneer de "drop buton" ingeklikt is
+    public void DropItem()
+    {
+        if (currentSelectedSlot)
+        {
+            currentSelectedSlot.OnItemDrop(Mathf.RoundToInt(dropItemSlider.value));
+        }
+    }
+    public void UnEquipItem()
+    {
+        if (playerHarvesting.heldItem != null & playerHarvesting.heldItem != playerHarvesting.fist)
+        {
+            heldItemImage.gameObject.SetActive(false);
+            unequipHeldItemButton.gameObject.SetActive(false);
+            heldItemImage.sprite = null;
+            OnItemAdd(playerHarvesting.heldItem, 1);
+            playerHarvesting.heldItem = null;
         }
     }
     public void EnableDropMode()

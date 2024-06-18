@@ -723,7 +723,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4349180986081621093}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
-        m_MethodName: OnItemDrop
+        m_MethodName: EnterDropMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
