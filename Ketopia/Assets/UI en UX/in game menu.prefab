@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96c05ce1754b3dc4d86c28a295ee7593, type: 2}
   m_sharedMaterial: {fileID: 1057537594762215708, guid: 96c05ce1754b3dc4d86c28a295ee7593,
@@ -4166,7 +4166,7 @@ RectTransform:
   m_Father: {fileID: 8805303128363429723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6889,15 +6889,27 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: 30
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: 60
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: 120
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8974804613593011111}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChangeFPS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &5075409621849195725
 GameObject:
@@ -7843,7 +7855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6063278648661671906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9332,6 +9344,7 @@ GameObject:
   - component: {fileID: 8402569946946595791}
   - component: {fileID: 319061843141886827}
   - component: {fileID: 846081330569197334}
+  - component: {fileID: 8974804613593011111}
   m_Layer: 5
   m_Name: in game menu
   m_TagString: Untagged
@@ -9458,6 +9471,12 @@ MonoBehaviour:
   hasClicked: 0
   dialogueSwapper: {fileID: 0}
   popup: {fileID: 3731263862666990780}
+  inGameMenu: {fileID: 8254773913611641689}
+  playerStats: {fileID: 1389604148657285478}
+  inventoryClose: {fileID: 6430568751353239869}
+  cursorClose: {fileID: 4394219829484023835}
+  playerMovement: {fileID: 0}
+  playerCamMovement: {fileID: 0}
 --- !u!114 &319061843141886827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9524,6 +9543,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   textPos: {fileID: 9106488868676914653}
+--- !u!114 &8974804613593011111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506120437388489975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb659726a7202d44b0ff8f56ea18414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {x: 0, y: 0, z: 0}
+  canyonIsland: {fileID: 0}
+  canyonActive: 0
+  menu: {fileID: 0}
 --- !u!1 &6548893708562592625
 GameObject:
   m_ObjectHideFlags: 0
@@ -10367,10 +10402,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1389604148657285478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8402569946946595791}
+        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
+        m_MethodName: WeerBewegen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -11,7 +11,6 @@ public class UIScript : MonoBehaviour
     public static UIScript instance;
     public GameObject inventory, playerstats, settings, dialogue, winScreen, cursor;
 
-
     public Transform npcDropLocation;
     public TextMeshProUGUI dialogueText;
     public int currentDialogueNumber;
@@ -22,10 +21,24 @@ public class UIScript : MonoBehaviour
     public Button dialogueSwapper;
 
     public PopUpScript popup;
+
+    public GameObject inGameMenu;
+    public GameObject playerStats;
+    public GameObject inventoryClose;
+    public GameObject cursorClose;
+    public PlayerMovement playerMovement;
+    public PlayerCamMovement playerCamMovement;
     public void Start()
     {
         instance = this;
         currentDialogueNumber = -1;
+        Invoke(nameof(AssignVariables), 1);
+    }
+
+    public void AssignVariables()
+    {
+        playerMovement = PlayerManager.instance.gameObject.GetComponent<PlayerMovement>();
+        playerCamMovement = PlayerManager.instance.gameObject.GetComponent<PlayerCamMovement>();
     }
     public void DisplayDialogue(string text)
     {
@@ -100,5 +113,25 @@ public class UIScript : MonoBehaviour
     public IEnumerator DialogueActive()
     {
         yield return new WaitForSeconds(1);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            inGameMenu.SetActive(true);
+            inventoryClose.SetActive(false);
+            playerStats.SetActive(false);
+            cursorClose.SetActive(false);
+            playerMovement.canMove = false;
+            playerCamMovement.canILook = false;
+        }
+    }
+    public void WeerBewegen()
+    {
+        playerMovement.canMove = true;
+        playerCamMovement.canILook = true;
+        playerStats.SetActive(true);
+        cursorClose.SetActive(true);
     }
 }

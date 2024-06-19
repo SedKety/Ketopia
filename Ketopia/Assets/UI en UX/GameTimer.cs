@@ -45,13 +45,14 @@ public class GameTimer : MonoBehaviour
     }
     public void CalculateBestTime()
     {
-        if(PlayerPrefs.GetFloat("BestTime")  != 0)
+        if(PlayerPrefs.GetInt("BestTime")  != 0)
         {
-            PlayerPrefs.SetFloat("BestTime", currentTimeMin * 60 + currentTimeSeconds);
+            PlayerPrefs.SetInt("BestTime", currentTimeMin * 60 + currentTimeSeconds);
         }
-        else if(PlayerPrefs.GetFloat("BestTime") <= currentTimeMin * 60 + currentTimeSeconds)
+        else if(PlayerPrefs.GetInt("BestTime") <= currentTimeMin * 60 + currentTimeSeconds)
         {
-            PlayerPrefs.SetFloat("BestTime", currentTimeMin * 60 + currentTimeSeconds);
+            PlayerPrefs.SetInt("BestTime", currentTimeMin * 60 + currentTimeSeconds);
         }
+        bestTimerText.text = PlayerPrefs.GetInt("BestTime" + "Seconds").ToString();
     }
 }
