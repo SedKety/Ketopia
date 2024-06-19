@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lowPolyMat
+  m_Name: GlowingShit
   m_Shader: {fileID: -6465566751694194690, guid: c6a8810ed0bb8144c8eb55a1f75239c0,
     type: 3}
   m_Parent: {fileID: 0}
@@ -51,13 +51,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Emission: 0
-    - _Metallic: 0.3
+    - _Emission: 0.12
+    - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness: 0.2
-    - _Smoothness: 0.358
+    - _Roughness: 0
+    - _Smoothness: 0
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _Emmission: {r: 0, g: 0, b: 0, a: 0}
+    - _Emmission: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 0}
   m_BuildTextureStacks: []
