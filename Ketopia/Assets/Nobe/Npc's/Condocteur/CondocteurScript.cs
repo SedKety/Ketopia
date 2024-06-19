@@ -24,7 +24,7 @@ public class CondocteurScript : NpcScript, IInteractable
                 PlayerManager.instance.dialogueLocation = playerLocation;
                 PlayerManager.instance.SwitchState(PlayerState.dialogue);
                 UIScript.instance.DisplayText
-                    ("Hello Captain!, your ship has: " + AirshipManager.instance.currentFuel + " fuel left!" + "         " + "You are currently in an: " + AirshipManager.instance.islandGenerator.currentChunk.name + "Chunk");
+                    ("Hello Captain!, your ship has: " + AirshipManager.instance.currentFuel + " fuel left!" + "                                " + "You are currently in an: " + ChunkSpawner.currentChunk.name + "Chunk");
             }
         }
     }

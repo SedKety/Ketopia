@@ -13,12 +13,18 @@ public class NpcScript : MonoBehaviour, IInteractable
     public string interactionString;
     public void Start()
     {
-        animator.SetBool("ShouldIdle", true);
+        if (animator)
+        {
+            animator.SetBool("ShouldIdle", true);
+        }
     }
     public virtual void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
-        animator.SetBool("Wavey", true);
+        if (animator)
+        {
+            animator.SetBool("Wavey", true);
+        }
         if (UIScript.instance.currentDialogue == null) 
         {
             if (dialogueCounter <= dialogue.Count - 1)
@@ -34,7 +40,7 @@ public class NpcScript : MonoBehaviour, IInteractable
             {
                 PlayerManager.instance.dialogueLocation = playerLocation;
                 PlayerManager.instance.SwitchState(PlayerState.dialogue);
-                UIScript.instance.DisplayText("I have nothing to say right now");
+                UIScript.instance.DisplayText(interactionString);
             }
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3444001430752941307}
   - component: {fileID: 8218724690286273739}
   - component: {fileID: 835117763502500455}
+  - component: {fileID: 241799369166563347}
   m_Layer: 2
   m_Name: Resourcenode Spawner
   m_TagString: Untagged
@@ -70,6 +71,7 @@ MonoBehaviour:
   - {fileID: 6654147948096511935, guid: 8c6e2fb693adb5144992d5d4f633a9f1, type: 3}
   - {fileID: 93784258848965428, guid: 79bb7af376ec44247a887ce6912ceb82, type: 3}
   - {fileID: 9014872947490528339, guid: 849d788139e1288469a3a75b4a7f2649, type: 3}
+  - {fileID: 8529415716665215101, guid: 695d4a2d82af2524286b4333f3a46e2a, type: 3}
   spawnCollider: {fileID: 8218724690286273739}
   spawnCount: 30
   maxRetries: 15
@@ -78,11 +80,32 @@ MonoBehaviour:
   grass: {fileID: 3450606834429453027, guid: 9491f5d62cf3ea74bbbfdcd736cc301c, type: 3}
   grassCount: 50
   flowers:
-  - {fileID: 3058028897966703429, guid: f30a5c9debb1c45468f8f5bd7d4a21c4, type: 3}
-  - {fileID: 6007098656871967084, guid: de30fe5f376f3b84397a7963b1bcd461, type: 3}
-  - {fileID: 8966783209863026408, guid: 041cdfce557485f45896152fc24963ea, type: 3}
-  - {fileID: 3685551985928193891, guid: c10c91b3b5e76f44c90abb4e95922842, type: 3}
-  flowerCount: 50
+  - {fileID: 3711580104155737445, guid: e2290b2fe71c02244941c7975cb646f2, type: 3}
+  - {fileID: 8718312919687831874, guid: 9276ec96d35556040b1dd4f4847d77b7, type: 3}
+  - {fileID: 7796047799529503433, guid: 1e6296321e208c7489a486227aff4e11, type: 3}
+  - {fileID: 6895906203622336487, guid: 77b5ecc83fb406a45acdd0d1704d7cf6, type: 3}
+  flowerCount: 10
+--- !u!135 &241799369166563347
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259850591642329940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 500
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2857840866017841366
 PrefabInstance:
   m_ObjectHideFlags: 0

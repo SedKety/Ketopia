@@ -143,7 +143,7 @@ public class PlayerStats : MonoBehaviour, IDamagable
         while (true)
         {
             yield return new WaitForSeconds(hungerCooldown);
-            if (food >= 0)
+            if (food > 0)
             {
                 food -= hungerAmount;
                 canRecoverHealth = true;

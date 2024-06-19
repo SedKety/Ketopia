@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeHp: 30
   nodeType: 0
-  nodeStrength: 1
+  nodeStrength: 2
   expUponDestroy: 0
   droppableItems:
   - item: {fileID: 2359838006440395083, guid: 8a3ae58e597325b4c922f620b1b467fb, type: 3}
@@ -172,3 +172,5 @@ MonoBehaviour:
     minDrop: 5
   dropPoint: {fileID: 533881269208779750}
   dissapearTimer: 0
+  shakeDuration: 0.5
+  shakeMagnitude: 0.1

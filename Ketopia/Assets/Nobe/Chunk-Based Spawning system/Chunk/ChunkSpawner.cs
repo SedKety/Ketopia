@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class ChunkSpawner : MonoBehaviour
 {
+    public static ChunkSpawner instance;
     public GameObject chunk;
     public static GameObject chunkToSpawn;
     public static List<GameObject> chunks = new();
     public static int chunkCounter;
 
+    public Chunk startChunk;
     public static Chunk currentChunk;
     public List<Chunk> placeHolder;
     public static List<Chunk> chunkTypes;
@@ -18,7 +20,9 @@ public class ChunkSpawner : MonoBehaviour
     public static float chunkTypeAmount = 0;
     public void Start()
     {
-        chunkToSpawn = chunk;
+        instance = this;
+        currentChunk = startChunk;
+        chunkTypeAmount = Random.Range(200, 400); chunkToSpawn = chunk;
         chunkTypes = placeHolder;
         chunks.Add(Instantiate(chunkToSpawn));
         SpawnChunk(chunkToSpawn.transform);

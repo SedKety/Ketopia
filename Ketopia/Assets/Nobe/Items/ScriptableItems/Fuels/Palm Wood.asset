@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDescription: 
   physicalItem: {fileID: 3722143927206145614, guid: a371deced5f8e334ebd2f2e3fbc4d2f3,
     type: 3}
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: d73b24ee0d1a17f42b88a92d6e51edfc, type: 3}
   itemId: 0
   itemType: 2
   maxQuantity: 30

@@ -146,7 +146,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 foreach (var obj in spawner.spawnedObjects)
                 {
-                    obj.SetActive(true);
+                    if (obj)
+                    {
+                        obj.SetActive(true);
+                    }
                 }
             }
         }
