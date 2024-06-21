@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31475765, g: 0.59021604, b: 0.5940174, a: 1}
+  m_IndirectSpecularColor: {r: 0.31475767, g: 0.590216, b: 0.5940174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1460,9 +1460,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
+      propertyPath: startChunk.mythicIslands.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
       propertyPath: startChunk.rareIslands.Array.data[0]
       value: 
       objectReference: {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b,
+        type: 3}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: startChunk.rareIslands.Array.data[1]
+      value: 
+      objectReference: {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206,
         type: 3}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
@@ -1481,6 +1492,12 @@ PrefabInstance:
       propertyPath: startChunk.legendaryIslands.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: startChunk.mythicIslands.Array.data[0]
+      value: 
+      objectReference: {fileID: 8495821035986055579, guid: db895fd02d2f96f489da7ddacfdab004,
+        type: 3}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
       propertyPath: placeHolder.Array.data[4].chunkColour.b
@@ -1525,6 +1542,17 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
+      propertyPath: startChunk.legendaryIslands.Array.data[2]
+      value: 
+      objectReference: {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206,
+        type: 3}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: placeHolder.Array.data[1].rareIslands.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
       propertyPath: placeHolder.Array.data[4].rareIslands.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1533,6 +1561,12 @@ PrefabInstance:
       propertyPath: placeHolder.Array.data[4].commonIslands.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: placeHolder.Array.data[1].rareIslands.Array.data[1]
+      value: 
+      objectReference: {fileID: 6726292697570850460, guid: 3f570c31687376d49a081bcd6412b728,
+        type: 3}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
       propertyPath: placeHolder.Array.data[4].rareIslands.Array.data[0]
@@ -1545,6 +1579,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3127889517707242887, guid: 814a0f2f350950743875f6828af66e5d,
         type: 3}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: placeHolder.Array.data[0].legendaryIslands.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
       propertyPath: placeHolder.Array.data[4].commonIslands.Array.data[0]
@@ -1562,6 +1601,12 @@ PrefabInstance:
       propertyPath: placeHolder.Array.data[4].legendaryIslands.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: placeHolder.Array.data[0].legendaryIslands.Array.data[2]
+      value: 
+      objectReference: {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206,
+        type: 3}
     - target: {fileID: 618668235439261406, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
       propertyPath: placeHolder.Array.data[4].legendaryIslands.Array.data[0]
@@ -1646,6 +1691,17 @@ PrefabInstance:
       propertyPath: hearts.Array.data[3]
       value: 
       objectReference: {fileID: 1958112344}
+    - target: {fileID: 8376558494072018894, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: defTools
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376558494072018894, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: magnatitePickaxe
+      value: 
+      objectReference: {fileID: 11400000, guid: d83c70db6416119418fc1c48ae0a8b74,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1767,6 +1823,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 129516074}
+    - target: {fileID: 5541858081897725740, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428703098623470882, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6506120437388489975, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
         type: 3}
       propertyPath: m_Name

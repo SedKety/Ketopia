@@ -81,4 +81,4 @@ MonoBehaviour:
   islandsSpawnPoint: {fileID: 0}
   islands: []
   hasBeenTriggered: 0
-  maxRetries: 10
+  maxRetries: 5

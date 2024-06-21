@@ -3,7 +3,12 @@ guid: f5f5e152f6e048944931df23f336ad8d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - heldItem: {instanceID: 0}
+  - fist: {instanceID: 0}
+  - magnatitePickaxe: {fileID: 11400000, guid: d83c70db6416119418fc1c48ae0a8b74, type: 2}
+  - hand: {instanceID: 0}
+  - animator: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -53,15 +53,15 @@ public class IslandGenerator : MonoBehaviour
         {
             var randomRarity = Random.Range(0, 100);
             GameObject islandToSpawn = null;
-            if (randomRarity < 75)
+            if (randomRarity < 50)
             {
                 islandToSpawn = currentChunk.commonIslands[Random.Range(0, currentChunk.commonIslands.Length)];
             }
-            else if (randomRarity < 99 && randomRarity >= 75)
+            else if (randomRarity < 80 && randomRarity >= 60)
             {
                 islandToSpawn = currentChunk.rareIslands[Random.Range(0, currentChunk.rareIslands.Length)];
             }
-            else if (randomRarity >= 99)
+            else if (randomRarity >= 90)
             {
                 islandToSpawn = currentChunk.legendaryIslands[Random.Range(0, currentChunk.legendaryIslands.Length)];
                 print(islandToSpawn.name);

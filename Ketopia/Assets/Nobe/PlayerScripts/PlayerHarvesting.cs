@@ -6,16 +6,19 @@ public class PlayerHarvesting : MonoBehaviour
 {
     public Item heldItem;
     public Item fist;
+    public Item magnatitePickaxe;
     public int hitTime;
     public int hitRange;
     public int objectInHandDmg;
     public bool canHit;
+    public bool defTools;
 
     public GameObject hand;
     public Animator animator;
     public void Start()
     {
         canHit = true;
+        defTools = true;
     }
     public void OnItemSwitch(Item item)
     {
@@ -64,6 +67,16 @@ public class PlayerHarvesting : MonoBehaviour
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
                     }
                 }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            defTools = true;
+            print("on");
+            if (defTools = true & Input.GetKeyDown(KeyCode.F1))
+            {
+                heldItem = magnatitePickaxe;
+                print("equipped");
             }
         }
     }
