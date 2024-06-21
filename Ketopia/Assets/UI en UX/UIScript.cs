@@ -94,27 +94,19 @@ public class UIScript : MonoBehaviour
     {
         SceneManager.LoadScene("Hernia");
     }
-
     public void DisplayText(string text)
     {
         dialogueText.text = text;
         PlayerManager.instance.SwitchState(PlayerState.dialogue);
     }
-    public void PlayButton()
-    {
-        SceneManager.LoadScene("Game");
-    }
-
     public void Quit()
     {
         Application.Quit();
     }
-
     public IEnumerator DialogueActive()
     {
         yield return new WaitForSeconds(1);
     }
-
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
