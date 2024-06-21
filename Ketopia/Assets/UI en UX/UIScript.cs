@@ -18,23 +18,23 @@ public class UIScript : MonoBehaviour
     public Dialogue interacteDialogue;
     public GameObject lastInteractedNpc;
     public bool hasClicked;
+    public bool setMenAan;
     public Button dialogueSwapper;
-
     public PopUpScript popup;
-
     public GameObject inGameMenu;
     public GameObject playerStats;
     public GameObject inventoryClose;
     public GameObject cursorClose;
     public PlayerMovement playerMovement;
     public PlayerCamMovement playerCamMovement;
+    public InventoryManager inventoryManager;
     public void Start()
     {
+        setMenAan = false;
         instance = this;
         currentDialogueNumber = -1;
         Invoke(nameof(AssignVariables), 1);
     }
-
     public void AssignVariables()
     {
         playerMovement = PlayerManager.instance.gameObject.GetComponent<PlayerMovement>();
@@ -109,7 +109,7 @@ public class UIScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") & setMenAan == false)
         {
             inGameMenu.SetActive(true);
             inventoryClose.SetActive(false);
@@ -117,6 +117,8 @@ public class UIScript : MonoBehaviour
             cursorClose.SetActive(false);
             playerMovement.canMove = false;
             playerCamMovement.canILook = false;
+            GetComponent<InventoryManager>().enabled = false;
+            setMenAan = true;
         }
     }
     public void WeerBewegen()
@@ -125,5 +127,7 @@ public class UIScript : MonoBehaviour
         playerCamMovement.canILook = true;
         playerStats.SetActive(true);
         cursorClose.SetActive(true);
+        GetComponent<InventoryManager>().enabled = true;
+        setMenAan = false;
     }
 }

@@ -20,15 +20,13 @@ public class InventoryManager : MonoBehaviour
     public InvState inventoryState;
     public PlayerState playerState;
     public InventorySlot[] inventorySlots;
-
-
+    public GameObject audioPlayer;
     public Image heldItemImage;
     public Button unequipHeldItemButton;
     public PlayerHarvesting playerHarvesting;
-
     public bool dropMode, buildMode, equipMode, consumeMode;
-    
 
+    public AudioClip dropItem;
     public GameObject sliderPopUp;
     public Slider dropItemSlider;
     public TextMeshProUGUI currentDropAmountText;
@@ -90,6 +88,7 @@ public class InventoryManager : MonoBehaviour
         if (currentSelectedSlot)
         {
             currentSelectedSlot.OnItemDrop(Mathf.RoundToInt(dropItemSlider.value));
+            AudioSource.PlayClipAtPoint(dropItem, audioPlayer.transform.position);
         }
     }
     public void UnEquipItem()
