@@ -1959,7 +1959,6 @@ GameObject:
   - component: {fileID: 1937505760}
   - component: {fileID: 1937505759}
   - component: {fileID: 1937505761}
-  - component: {fileID: 1937505762}
   - component: {fileID: 1937505763}
   - component: {fileID: 1937505764}
   m_Layer: 0
@@ -2010,19 +2009,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickTime: 1
   tickerTimer: 0
---- !u!114 &1937505762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937505758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a6f9485766ec740b20070881766e67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: 
 --- !u!114 &1937505763
 MonoBehaviour:
   m_ObjectHideFlags: 0
