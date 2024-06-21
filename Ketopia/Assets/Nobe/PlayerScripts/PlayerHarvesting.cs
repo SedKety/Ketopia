@@ -75,6 +75,7 @@ public class PlayerHarvesting : MonoBehaviour
             print("on");
             if (defTools = true & Input.GetKeyDown(KeyCode.F1))
             {
+                heldItem = null;
                 heldItem = magnatitePickaxe;
                 print("equipped");
             }
