@@ -12,7 +12,6 @@ public class PlayerHarvesting : MonoBehaviour
     public int objectInHandDmg;
     public bool canHit;
     public bool defTools;
-
     public GameObject hand;
     public Animator animator;
     public void Start()
@@ -63,8 +62,10 @@ public class PlayerHarvesting : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<IDamagable>() != null)
                     {
-                        animator.SetBool("Swing", true);
+                        animator.SetBool("Swing", true); 
+                        hit.collider.gameObject.GetComponent<AudioSource>().Play(0);
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
+                       
                     }
                 }
             }
