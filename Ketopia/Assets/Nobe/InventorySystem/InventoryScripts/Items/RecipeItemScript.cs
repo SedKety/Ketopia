@@ -9,6 +9,7 @@ public class RecipeItemScript : Item
 
     public string displayString;
     public bool shouldDisplay;
+    public AudioClip clip;
 
     public override void OnItemUse()
     {
@@ -16,6 +17,10 @@ public class RecipeItemScript : Item
         if(shouldDisplay)
         {
             UIScript.instance.DisplayText(displayString);
+        }
+        if (clip != null)
+        {
+            AudioSource.PlayClipAtPoint(clip, PlayerManager.instance.gameObject.transform.position);
         }
     }
 }

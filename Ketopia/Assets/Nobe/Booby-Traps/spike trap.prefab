@@ -150,6 +150,7 @@ MonoBehaviour:
   spike: {fileID: 5200322856357849817}
   originalSpikePosition: {x: 0, y: 0, z: 0}
   newSpikePosition: {x: 0, y: 0, z: 0}
+  spikeSound: {fileID: 8300000, guid: 03b1dabb1d439d042822619a0161d50c, type: 3}
   canBeSteppedOn: 0
 --- !u!1 &4765851376882090575 stripped
 GameObject:

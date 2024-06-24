@@ -266,3 +266,5 @@ MonoBehaviour:
   playerLocation: {fileID: 5278636586419870511}
   dialogueCounter: 0
   interactionString: 
+  npcTalk: {fileID: 0}
+  npcTalkCondoteur: {fileID: 8300000, guid: 965bc9ba3b198a740867250d7d1c364b, type: 3}

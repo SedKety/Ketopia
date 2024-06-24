@@ -11,6 +11,7 @@ public class NpcScript : MonoBehaviour, IInteractable
     public Transform playerLocation;
     public int dialogueCounter;
     public string interactionString;
+    public AudioClip npcTalk;
     public void Start()
     {
         if (animator)
@@ -24,6 +25,7 @@ public class NpcScript : MonoBehaviour, IInteractable
         if (animator)
         {
             animator.SetBool("Wavey", true);
+            AudioSource.PlayClipAtPoint(npcTalk, gameObject.transform.position);
         }
         if (UIScript.instance.currentDialogue == null) 
         {

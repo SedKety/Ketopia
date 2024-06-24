@@ -3,7 +3,11 @@ guid: a5f2ae35201d2264181a81e34c38d904
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - craftAudio: {fileID: 8300000, guid: e81d244a480cbf447be40dbed5dbaaa9, type: 3}
+  - outputItemSpot: {instanceID: 0}
+  - audioPlayer: {fileID: 919132149155446097, guid: ac08a19d1b7bd9c409b42baf134c2beb,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

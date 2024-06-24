@@ -15,7 +15,7 @@ public class Crafter : MonoBehaviour, IInteractable
     public List<Recipe> recipes;
     public List<Recipe> possibleRecipe;
     public List<CrafterInput> crafterInputs;
-
+    public AudioClip craftAudio;
     public Transform outputItemSpot;
 
     public void Start()
@@ -64,6 +64,7 @@ public class Crafter : MonoBehaviour, IInteractable
             }
 
             var craftedItem = Instantiate(finalRecipe.outputItem, outputItemSpot.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(craftAudio, gameObject.transform.position);
             if (craftedItem.TryGetComponent<PhysicalItemScript>(out var craftedItemScript))
             {
                 craftedItemScript.quantity = finalRecipe.outputItemAmount;

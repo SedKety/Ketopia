@@ -6,7 +6,7 @@ public class PlayerHarvesting : MonoBehaviour
 {
     public Item heldItem;
     public Item fist;
-    public Item magnatitePickaxe;
+    public GameObject[] devToolItems;
     public int hitTime;
     public int hitRange;
     public int objectInHandDmg;
@@ -67,17 +67,6 @@ public class PlayerHarvesting : MonoBehaviour
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
                     }
                 }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            defTools = true;
-            print("on");
-            if (defTools = true & Input.GetKeyDown(KeyCode.F1))
-            {
-                heldItem = null;
-                heldItem = magnatitePickaxe;
-                print("equipped");
             }
         }
     }

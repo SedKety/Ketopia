@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isSprinting;
     public float lastWPressTime;
     public float doubleTapTime;
-
+    public AudioClip audioClip;
     private void Start()
     {
         canMove = true;
@@ -87,6 +88,10 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        if (moveDirection != null)
+        {
+            AudioSource.PlayClipAtPoint(audioClip, gameObject.transform.position);
+        }
         float currentSpeed = isSprinting ? sprintSpeed : moveSpeed;
         Vector3 targetVelocity = moveDirection.normalized * currentSpeed;
         targetVelocity.y = rb.velocity.y;

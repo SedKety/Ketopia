@@ -7,7 +7,7 @@ public class SpikeTrap : MonoBehaviour
     public SpikeScript spike;
     public Vector3 originalSpikePosition;
     public Vector3 newSpikePosition;
-
+    public AudioClip spikeSound;
     public bool canBeSteppedOn;
 
     public void Start()
@@ -29,6 +29,7 @@ public class SpikeTrap : MonoBehaviour
         float upSpeed = 5;
         float upTime = 0;
         Vector3 endItemPosition = newSpikePosition;
+        AudioSource.PlayClipAtPoint(spikeSound, gameObject.transform.position);
 
         while (upTime < 1f)
         {
