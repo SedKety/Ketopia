@@ -8,6 +8,7 @@ public enum PlayerState
     inventory,
     menu,
     dialogue,
+    dead,
 }
 public class PlayerManager : MonoBehaviour
 {
@@ -117,6 +118,15 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
                 UIScript.instance.winScreen.SetActive(true);
+                break;
+            case PlayerState.dead:
+                UIScript.instance.deathscreen.SetActive(true);
+                UIScript.instance.inventory.SetActive(false);
+                UIScript.instance.playerstats.SetActive(false);
+                UIScript.instance.dialogue.SetActive(false);
+                UIScript.instance.cursor.SetActive(false);
+                player.GetComponent<PlayerMovement>().canMove = false;
+                player.GetComponent<PlayerCamMovement>().canILook = false;
                 break;
 
         }

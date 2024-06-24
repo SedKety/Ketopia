@@ -108,6 +108,10 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public void IDamagable(float dmgDone, NodeType type, int toolStrength)
     {
         health -= dmgDone;
+        if(health <= 0)
+        {
+            PlayerManager.instance.SwitchState(PlayerState.dead);
+        }
     }
     public void AddExp(float expToAdd)
     {

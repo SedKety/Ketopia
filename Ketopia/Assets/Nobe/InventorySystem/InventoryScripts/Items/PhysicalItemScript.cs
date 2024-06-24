@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PhysicalItemScript : MonoBehaviour, IInteractable
 {
     public Item item;
     public int quantity;
+    int DespawnTimer = 60;
     public virtual void Start()
     {
+        StartCoroutine(StartDespawnTimer());
         if (quantity <= 0)
         {
             Destroy(gameObject);
@@ -47,5 +50,11 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
         {
             transform.parent = null;
         }
+    }
+
+    public IEnumerator StartDespawnTimer()
+    {
+        yield return new WaitForSeconds(DespawnTimer);
+        Destroy(gameObject);
     }
 }
