@@ -322,7 +322,11 @@ MonoBehaviour:
   crafterInputs:
   - {fileID: 3643069265762994147}
   - {fileID: 2533039808072581681}
+  craftAudio: {fileID: 0}
   outputItemSpot: {fileID: 5125346417563402206}
+  confetti: {fileID: 7767543008776757366, guid: 9e2d28de9f52bb54ea162dba7db707f3,
+    type: 3}
+  confettiSpawnPoint: {fileID: 5125346417563402206}
 --- !u!65 &8852757787793842725
 BoxCollider:
   m_ObjectHideFlags: 0

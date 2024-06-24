@@ -18,6 +18,9 @@ public class Crafter : MonoBehaviour, IInteractable
     public AudioClip craftAudio;
     public Transform outputItemSpot;
 
+    public GameObject confetti;
+    public Transform confettiSpawnPoint;
+
     public void Start()
     {
         RecipeManager.crafters.Add(this);
@@ -64,7 +67,10 @@ public class Crafter : MonoBehaviour, IInteractable
             }
 
             var craftedItem = Instantiate(finalRecipe.outputItem, outputItemSpot.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(craftAudio, gameObject.transform.position);
+            if (craftAudio)
+                AudioSource.PlayClipAtPoint(craftAudio, gameObject.transform.position);
+            var spawnedConfetti = Instantiate(confetti, confettiSpawnPoint.position + new Vector3(0, 0.1f, 0), new Quaternion(-90, 0, 0, 0));
+            Destroy(spawnedConfetti, 2.5f);
             if (craftedItem.TryGetComponent<PhysicalItemScript>(out var craftedItemScript))
             {
                 craftedItemScript.quantity = finalRecipe.outputItemAmount;
