@@ -26,4 +26,3 @@ MonoBehaviour:
     normal magnets, and make 10 magnetite bars, combine these and behold the power
     of the giant magnet'
   shouldDisplay: 1
-  clip: {fileID: 8300000, guid: 036380dea31bbf44f96dd4057fefccf1, type: 3}
