@@ -25,3 +25,4 @@ MonoBehaviour:
   displayString: 'The Scroll reads:  To craft the magnet you will need to put 10
     iron distributed equally among all crafting table slots.'
   shouldDisplay: 1
+  clip: {fileID: 8300000, guid: 036380dea31bbf44f96dd4057fefccf1, type: 3}

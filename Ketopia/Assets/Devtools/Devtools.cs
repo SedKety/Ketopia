@@ -17,7 +17,8 @@ public class Devtools : MonoBehaviour
         {
             for (int i = 0; i < devToolItems.Length; i++)
             {
-                Instantiate(devToolItems[i], PlayerManager.instance.dropSpot);
+                Instantiate(devToolItems[i], PlayerManager.instance.dropSpot.position, Quaternion.identity);
+                devToolItems[i].GetComponent<PhysicalItemScript>().quantity = devToolItems[i].GetComponent<PhysicalItemScript>().item.maxQuantity;
             }
         }
     }
