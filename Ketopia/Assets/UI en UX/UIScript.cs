@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public static UIScript instance;
-    public GameObject inventory, playerstats, settings, dialogue, winScreen, cursor;
+    public GameObject inventory, playerstats, settings, dialogue, winScreen, cursor, deathscreen;
 
     public Transform npcDropLocation;
     public TextMeshProUGUI dialogueText;

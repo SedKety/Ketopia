@@ -8996,6 +8996,7 @@ MonoBehaviour:
   dialogue: {fileID: 8166414737702870446}
   winScreen: {fileID: 3209351518420773187}
   cursor: {fileID: 4394219829484023835}
+  deathscreen: {fileID: 6378744259727757496}
   npcDropLocation: {fileID: 0}
   dialogueText: {fileID: 8911752224307573462}
   currentDialogueNumber: -1

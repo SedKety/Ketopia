@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6687624758878742213}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24807781, y: -0, z: -0, w: 0.9687401}
-  m_LocalPosition: {x: 0.1, y: 0, z: -15.93}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8057794267297935719}
-  m_LocalEulerAnglesHint: {x: 28.728, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7519234896855144076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e624fa3f6b2a5149978ecfb063b43fa,
         type: 3}
       propertyPath: m_Name
-      value: SmallStone
+      value: Henk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -154,6 +154,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   dialogue:
   - {fileID: 11400000, guid: 111646db3e35ee946b28821f825efe2d, type: 2}
+  - {fileID: 11400000, guid: b67b470485ba5bf4a914bbf6a51f615e, type: 2}
   dropLocation: {fileID: 0}
   playerLocation: {fileID: 5810164180166747083}
   dialogueCounter: 0
