@@ -7,7 +7,6 @@ using UnityEngine.Assertions.Must;
 
 public class GameTimer : MonoBehaviour
 {
-    //public PlayerManager playerManager;
     private bool timerOn;
     public int currentTimeSeconds;
     public int currentTimeMin;
@@ -54,26 +53,14 @@ public class GameTimer : MonoBehaviour
             CalculateBestTime();
         }
     }
-    //public void CalculateBestTime()
-    //{
-      //  int currentTimeInSeconds = currentTimeMin * 60 + currentTimeSeconds;
-        //int bestTime = PlayerPrefs.GetInt("BestTime", int.MaxValue);
-        //if (currentTimeInSeconds < bestTime)
-        //{
-          //  PlayerPrefs.SetInt("BestTime", currentTimeInSeconds);
-        //}
-        //bestTimerText.text = PlayerPrefs.GetInt("BestTime").ToString() + " Seconds";
-    //}
     public void CalculateBestTime()
     {
-        if (PlayerPrefs.GetInt("BestTime") != 0)
+        int currentTimeInSeconds = currentTimeMin * 60 + currentTimeSeconds;
+        int bestTime = PlayerPrefs.GetInt("BestTime", int.MaxValue);
+        if (currentTimeInSeconds > bestTime)
         {
-            PlayerPrefs.SetInt("BestTime", currentTimeMin * 60 + currentTimeSeconds);
+            PlayerPrefs.SetInt("BestTime", currentTimeInSeconds);
         }
-        else if (PlayerPrefs.GetInt("BestTime") <= currentTimeMin * 60 + currentTimeSeconds)
-        {
-            PlayerPrefs.SetInt("BestTime", currentTimeMin * 60 + currentTimeSeconds);
-        }
-        bestTimerText.text = PlayerPrefs.GetInt("BestTime" + "Seconds").ToString();
+        bestTimerText.text ="Best time: " + PlayerPrefs.GetInt("BestTime").ToString() + " Seconds";
     }
 }

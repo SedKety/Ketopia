@@ -820,6 +820,7 @@ MonoBehaviour:
   currentTimeMin: 0
   timerText: {fileID: 0}
   bestTimerText: {fileID: 889488642838935151}
+  playerMc: {fileID: 0}
 --- !u!114 &5950282086786355635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2728,7 +2729,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 381139217239677561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.75500005, y: 0}
+  m_AnchorMin: {x: 0.70248336, y: 0}
   m_AnchorMax: {x: 1, y: 0.041888885}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -2763,8 +2764,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: No current best time
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96c05ce1754b3dc4d86c28a295ee7593, type: 2}
+  m_sharedMaterial: {fileID: 1057537594762215708, guid: 96c05ce1754b3dc4d86c28a295ee7593,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

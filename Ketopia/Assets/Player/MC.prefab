@@ -1,134 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &52673873298267202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5800476667397743162}
-  - component: {fileID: 6576828178882635530}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5800476667397743162
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52673873298267202}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 454925799973877102}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6576828178882635530
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52673873298267202}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 6f3526fafeaa5ee4185caa0bd266f0bf,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5c33bb199105595499306c5539b4d827, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.538
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 4.1392307
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &3936748385365560410
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,10 +483,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 373670204517919819}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5800476667397743162}
     - targetCorrespondingSourceObject: {fileID: -1486527654978891383, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       insertIndex: -1
@@ -702,6 +569,7 @@ MonoBehaviour:
   isSprinting: 0
   lastWPressTime: 0
   doubleTapTime: 0.3
+  audioClip: {fileID: 0}
 --- !u!114 &5031011553808536049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +611,7 @@ MonoBehaviour:
   cursor: {fileID: 0}
   canInteractWithNpc: 0
   dialogueLocation: {fileID: 0}
+  gameTimer: {fileID: 0}
   playerToBoatDistance: 250
   distanceDamage: 0.25
 --- !u!114 &5160098669033299587
@@ -814,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
   fist: {fileID: 11400000, guid: d8960efd15168a5409c954ddac7e759a, type: 2}
-  magnatitePickaxe: {fileID: 0}
+  devToolItems: []
   hitTime: 1
   hitRange: 3
   objectInHandDmg: 5
