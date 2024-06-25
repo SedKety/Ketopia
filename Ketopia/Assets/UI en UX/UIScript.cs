@@ -28,6 +28,7 @@ public class UIScript : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerCamMovement playerCamMovement;
     public InventoryManager inventoryManager;
+    public PlayerManager playerManager;
     public void Start()
     {
         setMenAan = false;
@@ -109,7 +110,7 @@ public class UIScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") & setMenAan == false)
+        if (Input.GetButtonDown("Cancel") & setMenAan == false & PlayerManager.instance.playerState != PlayerState.ship)
         {
             inGameMenu.SetActive(true);
             inventoryClose.SetActive(false);
