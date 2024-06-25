@@ -110,7 +110,7 @@ public class UIScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") & setMenAan == false & PlayerManager.instance.playerState != PlayerState.ship)
+        if (Input.GetButtonDown("Cancel") & setMenAan == false & PlayerManager.instance.playerState != PlayerState.ship & PlayerManager.instance.playerState != PlayerState.dead & PlayerManager.instance.playerState != PlayerState.menu & PlayerManager.instance.playerState != PlayerState.dialogue)
         {
             inGameMenu.SetActive(true);
             inventoryClose.SetActive(false);

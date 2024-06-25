@@ -8727,6 +8727,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &746274219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6506120437388489975, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1849792674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &746274229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3564125944197887304, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1849792674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746274219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481e167f2cbedd84cb7c248019713131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &749468334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038621331692944909, guid: 78747dcfc989efd44943ebaaf1eb9b35,
@@ -12221,6 +12239,16 @@ PrefabInstance:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1443240474}
+    - target: {fileID: 703719820403647574, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 746274229}
+    - target: {fileID: 703719820403647574, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
+      propertyPath: inGameMenu
+      value: 
+      objectReference: {fileID: 746274219}
     - target: {fileID: 944603866700853204, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
       propertyPath: m_Name
@@ -19961,6 +19989,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 129516074}
+    - target: {fileID: 3564125944197887304, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: playerMc
+      value: 
+      objectReference: {fileID: 1635208880}
+    - target: {fileID: 3564125944197887304, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1529841995}
+    - target: {fileID: 3564125944197887304, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: bestTimerText
+      value: 
+      objectReference: {fileID: 2038748603}
     - target: {fileID: 5541858081897725740, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
         type: 3}
       propertyPath: m_IsActive
@@ -19976,10 +20019,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: in game menu
       objectReference: {fileID: 0}
+    - target: {fileID: 7009072365030588531, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: m_Name
+      value: best timer Text (TMP)
+      objectReference: {fileID: 0}
     - target: {fileID: 7401424333629320541, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809035252628796568, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809035252628796568, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: bestTimerText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809035252628796568, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+        type: 3}
+      propertyPath: playerManager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8856297267202943843, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
         type: 3}
@@ -20081,7 +20144,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7809035252628796568, guid: 3544a64b7dbd1f044b1c3cae21de27c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21415,6 +21479,7 @@ MonoBehaviour:
   currentTimeMin: 0
   timerText: {fileID: 1529841995}
   bestTimerText: {fileID: 0}
+  playerMc: {fileID: 0}
 --- !u!1 &1938729972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7566419585624266936, guid: 78747dcfc989efd44943ebaaf1eb9b35,
@@ -22160,6 +22225,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2038748603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1493850834550046146, guid: 3544a64b7dbd1f044b1c3cae21de27c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1849792674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2046599277 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4237196886631969778, guid: 78747dcfc989efd44943ebaaf1eb9b35,

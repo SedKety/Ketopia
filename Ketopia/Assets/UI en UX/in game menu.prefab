@@ -3697,7 +3697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "you did it the world of ketopia \nis now restored.\nYippee"
+  m_text: "you did it!!\n the world of ketopia is now restored.\nYippee"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96c05ce1754b3dc4d86c28a295ee7593, type: 2}
   m_sharedMaterial: {fileID: 1057537594762215708, guid: 96c05ce1754b3dc4d86c28a295ee7593,
@@ -4549,7 +4549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc76e759c7f54124892663d7bcac9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 5936000277524345450}
+  resolutionDropdown: {fileID: 5936000277524345450}
 --- !u!1 &3703427635533598411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8880,7 +8880,7 @@ GameObject:
   - component: {fileID: 319061843141886827}
   - component: {fileID: 846081330569197334}
   - component: {fileID: 8974804613593011111}
-  - component: {fileID: 7809035252628796568}
+  - component: {fileID: 3564125944197887304}
   m_Layer: 5
   m_Name: in game menu
   m_TagString: Untagged
@@ -9100,7 +9100,7 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 0, z: 0}
   canyonIsland: {fileID: 0}
   canyonActive: 0
---- !u!114 &7809035252628796568
+--- !u!114 &3564125944197887304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9112,10 +9112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481e167f2cbedd84cb7c248019713131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
   currentTimeSeconds: 0
   currentTimeMin: 0
-  timerText: {fileID: 2065614296819738708}
-  bestTimerText: {fileID: 1493850834550046146}
+  timerText: {fileID: 0}
+  bestTimerText: {fileID: 0}
 --- !u!1 &6548893708562592625
 GameObject:
   m_ObjectHideFlags: 0

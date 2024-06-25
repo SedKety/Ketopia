@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     public bool canInteractWithNpc;
 
     public Transform dialogueLocation;
-
+    public GameTimer gameTimer;
     public float playerToBoatDistance;
     public float distanceDamage;
     public void Start()
@@ -48,6 +48,11 @@ public class PlayerManager : MonoBehaviour
         {
             transform.SetPositionAndRotation(playerWheelLocation.position, playerWheelLocation.rotation);
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SwitchState(PlayerState.menu);
         }
     }
 
@@ -118,6 +123,10 @@ public class PlayerManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
                 UIScript.instance.winScreen.SetActive(true);
+                UIScript.instance.inventory.SetActive(false);
+                UIScript.instance.playerstats.SetActive(false);
+                UIScript.instance.dialogue.SetActive(false);
+                UIScript.instance.cursor.SetActive(false);
                 break;
             case PlayerState.dead:
                 UIScript.instance.deathscreen.SetActive(true);
@@ -127,6 +136,7 @@ public class PlayerManager : MonoBehaviour
                 UIScript.instance.cursor.SetActive(false);
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerCamMovement>().canILook = false;
+                GetComponent<InventoryManager>().enabled = false;
                 break;
 
         }

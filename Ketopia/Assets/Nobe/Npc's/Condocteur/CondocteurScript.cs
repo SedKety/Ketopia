@@ -5,11 +5,12 @@ using UnityEngine;
 public class CondocteurScript : NpcScript, IInteractable
 {
     public AudioClip npcTalkCondoteur;
+    public float volume = 0.6f;
     public override void IInteractable()
     {
         PlayerManager.instance.canInteractWithNpc = false;
         animator.SetBool("Wavey", true);
-        AudioSource.PlayClipAtPoint(npcTalkCondoteur, gameObject.transform.position);
+        AudioSource.PlayClipAtPoint(npcTalkCondoteur, gameObject.transform.position,volume);
         if (UIScript.instance.currentDialogue == null)
         {
             if (dialogueCounter <= dialogue.Count - 1)
