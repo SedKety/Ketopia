@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31475762, g: 0.59021604, b: 0.5940174, a: 1}
+  m_IndirectSpecularColor: {r: 0.31475765, g: 0.59021604, b: 0.5940174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21478,7 +21478,7 @@ MonoBehaviour:
   currentTimeSeconds: 0
   currentTimeMin: 0
   timerText: {fileID: 1529841995}
-  bestTimerText: {fileID: 0}
+  bestTimerText: {fileID: 2038748603}
   playerMc: {fileID: 0}
 --- !u!1 &1938729972 stripped
 GameObject:

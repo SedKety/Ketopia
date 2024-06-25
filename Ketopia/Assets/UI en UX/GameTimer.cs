@@ -48,7 +48,7 @@ public class GameTimer : MonoBehaviour
     }
     public void Update()
     {
-        if (playerMc.GetComponent<PlayerManager>().playerState == PlayerState.menu)
+        if (PlayerManager.instance.playerState == PlayerState.menu)
         {
             StopTimer();
             CalculateBestTime();
