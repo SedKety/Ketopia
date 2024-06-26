@@ -4069,7 +4069,7 @@ RectTransform:
   m_Father: {fileID: 8805303128363429723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4505,51 +4505,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &3680717857695776431
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8676943445187005590}
-  - component: {fileID: 6759422779898992612}
-  m_Layer: 0
-  m_Name: Resolution Manger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8676943445187005590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680717857695776431}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.321533, y: 53.329193, z: -0.0083732605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5836945754731248740}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6759422779898992612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680717857695776431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc76e759c7f54124892663d7bcac9ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resolutionDropdown: {fileID: 5936000277524345450}
 --- !u!1 &3703427635533598411
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,8 +6671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.55375004, y: 0.601}
   m_AnchorMax: {x: 0.808, y: 0.7535318}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 0.00010681152, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2157323695358525428
 CanvasRenderer:
@@ -6816,9 +6771,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6759422779898992612}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ResolutionM, Assembly-CSharp
-        m_MethodName: SetResolution
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7346,7 +7301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6063278648661671906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8876,10 +8831,10 @@ GameObject:
   - component: {fileID: 1528787373462786777}
   - component: {fileID: 7594054446941196788}
   - component: {fileID: 9025007855615298928}
+  - component: {fileID: 96649314716151199}
   - component: {fileID: 8402569946946595791}
   - component: {fileID: 319061843141886827}
   - component: {fileID: 846081330569197334}
-  - component: {fileID: 8974804613593011111}
   - component: {fileID: 3564125944197887304}
   m_Layer: 5
   m_Name: in game menu
@@ -8980,6 +8935,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &96649314716151199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506120437388489975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc76e759c7f54124892663d7bcac9ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 5936000277524345450}
 --- !u!114 &8402569946946595791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9085,21 +9053,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   textPos: {fileID: 9106488868676914653}
---- !u!114 &8974804613593011111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506120437388489975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb659726a7202d44b0ff8f56ea18414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPosition: {x: 0, y: 0, z: 0}
-  canyonIsland: {fileID: 0}
-  canyonActive: 0
 --- !u!114 &3564125944197887304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10184,7 +10137,6 @@ RectTransform:
   - {fileID: 5375334237454058023}
   - {fileID: 925164424940164409}
   - {fileID: 1313364849640170467}
-  - {fileID: 8676943445187005590}
   - {fileID: 7990326978838154498}
   - {fileID: 4690179042083631340}
   m_Father: {fileID: 6063278648661671906}

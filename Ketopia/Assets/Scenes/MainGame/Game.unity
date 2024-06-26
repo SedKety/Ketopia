@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31475765, g: 0.59021604, b: 0.5940174, a: 1}
+  m_IndirectSpecularColor: {r: 0.31475762, g: 0.59021604, b: 0.5940174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20185,6 +20185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7809035252628796568, guid: 3544a64b7dbd1f044b1c3cae21de27c5, type: 3}
+    - {fileID: 8974804613593011111, guid: 3544a64b7dbd1f044b1c3cae21de27c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21436,7 +21437,6 @@ GameObject:
   - component: {fileID: 1937505760}
   - component: {fileID: 1937505759}
   - component: {fileID: 1937505761}
-  - component: {fileID: 1937505763}
   - component: {fileID: 1937505764}
   - component: {fileID: 1937505765}
   m_Layer: 0
@@ -21487,22 +21487,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickTime: 1
   tickerTimer: 0
---- !u!114 &1937505763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937505758}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb659726a7202d44b0ff8f56ea18414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPosition: {x: 1000, y: 0, z: 1000}
-  canyonIsland: {fileID: 8495821035986055579, guid: db895fd02d2f96f489da7ddacfdab004,
-    type: 3}
-  canyonActive: 0
 --- !u!114 &1937505764
 MonoBehaviour:
   m_ObjectHideFlags: 0

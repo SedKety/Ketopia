@@ -49,11 +49,6 @@ public class PlayerManager : MonoBehaviour
             transform.SetPositionAndRotation(playerWheelLocation.position, playerWheelLocation.rotation);
 
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SwitchState(PlayerState.menu);
-        }
     }
 
     public void OnTick()
