@@ -1,19 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManger : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManger instance;
     public Vector3 spawnPosition;
     public GameObject canyonIsland;
     public bool canyonActive;
     public void Start()
     {
         instance = this;
-        
+
     }
     public void SpawnCanyonIsland()
     {

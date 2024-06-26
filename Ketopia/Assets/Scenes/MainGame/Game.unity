@@ -21438,6 +21438,7 @@ GameObject:
   - component: {fileID: 1937505761}
   - component: {fileID: 1937505763}
   - component: {fileID: 1937505764}
+  - component: {fileID: 1937505765}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21493,7 +21494,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937505758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb659726a7202d44b0ff8f56ea18414, type: 3}
   m_Name: 
@@ -21519,6 +21520,22 @@ MonoBehaviour:
   timerText: {fileID: 1529841995}
   bestTimerText: {fileID: 2038748603}
   playerMc: {fileID: 0}
+--- !u!114 &1937505765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937505758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde985d678342a14fbdb391fc10b354f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {x: 1000, y: 0, z: 1000}
+  canyonIsland: {fileID: 8495821035986055579, guid: db895fd02d2f96f489da7ddacfdab004,
+    type: 3}
+  canyonActive: 0
 --- !u!1 &1938729972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7566419585624266936, guid: 78747dcfc989efd44943ebaaf1eb9b35,

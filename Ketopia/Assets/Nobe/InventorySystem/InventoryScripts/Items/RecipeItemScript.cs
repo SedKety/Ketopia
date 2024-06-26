@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Item/RecipeItem")]
 public class RecipeItemScript : Item
@@ -26,9 +24,9 @@ public class RecipeItemScript : Item
 
         if (giantMagnet)
         {
-            if (!GameManager.instance.canyonActive)
+            if (!GameManger.instance.canyonActive)
             {
-                GameManager.instance.SpawnCanyonIsland();
+                GameManger.instance.SpawnCanyonIsland();
             }
         }
     }

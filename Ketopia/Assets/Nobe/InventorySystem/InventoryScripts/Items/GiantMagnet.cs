@@ -6,9 +6,9 @@ public class GiantMagnet : PhysicalItemScript
 {
     public override void IInteractable()
     {
-        if(!GameManager.instance.canyonActive)
+        if(!GameManger.instance.canyonActive)
         {
-            GameManager.instance.SpawnCanyonIsland();
+            GameManger.instance.SpawnCanyonIsland();
         }
         int leftOverItems = InventoryManager.instance.OnItemAdd(item, quantity);
         if (leftOverItems <= 0)
