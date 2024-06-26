@@ -63,9 +63,8 @@ public class PlayerHarvesting : MonoBehaviour
                     if (hit.collider.gameObject.GetComponent<IDamagable>() != null)
                     {
                         animator.SetBool("Swing", true); 
-                        hit.collider.gameObject.GetComponent<AudioSource>().Play(0);
                         hit.collider.gameObject.GetComponent<IDamagable>().IDamagable(objectInHandDmg, harvestingTool.typeToHarvest, harvestingTool.toolStrength);
-                       
+                        hit.collider.gameObject.GetComponent<AudioSource>().Play(0);
                     }
                 }
             }

@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 8371720710525822864}
   - component: {fileID: 7384702378671654248}
   - component: {fileID: 5950282086786355635}
+  - component: {fileID: 3094498574305214016}
   m_Layer: 5
   m_Name: main menu
   m_TagString: Untagged
@@ -730,6 +731,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 16727114018718269}
   - {fileID: 381139217239677561}
   - {fileID: 2803238791152644037}
   - {fileID: 4044653485625071907}
@@ -845,6 +847,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1fcb27f066c908429b4a19dce5affde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3094498574305214016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224309430355186134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8509d56ac1ca041adab3dbd8c4d244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1551830342635631668
@@ -2350,7 +2364,6 @@ RectTransform:
   - {fileID: 7593146196608146352}
   - {fileID: 7958885238751061975}
   - {fileID: 5204500562549822624}
-  - {fileID: 16727114018718269}
   - {fileID: 524280110413250829}
   - {fileID: 81078053607531241}
   - {fileID: 5288806991032105832}
@@ -2639,16 +2652,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3236916594446969220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3685778455299963640}
+  m_Father: {fileID: 2423014851488166023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -91.399994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7889494798048090876
@@ -3573,7 +3586,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307397564784406628}
+      - m_Target: {fileID: 3094498574305214016}
         m_TargetAssemblyTypeName: FpsMan, Assembly-CSharp
         m_MethodName: ChangeFPS
         m_Mode: 0
@@ -4565,12 +4578,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_TargetAssemblyTypeName: 
         m_MethodName: 
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
