@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 613803362119888832}
   - component: {fileID: 4765430555983823772}
   - component: {fileID: 1029941743925714473}
+  - component: {fileID: 8371720710525822864}
   - component: {fileID: 7384702378671654248}
   - component: {fileID: 5950282086786355635}
   m_Layer: 5
@@ -804,6 +805,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8371720710525822864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224309430355186134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc76e759c7f54124892663d7bcac9ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 4457277171502670513}
 --- !u!114 &7384702378671654248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,51 +847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fcb27f066c908429b4a19dce5affde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1326657462724837487
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1212485184217121121}
-  - component: {fileID: 8102521414852672030}
-  m_Layer: 0
-  m_Name: Resolution Manger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1212485184217121121
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326657462724837487}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.321533, y: 53.329193, z: -0.0083732605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3685778455299963640}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8102521414852672030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326657462724837487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc76e759c7f54124892663d7bcac9ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resolutionDropdown: {fileID: 4457277171502670513}
 --- !u!1 &1551830342635631668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2356,6 @@ RectTransform:
   - {fileID: 5288806991032105832}
   - {fileID: 8244246217280013138}
   - {fileID: 6178153764417612839}
-  - {fileID: 1212485184217121121}
   - {fileID: 5114735504166838102}
   - {fileID: 4225251565658707203}
   m_Father: {fileID: 2803238791152644037}
@@ -4596,10 +4564,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8102521414852672030}
-        m_TargetAssemblyTypeName: ResolutionM, Assembly-CSharp
-        m_MethodName: SetResolution
-        m_Mode: 0
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: 
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

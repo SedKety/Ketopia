@@ -8,64 +8,63 @@ public class ResolutionM : MonoBehaviour
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
     private List<Resolution> resolutionList;
-    private float currentRefRate;
     private int currentResolutionIndex = 0;
+    private const string ResolutionIndexKey = "ResolutionIndex";
+
+    [System.Obsolete]
     void Start()
     {
         resolutions = Screen.resolutions;
         resolutionList = new List<Resolution>();
         resolutionDropdown.ClearOptions();
-        currentRefRate = Screen.currentResolution.refreshRate;
-        for (int i = 0; i < resolutions.Length; i++)
+        float savedRefreshRate = PlayerPrefs.GetFloat("RefreshRate", Screen.currentResolution.refreshRate);
+        foreach (var res in resolutions)
         {
-            if (resolutions[i].refreshRate == currentRefRate)
+            if (res.refreshRate == savedRefreshRate)
             {
-                resolutionList.Add(resolutions[i]);
+                resolutionList.Add(res);
             }
         }
         List<string> options = new List<string>();
-        for (int i = 0; i < resolutionList.Count; i++)
+        foreach (var res in resolutionList)
         {
-            string resolutionOption = resolutionList[i].width + "x" + resolutionList[i].height + " " + resolutionList[i].refreshRate + " Hz";
-            options.Add(resolutionOption);
-            if (resolutionList[i].width == Screen.width && resolutionList[i].height == Screen.height)
-            {
-                currentResolutionIndex = i;
-            }
+            string option = $"{res.width}x{res.height} {res.refreshRate} Hz";
+            options.Add(option);
         }
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
-        LoadResolution();
-    }
-    public void SetResolution(int resolutionIndex)
-    {
-        Resolution resolution = resolutionList[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, true);
-        PlayerPrefs.SetInt("ResolutionWidth", resolution.width);
-        PlayerPrefs.SetInt("ResolutionHeight", resolution.height);
-        PlayerPrefs.SetInt("RefreshRate", resolution.refreshRate);
-        PlayerPrefs.SetInt("ResolutionIndex", resolutionIndex);
-        PlayerPrefs.Save();
-    }
-    private void LoadResolution()
-    {
-        if (PlayerPrefs.HasKey("ResolutionWidth") && PlayerPrefs.HasKey("ResolutionHeight") && PlayerPrefs.HasKey("RefreshRate"))
+        if (PlayerPrefs.HasKey(ResolutionIndexKey))
         {
-            int width = PlayerPrefs.GetInt("ResolutionWidth");
-            int height = PlayerPrefs.GetInt("ResolutionHeight");
-            int refreshRate = PlayerPrefs.GetInt("RefreshRate");
+            currentResolutionIndex = PlayerPrefs.GetInt(ResolutionIndexKey);
+        }
+        else
+        {
             for (int i = 0; i < resolutionList.Count; i++)
             {
-                if (resolutionList[i].width == width && resolutionList[i].height == height && resolutionList[i].refreshRate == refreshRate)
+                if (resolutionList[i].width == Screen.width && resolutionList[i].height == Screen.height)
                 {
                     currentResolutionIndex = i;
-                    Screen.SetResolution(width, height, true);
-                    resolutionDropdown.value = currentResolutionIndex;
-                    resolutionDropdown.RefreshShownValue();
                     break;
                 }
             }
         }
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+        ApplyResolution(currentResolutionIndex);
+        resolutionDropdown.onValueChanged.AddListener(SetResolution);
+    }
+
+    [System.Obsolete]
+    public void SetResolution(int resolutionIndex)
+    {
+        currentResolutionIndex = resolutionIndex;
+        ApplyResolution(currentResolutionIndex);
+        PlayerPrefs.SetInt(ResolutionIndexKey, currentResolutionIndex);
+        PlayerPrefs.SetFloat("RefreshRate", resolutionList[resolutionIndex].refreshRate);
+        PlayerPrefs.Save();
+    }
+    private void ApplyResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutionList[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, true);
     }
 }
