@@ -40,6 +40,7 @@ public class UIScript : MonoBehaviour
     {
         playerMovement = PlayerManager.instance.gameObject.GetComponent<PlayerMovement>();
         playerCamMovement = PlayerManager.instance.gameObject.GetComponent<PlayerCamMovement>();
+        playerManager = PlayerManager.instance;
     }
     public void DisplayDialogue(string text)
     {
@@ -130,5 +131,6 @@ public class UIScript : MonoBehaviour
         cursorClose.SetActive(true);
         GetComponent<InventoryManager>().enabled = true;
         setMenAan = false;
+        playerManager.SwitchState(PlayerState.normal);
     }
 }

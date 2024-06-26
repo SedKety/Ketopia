@@ -8,8 +8,6 @@ public class RecipeItemScript : Item
     public string displayString;
     public bool shouldDisplay;
     public AudioClip clip;
-
-    public bool giantMagnet;
     public override void OnItemUse()
     {
         RecipeManager.OnRecipeAdd(this);
@@ -20,14 +18,6 @@ public class RecipeItemScript : Item
         if (clip != null)
         {
             AudioSource.PlayClipAtPoint(clip, PlayerManager.instance.gameObject.transform.position);
-        }
-
-        if (giantMagnet)
-        {
-            if (!GameManger.instance.canyonActive)
-            {
-                GameManger.instance.SpawnCanyonIsland();
-            }
         }
     }
 }

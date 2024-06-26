@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GiantMagnet : PhysicalItemScript
 {
+    string displayText;
     public override void IInteractable()
     {
         if(!GameManger.instance.canyonActive)
@@ -19,5 +20,7 @@ public class GiantMagnet : PhysicalItemScript
         {
             quantity = leftOverItems;
         }
+        GameManger.instance.SpawnCanyonIsland();
+        UIScript.instance.DisplayText(displayText);
     }
 }

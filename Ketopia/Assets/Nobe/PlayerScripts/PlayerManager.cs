@@ -98,6 +98,7 @@ public class PlayerManager : MonoBehaviour
                 break;
 
             case PlayerState.inventory:
+                Cursor.lockState = CursorLockMode.None;
                 AirshipMovement.instance.DisableMovement();
                 player.GetComponent<PlayerCamMovement>().canILook = false;
                 break;

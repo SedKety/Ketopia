@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5c6e0f65b09c944a7439f788512e0c, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  title: Tutorial
+  dialogue:
+  - Oi, My Name's Greg. I live on this glorified shithole of an island and i willteach
+    you how to play the game
+  - If you want to walk Press (W, A, S or D). and If you want to sprint, (double
+    press W).
+  - 'Press (F) if you want to interact with stuff and if you picked up an item (E)
+    for your inventory. '
+  - If you get stuck driving the boat press (G) to get of it.
+  - Harvest items by (clicking) on them.
+  - Go over to the ship and follow interact with the npc's! good luck cap
+  milestones: []
