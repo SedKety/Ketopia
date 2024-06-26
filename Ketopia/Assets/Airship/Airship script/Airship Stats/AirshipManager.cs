@@ -58,7 +58,6 @@ public class AirshipManager : MonoBehaviour
     {
         while (AirshipMovement.instance.airshipMovementEnabled)
         {
-            print("Womp Womp");
             if (currentFuel > 0)
             {
                 currentFuel -= fuelCost;

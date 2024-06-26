@@ -21,7 +21,6 @@ public class ResourceNode : MonoBehaviour, IDamagable
     public float shakeDuration;
     public float shakeMagnitude;
     protected Vector3 originalPosition;
-
    public virtual void Start()
     {
         originalPosition = transform.localPosition;

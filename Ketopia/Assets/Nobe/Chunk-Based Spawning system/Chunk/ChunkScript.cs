@@ -46,17 +46,17 @@ public class ChunkScript : MonoBehaviour
     {
         while (islandsSpawnedThisCycle < chunk.howManyToSpawn)
         {
-            var randomRarity = Random.Range(0, 100);
+            var randomRarity = Random.Range(0, 76);
             GameObject islandToSpawn = null;
             if (randomRarity < 50)
             {
                 islandToSpawn = chunk.commonIslands[Random.Range(0, chunk.commonIslands.Length)];
             }
-            else if (randomRarity < 80 && randomRarity >= 60)
+            else if (randomRarity <= 74 && randomRarity >= 50)
             {
                 islandToSpawn = chunk.rareIslands[Random.Range(0, chunk.rareIslands.Length)];
             }
-            else if (randomRarity >= 90)
+            else if (randomRarity >= 75)
             {
                 islandToSpawn = chunk.legendaryIslands[Random.Range(0, chunk.legendaryIslands.Length)];
             }

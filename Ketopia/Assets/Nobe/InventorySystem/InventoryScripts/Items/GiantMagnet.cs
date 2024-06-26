@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GiantMagnet : PhysicalItemScript, IInteractable
+public class GiantMagnet : PhysicalItemScript
 {
     public override void IInteractable()
     {

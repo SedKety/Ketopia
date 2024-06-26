@@ -15,10 +15,7 @@ public class PlayerInteraction : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, interactionDistance))
             {
-                if (hit.collider.GetComponent<IInteractable>() != null)
-                {
-                    hit.collider.GetComponent<IInteractable>().IInteractable();
-                }
+                hit.collider.GetComponent<IInteractable>()?.IInteractable();
                 if(debugName)
                 {
                     print(hit.collider.name);

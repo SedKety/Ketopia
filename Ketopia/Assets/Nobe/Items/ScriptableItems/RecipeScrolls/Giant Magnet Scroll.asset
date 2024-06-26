@@ -23,7 +23,8 @@ MonoBehaviour:
   heldRecipe: {fileID: 11400000, guid: 7f2d4a8eda278fa4989da72b94ae1b7f, type: 2}
   type: 0
   displayString: 'The Scroll reads:  To craft the giant magnet you shall craft 2
-    normal magnets, and make 10 magnetite bars, combine these and behold the power
-    of the giant magnet'
+    normal magnets, and make 10 magnetite bars, the core   has revealed itself at
+    (1000, 1000, 1000)'
   shouldDisplay: 1
   clip: {fileID: 0}
+  giantMagnet: 1
