@@ -93,7 +93,11 @@ public class AirshipMovement : MonoBehaviour
         rb.mass = 50;  
         rb.drag = groundDrag;  
         AirshipManager.instance.SwitchState(AirshipState.enabled);
-        airshipPlayerParentScript.DisableGravity();
+
+        if (airshipPlayerParentScript)
+        {
+            airshipPlayerParentScript.DisableGravity();
+        }
     }
 
     public void DisableMovement()
@@ -102,7 +106,10 @@ public class AirshipMovement : MonoBehaviour
         rb.mass = 100000;  
         rb.drag = 100000;  
         AirshipManager.instance.SwitchState(AirshipState.disabled);
-        airshipPlayerParentScript.EnableGravity();
+        if (airshipPlayerParentScript)
+        {
+            airshipPlayerParentScript.EnableGravity();
+        }
     }
     private void SpeedControl()
     {

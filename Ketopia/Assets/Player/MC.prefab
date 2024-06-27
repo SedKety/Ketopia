@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 0
+  m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -246,13 +246,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunk: {fileID: 8534369375708952914, guid: 05eb6db6f652dc441b47c156272f6bc9, type: 3}
   startChunk:
-    name: 
-    howManyToSpawn: 0
-    chunkColour: {r: 0, g: 0, b: 0, a: 0}
-    commonIslands: []
-    rareIslands: []
-    legendaryIslands: []
-    chunkColour1: {r: 0, g: 0, b: 0, a: 0}
+    name: Grass
+    howManyToSpawn: 2
+    chunkColour: {r: 0.25490198, g: 1, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
+    legendaryIslands:
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
+    chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
   placeHolder:
   - name: Grass
     howManyToSpawn: 2
@@ -265,6 +270,7 @@ MonoBehaviour:
     legendaryIslands:
     - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
     - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
     chunkColour1: {r: 0.25564075, g: 1, b: 0, a: 0}
   - name: Desert
     howManyToSpawn: 2
@@ -273,6 +279,7 @@ MonoBehaviour:
     - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
     rareIslands:
     - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    - {fileID: 6726292697570850460, guid: 3f570c31687376d49a081bcd6412b728, type: 3}
     legendaryIslands:
     - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
     chunkColour1: {r: 1, g: 0.9725491, b: 0, a: 0}
@@ -300,6 +307,21 @@ MonoBehaviour:
     - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
     - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
     - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
+  - name: Jungle/Grass
+    howManyToSpawn: 2
+    chunkColour: {r: 0.24957967, g: 1, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 3127889517707242887, guid: 814a0f2f350950743875f6828af66e5d, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    rareIslands:
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    - {fileID: 3127889517707242887, guid: 814a0f2f350950743875f6828af66e5d, type: 3}
+    legendaryIslands:
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 1230303540996541078, guid: 09364bfaae2ed404291dce081bb4916e, type: 3}
     chunkColour1: {r: 0.3295524, g: 1, b: 0, a: 0}
 --- !u!1 &7779281521872195767
 GameObject:
@@ -380,7 +402,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.304
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
         type: 3}
@@ -532,6 +554,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8968620673536577396}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8710837632928630897}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4719925935330641901}
   m_SourcePrefab: {fileID: 100100000, guid: 68324efdcc3be0e4fa69b1f5e9c15e95, type: 3}
 --- !u!4 &454925799973877102 stripped
 Transform:
@@ -666,8 +696,8 @@ MonoBehaviour:
   - {fileID: 0}
   recoveryCooldown: 1
   recoveryAmount: 0.05
-  hungerCooldown: 1
-  hungerAmount: 0.005
+  hungerCooldown: 60
+  hungerAmount: 0.5
   hungerHpDecrease: 1
 --- !u!114 &8376558494072018894
 MonoBehaviour:
@@ -688,7 +718,7 @@ MonoBehaviour:
   hitRange: 3
   objectInHandDmg: 5
   canHit: 1
-  defTools: 0
+  defTools: 1
   hand: {fileID: 7779281521872195767}
   animator: {fileID: 8968620673536577396}
 --- !u!54 &8423137525398540999
@@ -785,6 +815,72 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8710837632928630897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d689f9e42790f4742b126d2b31eb71fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHeight: 0.3
+  textToDisplay: F to pickup
+  displayText: {fileID: 0}
+--- !u!114 &4719925935330641901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944603866700853204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08241ee516fafd429f32211758b0143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devToolsOn: 0
+  devToolItems:
+  - {fileID: 5742178768951715055, guid: 4a74b147d4263bf4aacb77235c473d97, type: 3}
+  - {fileID: 7738287445799277081, guid: 2790a683ee8bd564f97fdf4cbf000ce9, type: 3}
+  - {fileID: 8079658611878861024, guid: fabe3a7d4f3c3c8468d1c0704be9d71a, type: 3}
+  - {fileID: 825221945493279016, guid: 47e9290dcc0f39843bc07d3e8b1cbb1b, type: 3}
+  - {fileID: 7602203982189013257, guid: 51a96939e7a8ca94691905185330618f, type: 3}
+  - {fileID: 5154609575317211702, guid: 13c6ba54017749a43914dd46b3f33c02, type: 3}
+  - {fileID: 296957500362164548, guid: b4947549319d64049b93c37431333d77, type: 3}
+  - {fileID: 5121727486959603919, guid: 4581e1c0eec1d684f93e13232f9e4401, type: 3}
+  - {fileID: 860498669100800376, guid: 414de6ec9aa2c834a908f65e2e77142a, type: 3}
+  allItems: {fileID: 6895325784509171911, guid: 2dfdc7ce1ea568542a6f183f45bf739a,
+    type: 3}
+  devChunk:
+    name: DevChunk
+    howManyToSpawn: 1
+    chunkColour: {r: 0, g: 0, b: 0, a: 0}
+    commonIslands:
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 2150221816058951321, guid: 92f4016926796a3488f4b22587f980ef, type: 3}
+    - {fileID: 5515357933975060658, guid: 6d3adbff134ecb1488129776d344bcc6, type: 3}
+    - {fileID: 2554627950580096945, guid: bb38bb0ce6411e844b5bd3f53b32c47c, type: 3}
+    - {fileID: 1898972722260750905, guid: d31aac66dc9622642bf3ff6055472b68, type: 3}
+    - {fileID: 8695514446222292264, guid: 3c55c4c814770b0429eb3c02021582d5, type: 3}
+    - {fileID: 4257032058140465025, guid: a5767f80753c2064788bbe8987e4400b, type: 3}
+    - {fileID: 3127889517707242887, guid: 814a0f2f350950743875f6828af66e5d, type: 3}
+    - {fileID: 4550127667709002336, guid: a7fd6736643b61444a94533bfa4f4e8b, type: 3}
+    - {fileID: 1125594375768225652, guid: 9bdd1c84b1d1f504d9f84a19e1dcf384, type: 3}
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    - {fileID: 3826582749742089319, guid: 41dd4da5b495adf4ba84c37e94690ae4, type: 3}
+    - {fileID: 6726292697570850460, guid: 3f570c31687376d49a081bcd6412b728, type: 3}
+    - {fileID: 5504152460845083957, guid: 634d3ceefb514644b8e324148501022c, type: 3}
+    - {fileID: 3030970185135521689, guid: 78747dcfc989efd44943ebaaf1eb9b35, type: 3}
+    - {fileID: 1230303540996541078, guid: 09364bfaae2ed404291dce081bb4916e, type: 3}
+    rareIslands:
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    legendaryIslands:
+    - {fileID: 3032151751355824899, guid: 309df75e1bd7f1f4ead84764aafe0206, type: 3}
+    chunkColour1: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1962692376588409421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7285025709699086136, guid: 68324efdcc3be0e4fa69b1f5e9c15e95,
