@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
     public Button unequipHeldItemButton;
     public PlayerHarvesting playerHarvesting;
     public bool dropMode, buildMode, equipMode, consumeMode;
-
+    public float volumeDrop = 0.25f;
     public AudioClip dropItem;
     public GameObject sliderPopUp;
     public Slider dropItemSlider;
@@ -88,7 +88,7 @@ public class InventoryManager : MonoBehaviour
         if (currentSelectedSlot)
         {
             currentSelectedSlot.OnItemDrop(Mathf.RoundToInt(dropItemSlider.value));
-            AudioSource.PlayClipAtPoint(dropItem, audioPlayer.transform.position);
+            AudioSource.PlayClipAtPoint(dropItem, audioPlayer.transform.position, volumeDrop);
         }
     }
     public void UnEquipItem()
