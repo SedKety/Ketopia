@@ -244,79 +244,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1048390728}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &324474648
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.3165798
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3308239
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.19929886
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.00000013315805
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 477484550941956617, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1003050406681608371, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: m_Name
-      value: Biggg Magnet
-      objectReference: {fileID: 0}
-    - target: {fileID: 7922632791299089298, guid: e85518e95a317c948892f9b06d18a537,
-        type: 3}
-      propertyPath: quantity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e85518e95a317c948892f9b06d18a537, type: 3}
 --- !u!1001 &697287522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -659,8 +586,13 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4719925935330641901, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
+      propertyPath: spawnPosition.y
+      value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719925935330641901, guid: c92b41b44114d694fb1f05c75e3795b3,
+        type: 3}
       propertyPath: spawnPosition.z
-      value: 2528
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 5160098669033299587, guid: c92b41b44114d694fb1f05c75e3795b3,
         type: 3}
@@ -1133,4 +1065,3 @@ SceneRoots:
   - {fileID: 1048390728}
   - {fileID: 52381754}
   - {fileID: 697287522}
-  - {fileID: 324474648}

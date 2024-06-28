@@ -29,6 +29,7 @@ public class Devtools : MonoBehaviour
                 Instantiate(allIslands, spawnPosition, Quaternion.identity);
                 ChunkSpawner.AnnihilateChunks();
                 AirshipMovement.instance.airshipMovementSpeed *= 3;
+                AirshipMovement.instance.airshipUpHeightMultiplier *= 3;
             }
         }
         if (devToolsOn = true & Input.GetKeyDown(KeyCode.F2))

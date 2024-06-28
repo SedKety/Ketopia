@@ -20,7 +20,5 @@ public class GiantMagnet : PhysicalItemScript
         {
             quantity = leftOverItems;
         }
-        GameManger.instance.SpawnCanyonIsland();
-        UIScript.instance.DisplayText(displayText);
     }
 }
