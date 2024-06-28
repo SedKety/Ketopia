@@ -13,39 +13,45 @@ public class GameTimer : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text bestTimerText;
     public GameObject playerMc;
+
     void Start()
     {
         currentTimeSeconds = 0;
         currentTimeMin = 0;
         StartTimer();
     }
+
     public void StartTimer()
     {
         timerOn = true;
         StartCoroutine(Timer());
     }
+
     public void StopTimer()
     {
         timerOn = false;
     }
-    public IEnumerator Timer()
+
+    private IEnumerator Timer()
     {
-        while(timerOn == true)
+        while (timerOn)
         {
+            yield return new WaitForSeconds(1);
             currentTimeSeconds++;
-            if (timerText != null)
-            {
-                timerText.text = "time " + currentTimeMin + ":" +currentTimeSeconds;
-            }
             if (currentTimeSeconds >= 60)
             {
-                currentTimeMin++; 
+                currentTimeMin++;
                 currentTimeSeconds = 0;
             }
-            yield return new WaitForSeconds(1);
+
+            if (timerText != null)
+            {
+                timerText.text = "Time: " + currentTimeMin.ToString("00") + ":" + currentTimeSeconds.ToString("00");
+            }
         }
     }
-    public void Update()
+
+    void Update()
     {
         if (PlayerManager.instance.playerState == PlayerState.menu)
         {
@@ -53,14 +59,15 @@ public class GameTimer : MonoBehaviour
             CalculateBestTime();
         }
     }
-    public void CalculateBestTime()
+
+    private void CalculateBestTime()
     {
         int currentTimeInSeconds = currentTimeMin * 60 + currentTimeSeconds;
         int bestTime = PlayerPrefs.GetInt("BestTime", int.MaxValue);
-        if (currentTimeInSeconds > bestTime)
+        if (currentTimeInSeconds < bestTime)
         {
             PlayerPrefs.SetInt("BestTime", currentTimeInSeconds);
         }
-        bestTimerText.text ="Best time: " + PlayerPrefs.GetInt("BestTime").ToString() + " Seconds";
+        bestTimerText.text = "Best Time: " + PlayerPrefs.GetInt("BestTime") + " Seconds";
     }
 }
