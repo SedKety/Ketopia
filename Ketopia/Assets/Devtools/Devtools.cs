@@ -5,10 +5,12 @@ using UnityEngine;
 public class Devtools : MonoBehaviour
 {
     public bool devToolsOn;
-    public GameObject[] devToolItems;
+
+    public bool islandsOn;
+    public GameObject allIslands;
+    public Vector3 spawnPosition;
 
     public GameObject allItems;
-    public Chunk devChunk;
     void Update() 
     {
         if (Input.GetKeyDown(KeyCode.L))
@@ -19,6 +21,13 @@ public class Devtools : MonoBehaviour
         if (devToolsOn = true & Input.GetKeyDown(KeyCode.F1))
         {
             Instantiate(allItems, PlayerManager.instance.dropSpot.position, Quaternion.identity);
+            if (!islandsOn)
+            {
+                islandsOn = true;
+                Instantiate(allIslands, spawnPosition, Quaternion.identity);
+                ChunkSpawner.AnnihilateChunks();
+                AirshipMovement.instance.airshipMovementSpeed *= 3;
+            }
         }
     }
 }

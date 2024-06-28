@@ -168,3 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9efe0f80ed93d3f41bc02aa750bc785d, type: 2}
   quantity: 0
+  displayText: 'The Scroll reads:  To craft the giant magnet you shall craft 2 normal
+    magnets, and make 10 magnetite bars, the core   has revealed itself at (1000,
+    1000, 1000)'

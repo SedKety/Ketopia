@@ -7,9 +7,9 @@ public class CoreScript : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         print(collision.gameObject.name);
-        if (collision.gameObject.GetComponent<GiantMagnet>() == true)
+        if (collision.gameObject.GetComponent<GiantMagnet>())
         {
-            UIScript.instance.inventory.gameObject.SetActive(false);
+            UIScript.instance.inventory.SetActive(false);
             UIScript.instance.playerstats.gameObject.SetActive(false);
             UIScript.instance.settings.gameObject.SetActive(false);
             UIScript.instance.dialogue.gameObject.SetActive(false);

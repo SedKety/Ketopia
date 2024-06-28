@@ -117,6 +117,15 @@ public class ChunkSpawner : MonoBehaviour
         return newChunk;
     }
 
+    public static void AnnihilateChunks()
+    {
+        print(chunks.Count);
+        for (int i = 0; i < chunks.Count; i++)
+        {
+            chunks[i].gameObject.SetActive(false);
+        }
+    }
+
     public static bool IsChunkAtPosition(Vector3 position)
     {
         foreach (GameObject existingChunk in chunks)

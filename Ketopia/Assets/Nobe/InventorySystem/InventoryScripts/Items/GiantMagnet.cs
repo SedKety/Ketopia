@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GiantMagnet : PhysicalItemScript
 {
-    string displayText;
+   public string displayText;
     public override void IInteractable()
     {
         if(!GameManger.instance.canyonActive)

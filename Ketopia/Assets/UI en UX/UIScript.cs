@@ -99,6 +99,7 @@ public class UIScript : MonoBehaviour
     public void DisplayText(string text)
     {
         dialogueText.text = text;
+        PlayerManager.instance.dialogueLocation = null;
         PlayerManager.instance.SwitchState(PlayerState.dialogue);
     }
     public void Quit()
