@@ -6315,11 +6315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Progra
-
-    meren
-
-    the Build'
+  m_text: A bit of everything
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96c05ce1754b3dc4d86c28a295ee7593, type: 2}
   m_sharedMaterial: {fileID: 1057537594762215708, guid: 96c05ce1754b3dc4d86c28a295ee7593,
@@ -6593,7 +6589,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Art
+  m_text: 'Island Art
+
+    Boat Art'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96c05ce1754b3dc4d86c28a295ee7593, type: 2}
   m_sharedMaterial: {fileID: 1057537594762215708, guid: 96c05ce1754b3dc4d86c28a295ee7593,
