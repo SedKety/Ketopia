@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Tutorial
   dialogue:
-  - Oi, My Name's Greg. Ii will teach you how to play the game
+  - Oi, My Name's Greg. I will teach you how to play the game
   - If you want to walk Press (W, A, S or D). and If you want to sprint, (double
     press W).
   - 'Press (F) if you want to interact with stuff and if you picked up an item (E)
