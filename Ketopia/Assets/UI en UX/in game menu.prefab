@@ -9054,11 +9054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481e167f2cbedd84cb7c248019713131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTimeSeconds: 0
-  currentTimeMin: 0
-  timerText: {fileID: 0}
-  bestTimerText: {fileID: 0}
-  playerMc: {fileID: 0}
+  currentTimeText: {fileID: 2065614296819738708}
+  bestTimeText: {fileID: 1493850834550046146}
 --- !u!114 &357867969098512764
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class CoreScript : MonoBehaviour
             UIScript.instance.cursor.gameObject.SetActive(false);
             UIScript.instance.winScreen.gameObject.SetActive(true);
             PlayerManager.instance.SwitchState(PlayerState.menu);
+            GameTimer.Instance.WinGame();
         }
     }
 }

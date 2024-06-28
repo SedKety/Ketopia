@@ -10,6 +10,9 @@ public class PositionTranker : MonoBehaviour
     public TextMeshProUGUI textPos;
     void Update()
     {
-        textPos.text = player.position.ToString("0");
+        if(player != null)
+        {
+            textPos.text = player.position.ToString("0");
+        }
     }
 }

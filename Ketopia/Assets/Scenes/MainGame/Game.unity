@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31475765, g: 0.59021604, b: 0.5940174, a: 1}
+  m_IndirectSpecularColor: {r: 0.31475762, g: 0.59021604, b: 0.5940174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1090,10 +1090,9 @@ GameObject:
   - component: {fileID: 1937505760}
   - component: {fileID: 1937505759}
   - component: {fileID: 1937505761}
-  - component: {fileID: 1937505764}
   - component: {fileID: 1937505765}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,23 +1139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickTime: 1
   tickerTimer: 0
---- !u!114 &1937505764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937505758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481e167f2cbedd84cb7c248019713131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTimeSeconds: 0
-  currentTimeMin: 0
-  timerText: {fileID: 1529841995}
-  bestTimerText: {fileID: 2038748603}
-  playerMc: {fileID: 0}
 --- !u!114 &1937505765
 MonoBehaviour:
   m_ObjectHideFlags: 0
