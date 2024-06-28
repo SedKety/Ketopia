@@ -7,10 +7,14 @@ public class PhysicalItemScript : MonoBehaviour, IInteractable
 {
     public Item item;
     public int quantity;
-    int DespawnTimer = 60;
+    readonly int DespawnTimer = 60;
+    public bool shouldntDespawn;
     public virtual void Start()
     {
-        StartCoroutine(StartDespawnTimer());
+        if (shouldntDespawn == false)
+        {
+            StartCoroutine(StartDespawnTimer());
+        }
         if (quantity <= 0)
         {
             Destroy(gameObject);

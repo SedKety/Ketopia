@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 54dbeea6ace299b478ccf962849fc76f, type: 2}
   quantity: 1
+  shouldntDespawn: 1
 --- !u!54 &9181181489897154182
 Rigidbody:
   m_ObjectHideFlags: 0
