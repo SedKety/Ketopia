@@ -11,12 +11,14 @@ public class Devtools : MonoBehaviour
     public Vector3 spawnPosition;
 
     public GameObject allItems;
-    void Update() 
+
+    public GameObject core;
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
             devToolsOn = true;
-            print("on"); 
+            print("on");
         }
         if (devToolsOn = true & Input.GetKeyDown(KeyCode.F1))
         {
@@ -28,6 +30,10 @@ public class Devtools : MonoBehaviour
                 ChunkSpawner.AnnihilateChunks();
                 AirshipMovement.instance.airshipMovementSpeed *= 3;
             }
+        }
+        if (devToolsOn = true & Input.GetKeyDown(KeyCode.F2))
+        {
+            Instantiate(core, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 }

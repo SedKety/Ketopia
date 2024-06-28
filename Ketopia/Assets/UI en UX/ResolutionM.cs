@@ -25,7 +25,7 @@ public class ResolutionM : MonoBehaviour
                 resolutionList.Add(res);
             }
         }
-        List<string> options = new List<string>();
+        List<string> options = new();
         foreach (var res in resolutionList)
         {
             string option = $"{res.width}x{res.height} {res.refreshRate} Hz";
